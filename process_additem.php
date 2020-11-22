@@ -156,7 +156,7 @@
                                 $info_array['availability'] = $row['availability'];
                                 $json[$cakeid] = $info_array;
                             }
-                            file_put_contents('json/ItemsTest.json', json_encode($json, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE));
+                            file_put_contents('json/Items.json', json_encode($json, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE));
                         }
                     }
                     $conn->close();
