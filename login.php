@@ -1,3 +1,10 @@
+<?php
+include 'sessiontest.php';
+if(isset($_SESSION['fname'])){
+header('Location: profile.php');
+die(); 
+}
+?>
 <html>
     <head>
         <?php
@@ -17,7 +24,7 @@
             <p> 
                 For new members, please go to the <a href="register.php">Registration page</a>.        
             </p>        
-            <form action="process_login.php" method="post">            
+            <form action="loginprocess.php" method="post">            
                 <div class="form-group">
                     <label for="email">Email:</label>            
                     <input class="form-control" type="email" id="email" name="email"                   

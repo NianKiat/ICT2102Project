@@ -1,3 +1,7 @@
+<?php
+include 'sessiontest.php';
+include 'adminTraverseSecurity.php';
+?>
 <!DOCTYPE html>
 <html lang = "en">
     <head>
@@ -8,13 +12,13 @@
     </head>
     <body>
         <?php
-        include 'm.navbar.php';
+        include 'navbar.php';
         ?>
         <br>
         <main class="container">
             <h1>Remove Member</h1>
             <h3>Enter User E-mail or ID</h3>
-            <form action="#" method="post">
+            <form action="deleteprocess.php" method="post">
                 <div class="form-group">
                     <label for="email">Email:</label>
                     <input class="form-control" type="email" id="email"

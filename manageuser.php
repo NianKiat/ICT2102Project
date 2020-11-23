@@ -1,16 +1,21 @@
+<?php
+require 'dbconfig.php';
+include 'sessiontest.php';
+include 'adminTraverseSecurity.php';
+?>
 <!DOCTYPE html>
 <html lang = "en">
     <head>
-    <?php
-    include 'header.php';
-    ?>
+        <?php
+        include 'header.php';
+        ?>
         <title>Floured - Manage User</title>
     </head>
     <body>
         <?php
-        include 'm.navbar.php';
+        include 'navbar.php';
         ?>
-
+        
         <div class="jumbotron jumbotron-fluid">
             <div class="container">
                 <h1 class="display-4">Manage Users</h1>
@@ -32,70 +37,45 @@
                                 <table class="table table-striped table-sm">
                                     <thead>
                                         <tr>
-                                            <th>#</th>
-                                            <th>Header</th>
-                                            <th>Header</th>
-                                            <th>Header</th>
-                                            <th>Header</th>
+                                            <th>MemberID:</th>
+                                            <th>First Name:</th>
+                                            <th>Last Name:</th>
+                                            <th>E-mail:</th>
+                                            <th>Address:</th>
+                                            <th>Contact:</th>
+                                            <th>Gender:</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>1,001</td>
-                                            <td>Lorem</td>
-                                            <td>ipsum</td>
-                                            <td>dolor</td>
-                                            <td>sit</td>
-                                        </tr>
-                                        <tr>
-                                            <td>1,002</td>
-                                            <td>amet</td>
-                                            <td>consectetur</td>
-                                            <td>adipiscing</td>
-                                            <td>elit</td>
-                                        </tr>
-                                        <tr>
-                                            <td>1,003</td>
-                                            <td>Integer</td>
-                                            <td>nec</td>
-                                            <td>odio</td>
-                                            <td>Praesent</td>
-                                        </tr>
-                                        <tr>
-                                            <td>1,003</td>
-                                            <td>libero</td>
-                                            <td>Sed</td>
-                                            <td>cursus</td>
-                                            <td>ante</td>
-                                        </tr>
-                                        <tr>
-                                            <td>1,004</td>
-                                            <td>dapibus</td>
-                                            <td>diam</td>
-                                            <td>Sed</td>
-                                            <td>nisi</td>
-                                        </tr>
-                                        <tr>
-                                            <td>1,005</td>
-                                            <td>Nulla</td>
-                                            <td>quis</td>
-                                            <td>sem</td>
-                                            <td>at</td>
-                                        </tr>
-                                        <tr>
-                                            <td>1,006</td>
-                                            <td>nibh</td>
-                                            <td>elementum</td>
-                                            <td>imperdiet</td>
-                                            <td>Duis</td>
-                                        </tr>
-                                        <tr>
-                                            <td>1,007</td>
-                                            <td>sagittis</td>
-                                            <td>ipsum</td>
-                                            <td>Praesent</td>
-                                            <td>mauris</td>
-                                        </tr>
+                                        <?php
+                                        $conn = OpenCon();
+                                        if ($conn->connect_error) {
+                                            $errorMsg = "Connection failed: " . $conn->connect_error;
+                                        } else {
+                                            $stmt = $conn->prepare("SELECT * FROM fmembers WHERE role = 'Member'");
+                                            $stmt->execute();
+                                            $result = $stmt->get_result();
+                                            while ($row = mysqli_fetch_array($result)) {
+                                                ?>
+
+                                                <tr>
+                                                    <td><?php echo $row['memberID'] ?></td>
+                                                    <td><?php echo $row['fname'] ?></td>
+                                                    <td><?php echo $row['lname'] ?></td>
+                                                    <td><?php echo $row['email'] ?></td>
+                                                    <td><?php echo $row['address'] ?></td>
+                                                    <td><?php echo $row['contact'] ?></td>
+                                                    <td><?php echo $row['gender'] ?></td>
+                                                </tr>
+
+
+
+                                                <?php
+                                            }
+                                        }
+                                        ?>
+
+
 
                                     </tbody>
                                 </table>
@@ -103,7 +83,7 @@
                     </div>
                 </div>
 
-                
+
                 <div class="card border-dark mb-3">
                     <div class="card-header">Admin Users</div>
                     <div class="card-body text-primary">
@@ -111,21 +91,45 @@
                             <table class="table table-striped table-sm">
                                 <thead>
                                     <tr>
-                                        <th>#</th>
-                                        <th>Header</th>
-                                        <th>Header</th>
-                                        <th>Header</th>
-                                        <th>Header</th>
+                                        <th>MemberID:</th>
+                                        <th>First Name:</th>
+                                        <th>Last Name:</th>
+                                        <th>E-mail:</th>
+                                        <th>Address:</th>
+                                        <th>Contact:</th>
+                                        <th>Gender:</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>1,001</td>
-                                        <td>Lorem</td>
-                                        <td>ipsum</td>
-                                        <td>dolor</td>
-                                        <td>sit</td>
-                                    </tr>
+                                    <?php
+                                    $conn = OpenCon();
+                                    if ($conn->connect_error) {
+                                        $errorMsg = "Connection failed: " . $conn->connect_error;
+                                    } else {
+                                        $stmt = $conn->prepare("SELECT * FROM fmembers WHERE role = 'Admin'");
+                                        $stmt->execute();
+                                        $result = $stmt->get_result();
+                                        while ($row = mysqli_fetch_array($result)) {
+                                            ?>
+
+                                            <tr>
+                                                <td><?php echo $row['memberID'] ?></td>
+                                                <td><?php echo $row['fname'] ?></td>
+                                                <td><?php echo $row['lname'] ?></td>
+                                                <td><?php echo $row['email'] ?></td>
+                                                <td><?php echo $row['address'] ?></td>
+                                                <td><?php echo $row['contact'] ?></td>
+                                                <td><?php echo $row['gender'] ?></td>
+                                            </tr>
+
+
+
+                                            <?php
+                                        }
+                                    }
+                                    ?>
+
+
 
                                 </tbody>
                             </table>
