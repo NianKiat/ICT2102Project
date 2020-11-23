@@ -7,10 +7,10 @@
                 "type": "Wedding Cake",
                 "description": "A red red red red red red red red red red red red red red red red red red red red red red red cake",
                 "discount":"90",
-                "imgurl":"images/red_cake.jpg",
+                "imgurl":"images/cakes/red_cake.jpg",
                 "dimension":"10 (diameter) x 4 (height) inch",
                 "warning":"milk, nuts, fruits",
-                "availability":"no"
+                "availability":"yes"
             },
     "00037":
             {
@@ -20,10 +20,10 @@
                 "type": "Cake",
                 "description":"A blue blue blue blue blue blue blue blue blue blue blue blue blue blue blue blue blue blue blue blue blue blue blue blue blue blue blue blue blue blue cake",
                 "discount":"0",
-                "imgurl":"images/blue_cake.jpg",
+                "imgurl":"images/cakes/blue_cake.jpg",
                 "dimension":"9 (diameter) x 5 (height) inch",
                 "warning":"milk, fruits",
-                "availability":"no"
+                "availability":"yes"
             }
             
 }
