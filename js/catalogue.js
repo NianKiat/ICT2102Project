@@ -60,11 +60,14 @@ function quantitychange(type, i) {
 }
 
 function updatecart() {
+    var total = document.getElementById('updatecart');
+    var price = parseFloat((total.innerHTML).match(/[\d\.]+/));
     //add to cart codes here
-
-    //end
-    var done = document.getElementById('quantity');
-    done.value = 0;
+    
+    //end Reset Numbers
+    var quantity = document.getElementById('quantity');
+    total.innerHTML = "Add to Cart $0";
+    quantity.value = 0;
 }
 
 function refreshitems(type) {
