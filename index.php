@@ -205,7 +205,7 @@ include 'sessiontest.php';
                 <div class="card">
                     <div class="card-header" id="headingTwo">
                         <h2 class="mb-0">
-                            <button type="button" class="btn btn-link collapsed button_faq" data-toggle="collapse" data-target="#collapseTwo">Do you do refunds/exchanges for orders</button>
+                            <button type="button" class="btn btn-link collapsed button_faq" data-toggle="collapse" data-target="#collapseTwo">Do you do refunds/exchanges for orders?</button>
                         </h2>
                     </div>
                     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
