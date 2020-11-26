@@ -16,9 +16,9 @@ include 'sessiontest.php';
         ?>
         <div id="banner_image" class="jumbotron jumbotron-fluid">
             <div class="container center">
-              <h1 id="banner-header" class="display-4 banner_font" style="font-weight: 500;">Singapore's Best Cake Delivery Outlet</h1>
-              <h2 id="banner-subheader" class="display-7" style='color:white; font-weight: 500;'>Same Day Delivery | No Minimum Order | Award Winning</h2>
-              <h2 id="subheading" class="lead" style='color:white; font-weight: 500; font-style:italic;'>Floured! brings you freshly-baked artisanal cakes delivered islandwide</h2>
+                <h1 id="banner-header" style="color:lightblue">Singapore's Best Cake Delivery Outlet</h1>
+              <h2 id="banner-subheader">same day delivery | no minimum order | award winning</h2>
+              <h2 id="subheading" class="lead" style='color:lightpink; font-weight: 500; font-style:italic;'>Floured! brings you freshly-baked artisanal cakes delivered islandwide</h2>
             </div>
             <br>
             <div class="container center">
