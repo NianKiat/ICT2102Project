@@ -12,18 +12,52 @@ include 'sessiontest.php';
     <body>
         <?php
         include 'navbar.php';
-        include 'carousel.php';
+        /*include 'carousel.php';*/
         ?>
-        <br>
-        <section class="jumbotron text-center">
+        <div id="banner_image" class="jumbotron jumbotron-fluid">
+            <div class="container center">
+              <h1 id="banner-header" class="display-4 banner_font" style="font-weight: 500;">Singapore's Best Cake Delivery Outlet</h1>
+              <h2 id="banner-subheader" class="display-7" style='color:white; font-weight: 500;'>Same Day Delivery | No Minimum Order | Award Winning</h2>
+              <h2 id="subheading" class="lead" style='color:white; font-weight: 500; font-style:italic;'>Floured! brings you freshly-baked artisanal cakes delivered islandwide</h2>
+            </div>
+            <br>
+            <div class="container center">
+                <div class="row">
+                    <div class="col-md-2 shrink">
+                    </div>
+                    <div class="col-md-4">
+                        <a href="#" id="banner_button_left" class="btn btn-info" role="button">View online catalogue</a>
+                    </div>
+                    <div class="col-md-4">
+                        <a href="#" id="banner_button_right" class="btn btn-info" role="button">Walk-in our store</a>
+                    </div>
+                    <div class="col-md-2 shrink">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class="jumbotron text-center section_wrap">
             <div class="container">
-                <h1 class="jumbotron-heading">Best Selling Cakes:</h1>
-                <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don't simply skip over it entirely.</p>
+                <h1 class="jumbotron-heading section_heading">what sets us apart</h1>
+                <hr class="section_break">
+            </div>
+            <div class="container">
+                <div class="row" style="padding-top:1rem;">
+                    <div class="col-12 col-md-6 col-lg-3 center_img"> <img id="acclaimed" class="fit-image" src="../images/acclaimed1.jpg" alt="acclaimed" style="margin-top:3px;"></div>
+                    <div class="col-12 col-md-6 col-lg-3 center_img"> <img id="affordable" class="fit-image" src="../images/affordable1.jpg" alt="affordable"></div>
+                    <div class="col-12 col-md-6 col-lg-3 center_img"> <img id="more" class="fit-image" src="../images/more1.jpg" alt="more choices"></div>
+                    <div class="col-12 col-md-6 col-lg-3 center_img"> <img id="time" class="fit-image" src="../images/time1.jpg" alt="1 hour express delivery"></div>
+                </div>
             </div>
         </section>
-        <div class="album py-5 bg-light">
+        <section class="jumbotron text-center section_wrap">
             <div class="container">
-
+                <h1 class="jumbotron-heading section_heading">best selling cakes</h1>
+                <hr class="section_break">
+            </div>
+        </section>
+        <div class="album py-5 bg-light" style="padding-top:0px;">
+            <div class="container">
                 <div class="row">
                     <div class="col-md-4">
                         <div class="card mb-4 shadow-sm">
@@ -71,20 +105,24 @@ include 'sessiontest.php';
                         </div>
                     </div>
                 </div>
+                <div class="row center">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4">
+                            <button type="button" class="btn btn-info btn-lg button_custom">shop all cakes</button>
+                    </div>
+                    <div class="col-md-4"></div>
+                </div>
             </div>
         </div>
-
         <br>
-
-        <section class="jumbotron text-center">
+        <section class="jumbotron text-center section_wrap">
             <div class="container">
-                <h1 class="jumbotron-heading">Recently-added Cakes:</h1>
-                <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don't simply skip over it entirely.</p>
+                <h1 class="jumbotron-heading section_heading">walk-in promotion</h1>
+                <hr class="section_break">
             </div>
         </section>
         <div class="album py-5 bg-light">
             <div class="container">
-
                 <div class="row">
                     <div class="col-md-4">
                         <div class="card mb-4 shadow-sm">
@@ -132,11 +170,68 @@ include 'sessiontest.php';
                         </div>
                     </div>
                 </div>
+                <div class="row center">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4">
+                            <button type="button" class="btn btn-info btn-lg button_custom">store location</button>
+                    </div>
+                    <div class="col-md-4"></div>
+                </div>
             </div>
         </div>
-
-
-
+        <br>
+        <section class="jumbotron text-center section_wrap">
+            <div class="container">
+                <h1 class="jumbotron-heading section_heading">frequently asked questions</h1>
+                <hr class="section_break">
+            </div>
+        </section>
+        <section class="jumbotron section_wrap" style="margin-left: 61.667px; margin-right: 61.667px; padding-left:30px; padding-right:30px;">
+            <div class="bs-example">
+            <div class="accordion" id="accordionExample">
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <h2 class="mb-0">
+                            <button type="button" class="btn btn-link button_faq" data-toggle="collapse" data-target="#collapseOne">Do you have local delivery service?</button>									
+                        </h2>
+                    </div>
+                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                        <div class="card-body">
+                            <p>Yes we do. We provide 1 hour express delivery guarantee, from the moment we confirm your order until we arrive at your doorstep.</p>
+                            <p>For orders below $100, we charge $10 per delivery trip per slice of cake. For orders of $100 or more, delivery is free.
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingTwo">
+                        <h2 class="mb-0">
+                            <button type="button" class="btn btn-link collapsed button_faq" data-toggle="collapse" data-target="#collapseTwo">Do you do refunds/exchanges for orders</button>
+                        </h2>
+                    </div>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                        <div class="card-body">
+                            <p>Unfortunately, we cannot offer refunds once the order is placed. However, if the product is unsatisfactory, we can offer exchanges on a case-by-case basis.</p>
+                            <p>Please <a href="#" target="_blank">contact us</a> for exchange requests.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingThree">
+                        <h2 class="mb-0">
+                            <button type="button" class="btn btn-link collapsed button_faq" data-toggle="collapse" data-target="#collapseThree">Why are your cakes just so good?</button>                     
+                        </h2>
+                    </div>
+                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                        <div class="card-body">
+                            <p> They are made with a special ingredient. <a href="https://en.wikipedia.org/wiki/Imagination" target="_blank">Click here to learn more.</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </section>
+        <br>
+        <br>
     </body>
     <?php
     include 'footer.php';
