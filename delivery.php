@@ -1,10 +1,15 @@
+<?php
+require 'dbconfig.php';
+include 'sessiontest.php';
+include 'memberTraverseSecurity.php';
+?>
 <!DOCTYPE html>
 <html lang = "en">
     <head>
         <?php
-        $link = mysqli_connect("localhost", "root", "", "deliverydate");
+        $conn = OpenCon();
         // Check connection
-        if ($link === false) {
+        if ($conn === false) {
             die("ERROR: Could not connect. " . mysqli_connect_error());
         }
         include 'header.php';
@@ -44,7 +49,7 @@
                         //echo $launch_date;
                         //echo "Date Chosen !!!";
                         $sql = "INSERT INTO deliverydate (memberid, date) VALUES ('2', '$launch_date')";
-                        if (mysqli_query($link, $sql)) {
+                        if (mysqli_query($conn, $sql)) {
                             echo " has been selected.";
                         } else {
                             echo "Date chosen is empty or unavailable. ";

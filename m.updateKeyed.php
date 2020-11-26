@@ -92,7 +92,16 @@ function getUser() {
         ?>
         <title>Floured - Update</title>
     </head>
+    <style>
+        .responsive {
+            width: 100%;
+            /*  max-width: 400px;*/
+            height: auto;
+
+        }
+    </style>
     <body>
+
         <?php
         include 'navbar.php';
         ?>
@@ -107,7 +116,7 @@ function getUser() {
                     <div class="row no-gutters">
                         <?php if ($success) { ?>
                             <?php if ($thisgender == 'Male') { ?>
-                                <img src="images/img_avatar.png" style="width: 500px" class="card-img-top" alt="profileimg"/>
+                                <img src="images/img_avatar.png" style="width: 500px " class="card-img-top" alt="profileimg"/>
                             <?php } else if ($thisgender == 'Female') { ?>
                                 <img src="images/img_avatar2.png" style="width: 500px" class="card-img-top" alt="profileimg"/>
                             <?php } ?>

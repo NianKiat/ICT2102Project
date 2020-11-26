@@ -1,3 +1,8 @@
+<?php
+require 'dbconfig.php';
+include 'sessiontest.php';
+include 'memberTraverseSecurity.php';
+?>
 <!DOCTYPE html>
 <html lang = "en">
     <head>
@@ -22,7 +27,6 @@
                         <!-- Credit card form tabs -->
                         <ul role="tablist" class="nav bg-light nav-pills rounded nav-fill mb-3">
                             <li class="nav-item"> <a data-toggle="pill" href="#credit-card" class="nav-link active "> <i class="fas fa-credit-card mr-2"></i> Credit Card </a> </li>
-                            <li class="nav-item"> <a data-toggle="pill" href="#paypal" class="nav-link "> <i class="fab fa-paypal mr-2"></i> Paypal </a> </li>
                         </ul>
                     </div> <!-- End -->
                     <!-- Credit card form content -->
@@ -58,6 +62,7 @@
                                 <p class="mb-0"><span><strong>$ <?php echo $_GET['totalamount'] ?></strong></span></p><br>
                                 <div class="card-footer"> <button type="button" class="subscribe btn btn-primary btn-block shadow-sm"> Confirm Payment </button>
                             </form>
+                            <br>
                             <h6><strong>Or pay using PayPal</strong></h6>
                             <div id="paypal-payment-button"></div>
                         </div>
@@ -79,7 +84,7 @@
                 return actions.order.create({
                     purchase_units:[{
                         amount:{
-                            value:'100'
+                            value:'<?php echo $_GET['totalamount'] ?>'
                         }
                     }]
                 });

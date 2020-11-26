@@ -2,9 +2,9 @@
 <html lang = "en">
     <head>
         <?php
-        $link = mysqli_connect("localhost", "root", "", "deliverydate");
+        $$conn = mysqli_connect("localhost", "root", "", "deliverydate");
         // Check connection
-        if ($link === false) {
+        if ($$conn === false) {
             die("ERROR: Could not connect. " . mysqli_connect_error());
         }
         include 'header.php';
@@ -52,7 +52,7 @@
                         $launch_date = $_POST['dateD'];
                         $rowid = $_POST['rowid'];
                         $sql = "UPDATE deliverydate SET date='$launch_date' WHERE id='$rowid'";
-                        if (mysqli_query($link, $sql)) {
+                        if (mysqli_query($$conn, $sql)) {
                             echo "Date has been changed to ";
                             echo $launch_date;
                         } else {

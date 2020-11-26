@@ -1,3 +1,8 @@
+<?php
+require 'dbconfig.php';
+include 'sessiontest.php';
+include 'memberTraverseSecurity.php';
+?>
 <!DOCTYPE html>
 <html lang = "en">
     
@@ -21,13 +26,7 @@
   <main>
     
     <?php
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "shoppingcart";
-        
-        // Create connection
-        $conn = new mysqli($servername, $username, $password, $dbname);
+        $conn = OpenCon();
         // Check connection
         if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
@@ -82,15 +81,14 @@
                         </div>
                         <div>
                           <div>
-
-                                <button type="submit" name="decrease" id="decrease" class="fa fa-minus" onclick="decreaseAjax(<?php echo $row["CartID"]; ?>,<?php echo $row["Quantity"]; ?>)"
-                                        style="border-color:transparent; background-color:transparent; float:left; height:30px" ></button>
-
-                                <input onchange="updateAjax(<?php echo $row["CartID"]; ?>,this.value)" min="0" id="quantity" name="quantity" value="<?php echo $row["Quantity"]; ?>" 
-                                       type="number" style="text-align:center; width:68.6%; float:left; height:30px">
-
                                 <button type="submit" name="increase" id="increase" class="fa fa-plus" onclick="increaseAjax(<?php echo $row["CartID"]; ?>,<?php echo $row["Quantity"]; ?>)"
                                         style="border-color:transparent; background-color:transparent; float:right; height:30px"></button>
+
+                                <input onchange="updateAjax(<?php echo $row["CartID"]; ?>,this.value)" min="0" id="quantity" name="quantity" value="<?php echo $row["Quantity"]; ?>" 
+                                       type="number" style="text-align:center; width:50%; float:right; height:30px">
+
+                                <button type="submit" name="decrease" id="decrease" class="fa fa-minus" onclick="decreaseAjax(<?php echo $row["CartID"]; ?>,<?php echo $row["Quantity"]; ?>)"
+                                        style="border-color:transparent; background-color:transparent; float:right; height:30px" ></button>
                           </div>
                         </div>
                       </div>

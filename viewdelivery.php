@@ -1,11 +1,16 @@
+<?php 
+require 'dbconfig.php';
+include 'sessiontest.php';
+include 'memberTraverseSecurity.php';
+?>
 <!DOCTYPE html>
 <html lang = "en">
     <head>
         <?php
-        $link = mysqli_connect("localhost", "root", "", "deliverydate");
+        $conn = OpenCon();
 
         // Check connection
-        if ($link === false) {
+        if ($conn === false) {
             die("ERROR: Could not connect. " . mysqli_connect_error());
         }
         include 'header.php';
@@ -37,7 +42,7 @@
                                 <tbody>
                                     <?php
                                     $query = "SELECT * FROM deliverydate WHERE memberid = '2'";
-                                    if ($result = $link->query($query)) {
+                                    if ($result = $conn->query($query)) {
                                         while ($row = $result->fetch_assoc()) {
                                             $field1name = $row["id"];
                                             $field2name = $row["memberid"];
