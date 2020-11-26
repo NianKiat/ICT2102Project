@@ -147,7 +147,8 @@ include 'memberTraverseSecurity.php';
             ?>    
             <br/>
             <br/>
-            <br/>
+            
+
 
             <div class="row">
 
@@ -202,11 +203,7 @@ include 'memberTraverseSecurity.php';
                                 </div>
                                 <br>
                                 <br>
-                                <br>
-                                <br>
-                                <br>
-                                <br>
-                                <br>
+
                                 <br>
                                 <br>
                                 <div>

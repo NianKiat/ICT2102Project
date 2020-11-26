@@ -23,8 +23,11 @@ include 'memberTraverseSecurity.php';
 
                 <button type="button" onclick="window.location.href = 'passwordchange.php'" class="btn btn-secondary btn-lg btn-block">Change Password</button>
                 <button type="button" onclick="window.location.href = 'deleteaccount.php'" class="btn btn-secondary btn-lg btn-block">Deactivate Account</button>
-                </body>
-                <?php
-                include 'footer.php';
-                ?>
-                </html>
+
+            </div>
+        </div>
+    </body>
+    <?php
+    include 'footer.php';
+    ?>
+</html>

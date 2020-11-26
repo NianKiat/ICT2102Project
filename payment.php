@@ -1,3 +1,8 @@
+<?php
+require 'dbconfig.php';
+include 'sessiontest.php';
+include 'memberTraverseSecurity.php';
+?>
 <!DOCTYPE html>
 <html lang = "en">
     <head>

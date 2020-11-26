@@ -20,26 +20,32 @@
 
     <div class="collapse navbar-collapse" id="expand">  
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+
+            <li class="nav-item active">
+                <a class="nav-link" href="index.php">Home<span class="sr-only">(current)</span></a>
+
+            </li> 
             <?php
             if (isset($_SESSION['fname'])) {
                 if ($_SESSION['role'] == 'Admin') {
                     ?>
                     <li class="nav-item active">
-                        <a class="nav-link" href="manageuser.php">User Management<span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="manageuser.php">User Management<span class="sr-only"></span></a>
                     </li> 
 
                     <li class="nav-item active">
-                        <a class="nav-link" href="managecatalogue.php">Product Management<span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="managecatalogue.php">Product Management<span class="sr-only"></span></a>
                     </li> 
                     <?php
+                } else if ($_SESSION['role'] == 'Member'){ ?>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="viewdelivery.php">Delivery<span class="sr-only"></span></a>
+                    </li>
+                <?php
+                
                 }
             }
             ?>
-            <li class="nav-item active">
-                <a class="nav-link" href="index.php">Home<span class="sr-only">(current)</span></a>
-
-            </li> 
-
             <li class="nav-item ">
                 <a class="nav-link" href="#Catalogue">Catalogue</a>
             </li> 
@@ -70,7 +76,7 @@
                         </div>
                     </li
                     <li class="nav-item">
-                        
+
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="logout.php"><i style="font-size:20px;" class="fas fa-sign-out-alt"></i> Logout</a>

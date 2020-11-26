@@ -1,3 +1,8 @@
+<?php
+require 'dbconfig.php';
+include 'sessiontest.php';
+include 'memberTraverseSecurity.php';
+?>
 <!DOCTYPE html>
 <html lang = "en">
     
@@ -21,13 +26,7 @@
   <main>
     
     <?php
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "shoppingcart";
-        
-        // Create connection
-        $conn = new mysqli($servername, $username, $password, $dbname);
+        $conn = OpenCon();
         // Check connection
         if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);

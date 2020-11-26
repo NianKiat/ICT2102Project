@@ -10,29 +10,14 @@ include 'memberTraverseSecurity.php';
             include "header.php";
             ?>
             <style type="text/css">
-                #pmId {
 
+                .responsive {
+                    width: 100%;
+                    /*  max-width: 400px;*/
+                    height: auto;
                 }
-                /*
-               #scorebarBorder {
-                          border: 1px solid #666666;
-                          height: 5px;
-                          position: relative;
-                          width: 122px;
-                  }
-    
-                  #scorebar {
-                          background-image: url("pm.png");
-                  }
-    
-                  #scorebar {
-                          background-position: 0 0;
-                          background-repeat: no-repeat;
-                          height: 5px;
-                          width: 122px;
-                          z-index: 0;
-                  }
-                */
+
+
                 #complexity {
                     padding: 0;
                     text-align: center;
