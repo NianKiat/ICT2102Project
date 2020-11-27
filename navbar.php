@@ -47,11 +47,11 @@
             }
             ?>
             <li class="nav-item ">
-                <a class="nav-link" href="#Catalogue">Catalogue</a>
+                <a class="nav-link" href="catalogue.php">Catalogue</a>
             </li> 
 
             <li class="nav-item">
-                <a class="nav-link" href="#cakes">Cakes</a>
+                <a class="nav-link" href="EmbeddedMaps.php">Store Information</a>
             </li>    
 
 

@@ -26,10 +26,10 @@ include 'sessiontest.php';
                     <div class="col-md-2">
                     </div>
                     <div class="col-md-4">
-                        <a href="#" id="banner_button_left" class="btn btn-info" role="button">View online catalogue</a>
+                        <a href="catalogue.php" id="banner_button_left" class="btn btn-info" role="button">View online catalogue</a>
                     </div>
                     <div class="col-md-4">
-                        <a href="#" id="banner_button_right" class="btn btn-info" role="button">Walk-in our store</a>
+                        <a href="EmbeddedMaps.php" id="banner_button_right" class="btn btn-info" role="button">Walk-in our store</a>
                     </div>
                     <div class="col-md-2">
                     </div>
@@ -108,7 +108,8 @@ include 'sessiontest.php';
                 <div class="row center">
                     <div class="col-md-4"></div>
                     <div class="col-md-4">
-                            <button type="button" class="btn btn-info btn-lg button_custom">shop all cakes</button>
+                            <a href="catalogue.php" class="btn btn-info button_custom" role="button">shop all cakes</a>
+                            <!--<button type="button" class="btn btn-info btn-lg button_custom">shop all cakes</button>-->
                     </div>
                     <div class="col-md-4"></div>
                 </div>
@@ -173,7 +174,7 @@ include 'sessiontest.php';
                 <div class="row center">
                     <div class="col-md-4"></div>
                     <div class="col-md-4">
-                            <button type="button" class="btn btn-info btn-lg button_custom">store location</button>
+                            <a href="EmbeddedMaps.php" class="btn btn-info button_custom" role="button">store location</a>
                     </div>
                     <div class="col-md-4"></div>
                 </div>
