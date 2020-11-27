@@ -43,10 +43,10 @@ include 'sessiontest.php';
             </div>
             <div class="container">
                 <div class="row" style="padding-top:1rem;">
-                    <div class="col-12 col-md-6 col-lg-3"> <img id="acclaimed" class="card-img-top" src="../images/acclaimed_large.png" alt="acclaimed"></div>
-                    <div class="col-12 col-md-6 col-lg-3"> <img id="affordable" class="card-img-top" src="../images/affordable_large.png" alt="affordable"></div>
-                    <div class="col-12 col-md-6 col-lg-3"> <img id="more" class="card-img-top" src="../images/more1_large.png" alt="more choices"></div>
-                    <div class="col-12 col-md-6 col-lg-3"> <img id="time" class="card-img-top" src="../images/time1_large.png" alt="1 hour express delivery"></div>
+                    <div class="col-12 col-md-6 col-lg-3"> <img id="acclaimed" class="card-img-top" src="../images/acclaimed1_large.png" alt="acclaimed"></div>
+                    <div class="col-12 col-md-6 col-lg-3"> <img id="affordable" class="card-img-top" src="../images/affordable3_large.png" alt="affordable"></div>
+                    <div class="col-12 col-md-6 col-lg-3"> <img id="more" class="card-img-top" src="../images/more3_large.png" alt="more choices"></div>
+                    <div class="col-12 col-md-6 col-lg-3"> <img id="time" class="card-img-top" src="../images/time3_large.png" alt="1 hour express delivery"></div>
                 </div>
             </div>
         </section>
