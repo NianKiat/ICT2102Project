@@ -23,7 +23,7 @@ include 'sessiontest.php';
             <br>
             <div class="container center">
                 <div class="row">
-                    <div class="col-md-2 shrink">
+                    <div class="col-md-2">
                     </div>
                     <div class="col-md-4">
                         <a href="#" id="banner_button_left" class="btn btn-info" role="button">View online catalogue</a>
@@ -31,7 +31,7 @@ include 'sessiontest.php';
                     <div class="col-md-4">
                         <a href="#" id="banner_button_right" class="btn btn-info" role="button">Walk-in our store</a>
                     </div>
-                    <div class="col-md-2 shrink">
+                    <div class="col-md-2">
                     </div>
                 </div>
             </div>
@@ -43,10 +43,10 @@ include 'sessiontest.php';
             </div>
             <div class="container">
                 <div class="row" style="padding-top:1rem;">
-                    <div class="col-12 col-md-6 col-lg-3 center_img"> <img id="acclaimed" class="fit-image" src="../images/acclaimed1.jpg" alt="acclaimed" style="margin-top:3px;"></div>
-                    <div class="col-12 col-md-6 col-lg-3 center_img"> <img id="affordable" class="fit-image" src="../images/affordable1.jpg" alt="affordable"></div>
-                    <div class="col-12 col-md-6 col-lg-3 center_img"> <img id="more" class="fit-image" src="../images/more1.jpg" alt="more choices"></div>
-                    <div class="col-12 col-md-6 col-lg-3 center_img"> <img id="time" class="fit-image" src="../images/time1.jpg" alt="1 hour express delivery"></div>
+                    <div class="col-12 col-md-6 col-lg-3"> <img id="acclaimed" class="card-img-top" src="../images/acclaimed_large.png" alt="acclaimed"></div>
+                    <div class="col-12 col-md-6 col-lg-3"> <img id="affordable" class="card-img-top" src="../images/affordable_large.png" alt="affordable"></div>
+                    <div class="col-12 col-md-6 col-lg-3"> <img id="more" class="card-img-top" src="../images/more1_large.png" alt="more choices"></div>
+                    <div class="col-12 col-md-6 col-lg-3"> <img id="time" class="card-img-top" src="../images/time1_large.png" alt="1 hour express delivery"></div>
                 </div>
             </div>
         </section>
@@ -183,7 +183,7 @@ include 'sessiontest.php';
         <section class="jumbotron text-center section_wrap">
             <div class="container">
                 <h1 class="jumbotron-heading section_heading">frequently asked questions</h1>
-                <hr class="section_break">
+                <hr class="section_break" style="width:40%;">
             </div>
         </section>
         <section class="jumbotron section_wrap" style="margin-left: 61.667px; margin-right: 61.667px; padding-left:30px; padding-right:30px;">

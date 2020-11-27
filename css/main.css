@@ -1,10 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC&display=swap');
+
 .responsive {
   width: 100%;
 /*  max-width: 400px;*/
   height: auto;
 }
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC&display=swap');
 
 h1, h2, h3, h4, h5, h6, p {
     font-family: 'Roboto', sans-serif;
@@ -15,7 +16,7 @@ h1, h2, h3, h4, h5, h6, p {
     background-size:cover;
     height:100%;
     padding-top:5%;
-    padding-bottom:23%;
+    padding-bottom:23.5%;
     margin-bottom:0px;
 }
 
@@ -25,33 +26,6 @@ h1, h2, h3, h4, h5, h6, p {
 
 #banner_button_right {
         font-weight: bold;
-}
-@media only screen and (min-width: 992px) {
-    #banner_button_left {
-        float:right; 
-        font-weight: bold;
-    }
-
-    #banner_button_right {
-        float:left; 
-        font-weight: bold;
-    }
-}
-
-@media only screen and (min-width: 768px) {
-    #banner_button_left {
-        float:right; 
-        font-weight: bold;
-    }
-
-    #banner_button_right {
-        float:left; 
-        font-weight: bold;
-    }
-    
-    .shrink {
-        padding:0px;
-    }
 }
 
 .center {
@@ -86,6 +60,30 @@ h1, h2, h3, h4, h5, h6, p {
     }
 }
 
+@media only screen and (min-width: 992px) {
+    #banner_button_left {
+        float:right; 
+        font-weight: bold;
+    }
+
+    #banner_button_right {
+        float:left; 
+        font-weight: bold;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    #banner_button_left {
+        float:right; 
+        font-weight: bold;
+    }
+
+    #banner_button_right {
+        float:left; 
+        font-weight: bold;
+    }
+}
+
 @media only screen and (max-width: 767px) {
     #banner_button_right {
         margin-top:1rem;
@@ -101,6 +99,14 @@ h1, h2, h3, h4, h5, h6, p {
         font-size: 23px;
     }
 }
+
+/* this fixes that single pixel width where buttons don't margin properly. must be last one */
+@media (max-width:768px) and (min-width:767px) {
+    #banner_button_right {
+        margin-top:1rem;
+        width:192px;
+    }
+}​
 
 .fit-image{
 width: 100%;
@@ -119,12 +125,14 @@ object-fit: cover;
 .section_heading {
     font-family: 'Alegreya Sans SC', sans-serif;
     font-size: 45px;
+    color: #5bc0de;
 }
 
 .section_break {
     width:27%;
     border-top: 2px solid;
     margin-top:0px;
+    color: #5bc0de;
 }
 
 .pt-5, .py-5 {
