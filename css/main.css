@@ -351,11 +351,17 @@ li img{
     top: 25px;
     right: 25px;
     position: absolute;
+    text-align: center;
     border-radius: 17px;
     z-index: 9999;
     padding-left: 15px;
     padding-right: 15px;
-    font-size: 2rem;
+    padding-bottom: 15px;
+    font-size: 3em;
+    text-align: center;
+    line-height: 1em;
+    display: block;
+
 }
 
 #container_img {

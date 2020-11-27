@@ -198,6 +198,9 @@ function additems(type) {
            "class":"btn-close btn-dark"
         });
         button_close.innerHTML = "x";
+        button_close.addEventListener("click", e=>{
+            lightbox.classList.remove("active");
+        });
         product.setAttribute("id", "product");
         product.setAttribute("class", "row");
         container_img.setAttribute("id", "container_img");
