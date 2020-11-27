@@ -292,7 +292,7 @@ object-fit: cover;
     padding-right: 0px;
 }
 
-#lightbox{
+#lightbox {
     position: fixed;
     z-index: 1000;
     top: 0;
@@ -300,6 +300,8 @@ object-fit: cover;
     height: 100%;
     background-color: rgba(0,0,0, .8);
     display: none;
+    overflow: scroll;
+    top: 56px;
 }
 
 #lightbox.active{
@@ -356,38 +358,70 @@ li img{
 }
 
 
-#lightbox #product{
-    width: 90%;
-    max-width: 1200px;
-    height: 90%;
+#lightbox #product {
+    position: relative;
+    width: auto;
+    max-width: 1400px;
+    height: auto;
     padding: 4px;
     background-color: white;
     border-radius: 25px;
+    margin: auto;
 }
 
-#container_img{
+.btn-close {
+    top: 25px;
+    right: 25px;
+    position: absolute;
+    text-align: center;
+    border-radius: 17px;
+    z-index: 9999;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    font-size: 3em;
+    text-align: center;
+    line-height: 1em;
+    display: block;
+
+}
+
+#container_img {
+    position: relative;
     padding: 20px;
-    width: 60%;
+    width: auto;
+    height: 92vh;
+    max-width: 100%;
     max-height: 100%;
     background-color: white;
     border-radius: 25px;
-}
-
-#container_img img{
-    height: 100%;
-    width:auto;
+    vertical-align: middle;
+    align-items: center;
     text-align: center;
 }
 
-#container_details{
-    height:100%;
-    width:100%;
-    position:relative;
+#container_img img {
+    max-height: 100% !important;
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;
+    text-align: center;
+    width: auto;
+    vertical-align: middle;
+}
+
+#container_details {
+    position: relative;
+    height: 100vh;
+    max-height: 95vh;
+    width: 95vw;
 }
 
 #information, #container_header{
-    height:40%;
-    width:100%;
+    top: 20vh;
+    height: auto;
+    width: 100%;
+    position: relative;
 }
 
 .info_divider{
@@ -395,15 +429,20 @@ li img{
     height: 5vh;
 }
 
-#quantity_inputs{
-    position:absolute;
-    bottom: 7px;
+#quantity_inputs {
+    position: absolute;
+    bottom: 45px;
     right: 7px;
-    width:100%;
+    left: 7px;
+    /* width: auto; */
 }
 
-#container_header{
-    top: 10%;
+#container_header {
+    top: 5vh;
+    position: relative;
+    overflow: visible;
+    height: auto;
+    box-sizing: border-box;
 }
 
 .item_quantity{

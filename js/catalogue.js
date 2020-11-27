@@ -146,6 +146,7 @@ function additems(type) {
         const label_quantity = document.createElement("label");
         const button_add = document.createElement("Button");
         const button_remove = document.createElement("Button");
+        const button_close = document.createElement("Button");
         const price_label = document.createElement("Div");
         const price_per = document.createElement("p");
         const total_price = document.createElement("p");
@@ -191,6 +192,14 @@ function additems(type) {
         $(section_info).attr({
             "class": "container",
             "id": "information"
+        });
+        $(button_close).attr({
+           "type":"button",
+           "class":"btn-close btn-dark"
+        });
+        button_close.innerHTML = "x";
+        button_close.addEventListener("click", e=>{
+            lightbox.classList.remove("active");
         });
         product.setAttribute("id", "product");
         product.setAttribute("class", "row");
@@ -250,6 +259,7 @@ function additems(type) {
         section_quantity.append(button_add);
         section_quantity.append(button_updatecart);
         container_img.append(img);
+        product.append(button_close);
         product.append(container_img);
         product.append(container_details);
         lightbox.append(product);
