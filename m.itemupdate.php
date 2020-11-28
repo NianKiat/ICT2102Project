@@ -2,8 +2,9 @@
 <html lang = "en">
     <head>
         <?php
+        require 'adminTraverseSecurity.php';
         include 'header.php';
-        include 'm.navbar.php';
+        include 'navbar.php';
         ?>
 
         <script defer src="js/itemupdate.js" type="text/javascript"></script>
@@ -21,8 +22,9 @@
                                 <input type='text' class='form-control' id='selected' name='idarray'>
                             </div>
                             <a class='btn btn-danger float-right' onclick="toggle('Delete')" style='margin-left:10px;'>Delete</a>
-                            <a class='btn btn-dark float-right' onclick="toggle('Price')" style='margin-left:10px;'>Set Price</a>
-                            <a class='btn btn-dark float-right' onclick="toggle('Discount')">Set Discount</a>
+                            <a class='btn btn-dark float-right' onclick="toggle('Price')" style='margin-left:10px;'>Price</a>
+                            <a class='btn btn-dark float-right' onclick="toggle('Discount')" style='margin-left:10px;'>Discount</a>
+                            <a class='btn btn-dark float-right' onclick="toggle('Availability')">Availability</a>
                         </form>
                     </div>
                     <div class="card-body text-primary">

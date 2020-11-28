@@ -2,8 +2,9 @@
 <html lang = "en">
     <head>
         <?php
+        require 'adminTraverseSecurity.php';
         include 'header.php';
-        include 'm.navbar.php';
+        include 'navbar.php';
         ?>
         <script defer src="js/edititem.js"></script>
         <title>Floured - Add New Items</title>

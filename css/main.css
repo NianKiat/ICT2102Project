@@ -311,10 +311,10 @@ object-fit: cover;
 }
 
 #lightbox #prompt{
-    width: 25%;
+    width: auto;
     max-width: 1200px;
-    height: 25%;
-    padding: 4px;
+    height: auto;
+    padding: 10px;
     background-color: white;
     border-radius: 5px;
 }

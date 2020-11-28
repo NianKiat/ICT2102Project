@@ -2,8 +2,10 @@
 <html lang = "en">
     <head>
         <?php
+        require 'adminTraverseSecurity.php';
+        require 'dbconfig.php';
         include 'header.php';
-        include 'm.navbar.php';
+        include 'navbar.php';
         ?>
         <script>
             if (window.history.replaceState) {
@@ -22,6 +24,7 @@
                 $safeData = filter_input_array(INPUT_POST);
                 $price = "";
                 $discount = "";
+                $availability = "";
                 $success = true;
                 $errorMsg = "";
                 $type = "";
@@ -38,6 +41,8 @@
                     $type = 'price';
                 } else if ($_POST['submit'] == 'Discount') {
                     $type = 'discount';
+                } else if ($_POST['submit'] == 'Availability'){
+                    $type = 'availability';
                 } else if ($_POST['submit'] == 'Delete') {
                     $type = 'delete';
                 }
@@ -55,8 +60,15 @@
                             $discount = sanitize_input($safeData["idiscount"]);
                         }
                         break;
-                    default:
+                    case 'availability':{
+                            $availability = sanitize_input($safeData['iavailability']);
+                            if($availability == "Available"){
+                                $avaialbility = "Yes";
+                            }else{
+                                $avaialbility = "No";
+                            }
                         break;
+                    }
                 }
 
                 if ($success) {
@@ -77,32 +89,27 @@
                 }
 
                 function processDB($type) {
-                    global $type, $price, $discount, $cakeid;
-                    //Create database connection .
-                    //$config = parse_ini_file('../../private/db-config.ini');
-                    //$conn = new mysqli($config['servername'], $config['username'],
-                    //        $config['password'], $config['dbname']);
-                    //Check connection    
-                    $servername = "localhost";
-                    $username = "root";
-                    $password = "password";
-                    $database = "items";
-                    $conn = new mysqli($servername, $username, $password, $database);
+                    global $type, $price, $discount, $cakeid, $avaialbility;
+                    $conn = OpenCon();
                     if ($conn->connect_error) {
                         $errorMsg = "Connection failed: " . $conn->connect_error;
                         $success = false;
                     } else {        // Prepare the statement:
                         switch ($type) {
                             case 'price':
-                                $stmt = $conn->prepare("UPDATE cakes SET price=? WHERE cakeid IN (" . $cakeid . ")");
+                                $stmt = $conn->prepare("UPDATE catalogue SET price=? WHERE cakeid IN (" . $cakeid . ")");
                                 $rc = $stmt->bind_param("s", $price);
                                 break;
                             case 'discount':
-                                $stmt = $conn->prepare("UPDATE cakes SET discount=? WHERE cakeid IN (" . $cakeid . ")");
+                                $stmt = $conn->prepare("UPDATE catalogue SET discount=? WHERE cakeid IN (" . $cakeid . ")");
                                 $rc = $stmt->bind_param("s", $discount);
                                 break;
+                            case 'availability':
+                                $stmt = $conn->prepare("UPDATE catalogue SET availability=? WHERE cakeid IN (" . $cakeid . ")");
+                                $rc = $stmt->bind_param("s", $avaialbility);
+                                break;
                             case 'delete';
-                                $stmt = $conn->prepare("DELETE FROM cakes WHERE cakeid IN (" . $cakeid . ")");
+                                $stmt = $conn->prepare("DELETE FROM catalogue WHERE cakeid IN (" . $cakeid . ")");
                                 $rc = true;
                                 break;
                         }
@@ -115,7 +122,7 @@
                             die('execute() failed: ' . htmlspecialchars($stmt->error));
                         }
                         $stmt->close();
-                        $sql = "SELECT * FROM cakes";
+                        $sql = "SELECT * FROM catalogue";
                         $sqlexecute = mysqli_query($conn, $sql);
                         $json = array();
                         $records = mysqli_num_rows($sqlexecute);

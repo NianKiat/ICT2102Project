@@ -168,12 +168,10 @@ function toggle(type) {
         const label = document.createElement("label");
         const hidden_input = document.createElement("input");
         const input = document.createElement("input");
+        const dropdown = document.createElement("select");
         const btn_cancel = document.createElement("a");
         const btn_submit = document.createElement("input");
         container.setAttribute("id", "prompt");
-        $(container).attr({
-
-        });
         $(hidden).attr({
             'id': 'hidden_form_container',
             'style': 'display:none;'
@@ -204,18 +202,24 @@ function toggle(type) {
             'id': 'submitb'
         });
         btn_cancel.innerHTML = "Cancel";
-
+        $(dropdown).attr({
+            'class':'form-control',
+            'id':'iavailability',
+            'name':'iavailability'
+        });
+        dropdown.innerHTML = "<option>Available</option><option>Not Available</option>";
         container.append(title);
         hidden.append(hidden_input);
         switch (type) {
             case "Price":
                 {
                     title.innerHTML = "Set Price";
-                    description.innerHTML = "updating price of " + selected.length + " items.";
+                    description.innerHTML = "updating price of " + selected.length + " item(s).";
                     $(label).attr({
                         'for': 'iprice'
                     });
                     label.innerHTML = "Price:";
+                    dropdown.style.display = "none";
                     $(input).attr({
                         'type': 'number',
                         'class': 'form-control',
@@ -231,11 +235,12 @@ function toggle(type) {
             case "Discount":
                 {
                     title.innerHTML = "Set Discount";
-                    description.innerHTML = "updating price of " + selected.length + " items.";
+                    description.innerHTML = "updating price of " + selected.length + " item(s).";
                     $(label).attr({
                         'for': 'iprice'
                     });
                     label.innerHTML = "Discount:";
+                    dropdown.style.display = "none";
                     $(input).attr({
                         'type': 'text',
                         'class': 'form-control',
@@ -247,15 +252,33 @@ function toggle(type) {
                 break;
             case "Delete":
                 title.innerHTML = "Deletion";
-                description.innerHTML = "deleting " + selected.length + "items.";
+                description.innerHTML = "deleting " + selected.length + "item(s).";
                 label.style.display = "none";
                 input.style.display = "none";
-                warning.innerHTML = "WARNING: items can be set to disabled. However, deleting is permanent and is not reversible."
+                dropdown.style.display = "none";
+                warning.innerHTML = "WARNING: items can be set to disabled. However, deleting is permanent and is not reversible.";
+                btn_submit.setAttribute("class",'float-right btn btn-danger');
+            case "Availability":
+                title.innerHTML = "Availability";
+                description.innerHTML = "updating availability of " + selected.length + " item(s).";
+                input.style.display = "none";
+                label.innerHTML = "Availability:";
+                    $(dropdown).attr({
+                    'type': 'number',
+                    'class': 'form-control',
+                    'name': 'iprice',
+                    'id': 'iprice',
+                    'placeholder': 'e.g. 10.5',
+                    'minlength': '1',
+                    'maxlength': '7',
+                    'required': true
+                    });
                 break;
         }
         form.append(warning);
         form.append(description);
         form.append(label);
+        form.append(dropdown);
         form.append(input);
         form.append(hidden);
         form.append(br);

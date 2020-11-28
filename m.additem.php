@@ -2,9 +2,9 @@
 <html lang = "en">
     <head>
         <?php
+        require 'adminTraverseSecurity.php';
         include 'header.php';
-        include 'm.navbar.php';
-        
+        include 'navbar.php';
         ?>
         <script defer src="js/itemadd.js"></script>
         <title>Floured - Add New Items</title>

@@ -2,8 +2,10 @@
 <html lang = "en">
     <head>
         <?php
+        require 'adminTraverseSecurity.php';
+        require 'dbconfig.php';
         include 'header.php';
-        include 'm.navbar.php';
+        include 'navbar.php';
         ?>
         <script>
             if (window.history.replaceState) {
@@ -104,21 +106,12 @@
 
                 function addItemToDB() {
                     global $name, $type, $price, $dimension, $description, $imgurl, $availability, $discount, $warning;
-                    //Create database connection .
-                    //$config = parse_ini_file('../../private/db-config.ini');
-                    //$conn = new mysqli($config['servername'], $config['username'],
-                    //        $config['password'], $config['dbname']);
-                    //Check connection    
-                    $servername = "localhost";
-                    $username = "root";
-                    $password = "password";
-                    $database = "items";
-                    $conn = new mysqli($servername, $username, $password, $database);
+                    $conn = OpenCon();
                     if ($conn->connect_error) {
                         $errorMsg = "Connection failed: " . $conn->connect_error;
                         $success = false;
                     } else {        // Prepare the statement:       
-                        $stmt = $conn->prepare("INSERT INTO cakes(name, type, price, description, discount, imgurl, dimension, warning, availability) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+                        $stmt = $conn->prepare("INSERT INTO catalogue(name, type, price, description, discount, imgurl, dimension, warning, availability) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
                         if (false === $stmt) {
                             die('prepare() failed: ' . htmlspecialchars($conn->error));
                         }
@@ -135,7 +128,7 @@
                             die('execute() failed: ' . htmlspecialchars($stmt->error));
                         }
                         $stmt->close();
-                        $sql = "SELECT * FROM cakes";
+                        $sql = "SELECT * FROM catalogue";
                         $sqlexecute = mysqli_query($conn, $sql);
                         $json = array();
                         $records = mysqli_num_rows($sqlexecute);
