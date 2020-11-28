@@ -36,8 +36,20 @@ die();
                            required name="pwd" placeholder="Enter password">             
                 </div>
                 <div>
-                    <button class="btn btn-primary mb1 bg-teal" type="submit">Submit</button>   
+                    <button class="btn btn-dark"" type="submit">Submit</button>   
                 </div>
+                <div>
+                    <br>
+                    <?php
+                    if(isset($_GET["newpwd"])){
+                        if($_GET["newpwd"] == "passwordupdated") {
+                            echo '<h2 style="color: green;">Your password has been reset!</h2>';
+                        }
+                    }
+                    ?>
+                <a href ="reset-password.php">Forgot your password?</a>
+                </div>
+                
             </form>    
         </main>    
         <?php

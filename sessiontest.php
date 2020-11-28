@@ -1,7 +1,11 @@
 <?php
 session_start();
-$_SESSION['timeout'] = time();
-if ($_SESSION['timeout'] + 10 * 60 < time()) {
-    session_destroy();
+// set timeout period in seconds
+$inactive = 600;
+// check to see if $_SESSION['timeout'] is set
+if(isset($_SESSION['timeout']) ) {
+	$session_life = time() - $_SESSION['timeout'];
+	if($session_life > $inactive)
+        { session_destroy(); header("Location: logout.php"); }
 }
-?>
+$_SESSION['timeout'] = time();;
