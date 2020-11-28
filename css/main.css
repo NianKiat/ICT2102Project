@@ -21,11 +21,11 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 #banner_button_left {
-        font-weight: bold;
+    font-weight: bold;
 }
 
 #banner_button_right {
-        font-weight: bold;
+    font-weight: bold;
 }
 
 .center {
@@ -100,7 +100,7 @@ h1, h2, h3, h4, h5, h6, p {
     }
 }
 
-/* this fixes that single pixel width where buttons don't margin properly. must be last one */
+/* this fixes that single pixel width where buttons don't margin properly. must be last one in this series! */
 @media (max-width:768px) and (min-width:767px) {
     #banner_button_right {
         margin-top:1rem;
