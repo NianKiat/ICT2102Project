@@ -19,8 +19,9 @@ include 'memberTraverseSecurity.php';
         $name = $_POST["name"];
         $memberId = $_SESSION['memberID'];
         $quantity = $_POST["quantity"];
+        //$memberId = 2;
 
-        $sql3 = "INSERT INTO shoppingcart (CakeId, Price, Imgurl, MemberId, Quantity, Name, Dimension) "
+        $sql3 = "INSERT INTO shoppingcart (cakeid, price, imgurl, memberid, quantity, name, dimension) "
                 . "VALUES ($cakeId, $price, '$imgurl', $memberId, $quantity, '$name', '$dimension')";
         
         //INSERT INTO `shoppingcart`(`CakeId`, `Price`, `Imgurl`, `MemberId`, `CartId`, `Quantity`, `Name`, `Dimension`) 

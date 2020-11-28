@@ -1,12 +1,12 @@
 <?php
 
-$servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "shoppingcart";
+require 'dbconfig.php';
+include 'sessiontest.php';
+include 'memberTraverseSecurity.php';
+
         
         // Create connection
-        $conn = new mysqli($servername, $username, $password, $dbname);
+        $conn = OpenCon();
         // Check connection
         if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
@@ -14,7 +14,7 @@ $servername = "localhost";
         
             $cartid = $_POST["update_id"];
             $quantity = $_POST["quantity"] + 1;
-            $sql5 = "UPDATE shoppingcart SET Quantity = " . $quantity . " WHERE CartID = " . $cartid;
+            $sql5 = "UPDATE shoppingcart SET quantity = " . $quantity . " WHERE cartid = " . $cartid;
             $conn->query($sql5);    
 
             
