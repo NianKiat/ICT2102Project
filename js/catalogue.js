@@ -70,7 +70,7 @@ function updatecart(cake) {
     var imgurl = data_all[cakeId].imgurl;
     var dimension = data_all[cakeId].dimension;
     var name = data_all[cakeId].name;
-    var price = data_all[cakeId].price;
+    var price = "$" + calculateprice(cake);
     
     $.ajax({
         type: 'post',
