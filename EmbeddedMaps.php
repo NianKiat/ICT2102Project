@@ -4,10 +4,14 @@
         include 'header.php';
         ?>
         <title>Store Information</title>
+        <script> <!-- refreshes the maps when resized to support responsiveness -->
+            $(document).on("resize", function(){
+            $("#gmap_canvas").hide().show();
+        </script>
         <script>
             // this function is entangled to toggleme(). idea is that is the width is less than breakpoint...
             // ...we use this to clear the leftover image as a result of toggleme().
-            function check_width_and_clear_img() { 
+            function check_width_and_clear_img() {
                 width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
                 //alert(width);
                 var image = document.getElementById("myDIV");
@@ -36,7 +40,7 @@
             .gmap_canvas_mobile {display:none;}
             #gmap_canvas {width:540px; height:490px;}
             #gmap_canvas_mobile {display:none;}
-            #map_col {padding-left: 15px;}
+            #map_col {padding-right:0px;}
             #locator_canvas {}
             #contact_us{padding-left: 15px; margin-top: 15px; margin-bottom:15px;}
             .center{text-align: center;}
@@ -149,6 +153,7 @@
                     display: initial;
                     width: 632px;
                     height: 632px;
+                    padding-right:14px;
                 }
                 #mobile-only-break {
                     display:initial;
@@ -253,7 +258,7 @@
                                 <h2 class="center caps"> Contact Us </h2>
                                 <br>
                                 <div id="outer_wrapper">
-                                    <div id="wrapper">
+<!-- accessibility main -->         <div id="wrapper" role="main">
                                         <span class="left bold">Order Hotline:</span> 
                                         <span class="right bold"> +65 6592 2589</span>
                                         <span class="spacing"> &nbsp; </span>

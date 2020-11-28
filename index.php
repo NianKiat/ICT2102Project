@@ -14,7 +14,7 @@ include 'sessiontest.php';
         include 'navbar.php';
         /*include 'carousel.php';*/
         ?>
-        <div id="banner_image" class="jumbotron jumbotron-fluid">
+        <div id="banner_image" class="jumbotron jumbotron-fluid" role="main">
             <div class="container center">
                 <h1 id="banner-header" style="color:lightblue">Singapore's Best Cake Delivery Outlet</h1>
               <h2 id="banner-subheader">same day delivery | no minimum order | award winning</h2>
