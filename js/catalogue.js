@@ -59,11 +59,30 @@ function quantitychange(type, i) {
     document.getElementById("updatecart").innerHTML = "Add to Cart $" + (calculateprice(i) * number);
 }
 
-function updatecart() {
+function updatecart(cake) {
     var total = document.getElementById('updatecart');
     var price = parseFloat((total.innerHTML).match(/[\d\.]+/));
+
     //add to cart codes here
+    var quantity = document.getElementById('quantity');
+    quantity = quantity.value;
+    var cakeId = cake;
+    var imgurl = data_all[cakeId].imgurl;
+    var dimension = data_all[cakeId].dimension;
+    var name = data_all[cakeId].name;
+    var price = data_all[cakeId].price;
     
+    $.ajax({
+        type: 'post',
+        url: 'insertCart.php',
+        data: {cakeId: cakeId,
+               imgurl: imgurl,
+               dimension: dimension,
+               price: price,
+               name: name,
+               quantity: quantity
+        },
+    });
     //end Reset Numbers
     var quantity = document.getElementById('quantity');
     total.innerHTML = "Add to Cart $0";
@@ -170,7 +189,7 @@ function additems(type) {
         $(button_updatecart).attr({
             "id": "updatecart",
             "class": "btn btn-dark",
-            "onclick": "updatecart()"
+            "onclick": "updatecart('" + str + "')"
         });
         button_add.innerHTML = "+";
         button_remove.innerHTML = "-";
