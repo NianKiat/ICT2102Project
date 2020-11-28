@@ -340,10 +340,9 @@
                 var myWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
                 var toggle_button = document.getElementById("toggle");
                 if (myWidth < 992) {
-                    alert("here!");
                     toggle_button.style.display = "none";                    
                 }
-                else {alert("there!");}
+                else {}
             }
             
             var firstloop = true;
@@ -374,7 +373,6 @@
                 else {
                     map.style.display = "false";
                 }
-            //alert("Hello! I am an alert box!!");
             }
         </script>
     </body>
