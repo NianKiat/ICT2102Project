@@ -2,7 +2,6 @@
 
 require 'dbconfig.php';
 include 'sessiontest.php';
-include 'memberTraverseSecurity.php';
 
         
         // Create connection
