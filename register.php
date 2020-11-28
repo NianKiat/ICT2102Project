@@ -258,7 +258,7 @@ include 'sessiontest.php';
 
 
                 <div>
-                    <button class="btn btn-primary mb1 bg-teal" type="submit">Submit</button>   
+                    <button class="btn btn-dark" type="submit">Submit</button>   
                 </div>
             </form>    
         </main>    
