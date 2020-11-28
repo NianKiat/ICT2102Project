@@ -7,7 +7,7 @@ include 'sessiontest.php';
         <?php
         include 'header.php';
         ?>
-        <title>Floured</title>
+        <title>Floured! Homepage</title>
     </head>
     <body>
         <?php
@@ -36,7 +36,7 @@ include 'sessiontest.php';
                 </div>
             </div>
         </div>
-        <section class="jumbotron text-center section_wrap">
+        <section class="jumbotron text-center section_wrap" role="contentinfo" aria-label="What sets us apart">
             <div class="container">
                 <h1 class="jumbotron-heading section_heading">what sets us apart</h1>
                 <hr class="section_break">
@@ -50,7 +50,7 @@ include 'sessiontest.php';
                 </div>
             </div>
         </section>
-        <section class="jumbotron text-center section_wrap">
+        <section class="jumbotron text-center section_wrap" role="contentinfo" aria-label="Best Selling Cakes">
             <div class="container">
                 <h1 class="jumbotron-heading section_heading">best selling cakes</h1>
                 <hr class="section_break">
@@ -116,7 +116,7 @@ include 'sessiontest.php';
             </div>
         </div>
         <br>
-        <section class="jumbotron text-center section_wrap">
+        <section class="jumbotron text-center section_wrap" role="contentinfo" aria-label="Walk-in promotion">
             <div class="container">
                 <h1 class="jumbotron-heading section_heading">walk-in promotion</h1>
                 <hr class="section_break">
@@ -181,55 +181,55 @@ include 'sessiontest.php';
             </div>
         </div>
         <br>
-        <section class="jumbotron text-center section_wrap">
+        <section class="jumbotron section_wrap" role="contentinfo" aria-label="Frequently Asked Questions">
             <div class="container">
-                <h1 class="jumbotron-heading section_heading">frequently asked questions</h1>
+                <h1 class="jumbotron-heading section_heading" style="text-align:center;">frequently asked questions</h1>
                 <hr class="section_break" style="width:40%;">
             </div>
-        </section>
-        <section class="jumbotron section_wrap" style="margin-left: 61.667px; margin-right: 61.667px; padding-left:30px; padding-right:30px;">
-            <div class="bs-example">
-            <div class="accordion" id="myaccordion">
-                <div class="card">
-                    <div class="card-header" id="localdelivery">
-                        <h2 class="mb-0">
-                            <button type="button" class="btn btn-link button_faq" data-toggle="collapse" data-target="#collapseOne">Do you have local delivery service?</button>									
-                        </h2>
+            <div class="jumbotron section_wrap" style="margin-left: 61.667px; margin-right: 61.667px; padding-left:30px; padding-right:30px;">
+                <div class="bs-example">
+                <div class="accordion" id="myaccordion">
+                    <div class="card">
+                        <div class="card-header" id="localdelivery">
+                            <h2 class="mb-0">
+                                <button type="button" class="btn btn-link button_faq" data-toggle="collapse" data-target="#collapseOne">Do you have local delivery service?</button>									
+                            </h2>
+                        </div>
+                        <div id="collapseOne" class="collapse" aria-labelledby="localdelivery" data-parent="#myaccordion">
+                            <div class="card-body">
+                                <p><b>Yes we do.</b> We provide 1 hour express delivery guarantee, from the moment we confirm your order until we arrive at your doorstep.</p>
+                                <p>For orders <b>below</b> $100, we charge $10 per delivery trip. For orders of $100 or more, delivery is free.</p>
+                            </div>
+                        </div>
                     </div>
-                    <div id="collapseOne" class="collapse" aria-labelledby="localdelivery" data-parent="#myaccordion">
-                        <div class="card-body">
-                            <p><b>Yes we do.</b> We provide 1 hour express delivery guarantee, from the moment we confirm your order until we arrive at your doorstep.</p>
-                            <p>For orders <b>below</b> $100, we charge $10 per delivery trip. For orders of $100 or more, delivery is free.</p>
+                    <div class="card">
+                        <div class="card-header" id="refunds">
+                            <h2 class="mb-0">
+                                <button type="button" class="btn btn-link collapsed button_faq" data-toggle="collapse" data-target="#collapseTwo">Do you do refunds/exchanges for orders?</button>
+                            </h2>
+                        </div>
+                        <div id="collapseTwo" class="collapse" aria-labelledby="refunds" data-parent="#myaccordion">
+                            <div class="card-body">
+                                <p>Unfortunately, we <b>cannot offer refunds</b> once the order is placed. However, if the product is unsatisfactory, we <b>can offer exchanges</b> on a <b>case-by-case basis</b>.</p>
+                                <p>Please <a href="EmbeddedMaps.php" target="_blank">contact us</a> for exchange requests.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="sogood">
+                            <h2 class="mb-0">
+                                <button type="button" class="btn btn-link collapsed button_faq" data-toggle="collapse" data-target="#collapseThree">Why are your cakes just so good?</button>                     
+                            </h2>
+                        </div>
+                        <div id="collapseThree" class="collapse" aria-labelledby="sogood" data-parent="#myaccordion">
+                            <div class="card-body">
+                                <p> They are made with a special ingredient. <a href="https://en.wikipedia.org/wiki/Imagination" target="_blank">Click here to learn more.</a></p>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="card">
-                    <div class="card-header" id="refunds">
-                        <h2 class="mb-0">
-                            <button type="button" class="btn btn-link collapsed button_faq" data-toggle="collapse" data-target="#collapseTwo">Do you do refunds/exchanges for orders?</button>
-                        </h2>
-                    </div>
-                    <div id="collapseTwo" class="collapse" aria-labelledby="refunds" data-parent="#myaccordion">
-                        <div class="card-body">
-                            <p>Unfortunately, we <b>cannot offer refunds</b> once the order is placed. However, if the product is unsatisfactory, we <b>can offer exchanges</b> on a <b>case-by-case basis</b>.</p>
-                            <p>Please <a href="EmbeddedMaps.php" target="_blank">contact us</a> for exchange requests.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-header" id="sogood">
-                        <h2 class="mb-0">
-                            <button type="button" class="btn btn-link collapsed button_faq" data-toggle="collapse" data-target="#collapseThree">Why are your cakes just so good?</button>                     
-                        </h2>
-                    </div>
-                    <div id="collapseThree" class="collapse" aria-labelledby="sogood" data-parent="#myaccordion">
-                        <div class="card-body">
-                            <p> They are made with a special ingredient. <a href="https://en.wikipedia.org/wiki/Imagination" target="_blank">Click here to learn more.</a></p>
-                        </div>
-                    </div>
                 </div>
             </div>
-        </div>
         </section>
         <br>
         <br>
