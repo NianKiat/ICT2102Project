@@ -84,10 +84,10 @@
                 display:none;
             }
             .mobile-only {
-                display:hidden;
+                display:none;
             }
             #mobile-only-div {
-                display:hidden;
+                display:none;
             }
             /*.center_space{display:block; overflow:auto; position:relative; background-color:blue;}*/
             @media only screen and (max-width: 1200px) {
@@ -314,7 +314,7 @@
                         </div>
                     </div>
                     <br id="picmobile_break mobile-only">
-                    <div class="row mobile_only">
+                    <div class="row mobile-only">
                         <div class="container" style="text-align:center;">
                             <h1 class="jumbotron-heading section_heading">our shopfront</h1>
                             <hr class="section_break">

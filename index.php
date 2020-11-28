@@ -106,12 +106,12 @@ include 'sessiontest.php';
                     </div>
                 </div>
                 <div class="row center">
-                    <div class="col-md-4"></div>
-                    <div class="col-md-4">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-6">
                             <a href="catalogue.php" class="btn btn-info button_custom" role="button">shop all cakes</a>
                             <!--<button type="button" class="btn btn-info btn-lg button_custom">shop all cakes</button>-->
                     </div>
-                    <div class="col-md-4"></div>
+                    <div class="col-md-3"></div>
                 </div>
             </div>
         </div>
@@ -172,11 +172,11 @@ include 'sessiontest.php';
                     </div>
                 </div>
                 <div class="row center">
-                    <div class="col-md-4"></div>
-                    <div class="col-md-4">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-6">
                             <a href="EmbeddedMaps.php" class="btn btn-info button_custom" role="button">store location</a>
                     </div>
-                    <div class="col-md-4"></div>
+                    <div class="col-md-3"></div>
                 </div>
             </div>
         </div>
@@ -189,40 +189,40 @@ include 'sessiontest.php';
         </section>
         <section class="jumbotron section_wrap" style="margin-left: 61.667px; margin-right: 61.667px; padding-left:30px; padding-right:30px;">
             <div class="bs-example">
-            <div class="accordion" id="accordionExample">
+            <div class="accordion" id="myaccordion">
                 <div class="card">
-                    <div class="card-header" id="headingOne">
+                    <div class="card-header" id="localdelivery">
                         <h2 class="mb-0">
                             <button type="button" class="btn btn-link button_faq" data-toggle="collapse" data-target="#collapseOne">Do you have local delivery service?</button>									
                         </h2>
                     </div>
-                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                    <div id="collapseOne" class="collapse" aria-labelledby="localdelivery" data-parent="#myaccordion">
                         <div class="card-body">
-                            <p>Yes we do. We provide 1 hour express delivery guarantee, from the moment we confirm your order until we arrive at your doorstep.</p>
-                            <p>For orders below $100, we charge $10 per delivery trip per slice of cake. For orders of $100 or more, delivery is free.
+                            <p><b>Yes we do.</b> We provide 1 hour express delivery guarantee, from the moment we confirm your order until we arrive at your doorstep.</p>
+                            <p>For orders <b>below</b> $100, we charge $10 per delivery trip. For orders of $100 or more, delivery is free.</p>
                         </div>
                     </div>
                 </div>
                 <div class="card">
-                    <div class="card-header" id="headingTwo">
+                    <div class="card-header" id="refunds">
                         <h2 class="mb-0">
                             <button type="button" class="btn btn-link collapsed button_faq" data-toggle="collapse" data-target="#collapseTwo">Do you do refunds/exchanges for orders?</button>
                         </h2>
                     </div>
-                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                    <div id="collapseTwo" class="collapse" aria-labelledby="refunds" data-parent="#myaccordion">
                         <div class="card-body">
-                            <p>Unfortunately, we cannot offer refunds once the order is placed. However, if the product is unsatisfactory, we can offer exchanges on a case-by-case basis.</p>
+                            <p>Unfortunately, we <b>cannot offer refunds</b> once the order is placed. However, if the product is unsatisfactory, we <b>can offer exchanges</b> on a <b>case-by-case basis</b>.</p>
                             <p>Please <a href="EmbeddedMaps.php" target="_blank">contact us</a> for exchange requests.</p>
                         </div>
                     </div>
                 </div>
                 <div class="card">
-                    <div class="card-header" id="headingThree">
+                    <div class="card-header" id="sogood">
                         <h2 class="mb-0">
                             <button type="button" class="btn btn-link collapsed button_faq" data-toggle="collapse" data-target="#collapseThree">Why are your cakes just so good?</button>                     
                         </h2>
                     </div>
-                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                    <div id="collapseThree" class="collapse" aria-labelledby="sogood" data-parent="#myaccordion">
                         <div class="card-body">
                             <p> They are made with a special ingredient. <a href="https://en.wikipedia.org/wiki/Imagination" target="_blank">Click here to learn more.</a></p>
                         </div>
