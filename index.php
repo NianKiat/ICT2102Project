@@ -212,7 +212,7 @@ include 'sessiontest.php';
                     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                         <div class="card-body">
                             <p>Unfortunately, we cannot offer refunds once the order is placed. However, if the product is unsatisfactory, we can offer exchanges on a case-by-case basis.</p>
-                            <p>Please <a href="#" target="_blank">contact us</a> for exchange requests.</p>
+                            <p>Please <a href="EmbeddedMaps.php" target="_blank">contact us</a> for exchange requests.</p>
                         </div>
                     </div>
                 </div>
