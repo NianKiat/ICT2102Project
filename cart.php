@@ -185,7 +185,7 @@ include 'memberTraverseSecurity.php';
 
                 <h5 class="mb-3">Total amount:</h5>
                 <?php
-                    $sql = "SELECT name, (price*quantity) AS tPrice FROM shoppingcart WHERE memberid = 2" . $_SESSION['memberID'];
+                    $sql = "SELECT name, (price*quantity) AS tPrice FROM shoppingcart WHERE memberid = " . $_SESSION['memberID'];
                     $result = $conn->query($sql);
                     while($row = mysqli_fetch_array($result)) {
                 ?>
