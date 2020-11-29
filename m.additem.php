@@ -2,7 +2,7 @@
 <html lang = "en">
     <head>
         <?php
-        require 'adminTraverseSecurity.php';
+        include 'adminTraverseSecurity.php';
         include 'header.php';
         include 'navbar.php';
         ?>

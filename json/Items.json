@@ -2,7 +2,6 @@
     "00038": 
             {
                 "name":"Red Cake",
-                "type":"signature",
                 "price": "$300",
                 "type": "Wedding Cake",
                 "description": "A red red red red red red red red red red red red red red red red red red red red red red red cake",
@@ -15,7 +14,6 @@
     "00037":
             {
                 "name":"Blue Cake",
-                "type":"signature",
                 "price": "$400",
                 "type": "Cake",
                 "description":"A blue blue blue blue blue blue blue blue blue blue blue blue blue blue blue blue blue blue blue blue blue blue blue blue blue blue blue blue blue blue cake",
