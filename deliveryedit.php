@@ -1,10 +1,15 @@
+<?php
+require 'dbconfig.php';
+include 'sessiontest.php';
+include 'memberTraverseSecurity.php';
+?>
 <!DOCTYPE html>
 <html lang = "en">
     <head>
-        <?php
-        $$conn = mysqli_connect("localhost", "root", "", "deliverydate");
+         <?php
+        $conn = OpenCon();
         // Check connection
-        if ($$conn === false) {
+        if ($conn === false) {
             die("ERROR: Could not connect. " . mysqli_connect_error());
         }
         include 'header.php';
@@ -47,21 +52,27 @@
                 <?php
                 if (isset($_POST['submit'])) {
                     if (empty($_POST["dateD"])) {
-                        echo "Date chosen is empty or unavailable. ";
+                        echo "Date chosen is empty or unavailable1. ";
                     } else {
                         $launch_date = $_POST['dateD'];
                         $rowid = $_POST['rowid'];
-                        $sql = "UPDATE deliverydate SET date='$launch_date' WHERE id='$rowid'";
-                        if (mysqli_query($$conn, $sql)) {
+                        //echo $rowid;
+                        //echo $launch_date;
+                        $sql2 = "UPDATE checkout SET date = '$launch_date' WHERE checkoutid = " . $rowid;
+                        //$sql3 = "UPDATE checkout SET date = '$launch_date' WHERE checkoutid = '$rowid'";
+                        if (mysqli_query($conn, $sql2)) {
                             echo "Date has been changed to ";
                             echo $launch_date;
+                            //echo $sql2;
                         } else {
                             echo "Date chosen is empty or unavailable. ";
+                            //echo $sql2;
                         }
                     }
                 }
                 ?>
             </a>
+            <br><br>
         </main>    
     </body>
     <?php

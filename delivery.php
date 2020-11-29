@@ -26,15 +26,19 @@ include 'memberTraverseSecurity.php';
         <main class="container">        
             <h1>Order Delivery Date</h1>
             <p> 
-                Please select your date here.        
+                Please select your date here. 
+
+                
             </p>        
             <form action="" method="post">
                 <label for="Delivery">Delivery Date:</label>              
                 <input type="date" id="dateD" name="dateD"
                        min="<?php $Date = $date = date("Y-m-d");
-        echo date('Y-m-d', strtotime($Date . ' + 2 days')); ?>" 
+                echo date('Y-m-d', strtotime($Date . ' + 2 days'));
+                ?>" 
                        max="<?php $Date = $date = date("Y-m-d");
-        echo date('Y-m-d', strtotime($Date . ' + 14 days')); ?>"
+                       echo date('Y-m-d', strtotime($Date . ' + 14 days'));
+                ?>"
                        >
                 <input type="submit" name="submit">
             </form>  
@@ -45,24 +49,47 @@ include 'memberTraverseSecurity.php';
                         echo "Date chosen is empty or unavailable. ";
                     } else {
                         $launch_date = $_POST['dateD'];
-                        echo $launch_date;
-                        //echo $launch_date;
-                        //echo "Date Chosen !!!";
-                        $sql = "INSERT INTO deliverydate (memberid, date) VALUES ('2', '$launch_date')";
-                        if (mysqli_query($conn, $sql)) {
-                            echo " has been selected.";
+                        $id = $_SESSION['memberID'];
+                        $query = "SELECT * FROM shoppingcart WHERE memberid = '$id'";
+                        if ($result = $conn->query($query)) {
+                            while ($row = $result->fetch_assoc()) {
+                                $fieldprice = $row["price"];
+                                $fieldimg = $row["imgurl"];
+                                $fieldquantity = $row["quantity"];
+                                $fieldname = $row["name"];
+
+                                
+                                //echo $launch_date;
+                                //echo "Date Chosen !!!";
+                                $sql = "INSERT INTO checkout (name, date, memberid, price, quantity, imgurl) VALUES ('$fieldname', '$launch_date', '$id', '$fieldprice', '$fieldquantity', '$fieldimg')";
+                                if (mysqli_query($conn, $sql)) {
+                                    $status = "added";
+                                } else {
+                                    echo "Date chosen is empty or unavailable. ";
+                                }
+                            }
                         } else {
-                            echo "Date chosen is empty or unavailable. ";
+                            echo "No Delivery Found";
+                        }
+                        if($status == "added")
+                        {
+                            echo $launch_date;
+                            echo " has been selected.";
+                        }
+                        else
+                        {
+                             echo "Date chosen is empty or unavailable. ";
                         }
                     }
                 }
                 ?>
             </a>
+            <br><br>
         </main>    
 
     </body>
-                <?php
-                include 'footer.php';
-                ?>
+    <?php
+    include 'footer.php';
+    ?>
 </html>
 

@@ -1,4 +1,4 @@
-<?php 
+<?php
 require 'dbconfig.php';
 include 'sessiontest.php';
 include 'memberTraverseSecurity.php';
@@ -27,7 +27,7 @@ include 'memberTraverseSecurity.php';
         <main class="container">        
             <h1>View Delivery Date</h1>
             <div class="card border-dark mb-3">
-                <div class="card-header">Your Date</div>
+                <div class="card-header"> &nbsp;Your Date</div>
                 <div class="card-body text-primary">
                     <main role="main" class="col-md-9 ml-sm-auto col-lg-auto px-md-auto">
                         <div class="table-responsive">
@@ -35,39 +35,45 @@ include 'memberTraverseSecurity.php';
                                 <thead>
                                     <tr>
                                         <th>Cakes</th>
+                                        <th>flavor</th>
                                         <th>Date</th>
                                         <th>&nbsp;&nbsp;&nbsp;&nbsp;</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?php
-                                    $query = "SELECT * FROM deliverydate WHERE memberid = '2'";
+                                    $status = 1;
+                                    $id = $_SESSION['memberID'];
+                                    $query = "SELECT * FROM checkout WHERE memberid = '$id'";
                                     if ($result = $conn->query($query)) {
-                                        while ($row = $result->fetch_assoc()) {
-                                            $field1name = $row["id"];
-                                            $field2name = $row["memberid"];
-                                            $field3name = $row["date"];
-                                            ?>     
-                                            <tr id="delete<?php echo $field1name; ?>"> 
-
-                                                <td><?php echo $field2name; ?></td> 
-                                                <td><?php echo $field3name; ?></td>
-                                                <td style="text-align:right;">                                    
-                                                    <form action="deliveryedit.php" method="POST">
-                                                        <button name="editdate" value="<?php echo $field1name; ?>" >Change date</button>
-                                                    </form>
-                                                </td>
-<!--                                                <td style="text-align:right;">                                         
-                                                    <button name="deletedate" onclick="deleteAjax(<?php //echo $field1name; ?>)">Delete date</button>
-                                                </td>-->
-                                            </tr>
-                                            <?php
-                                        }
-                                        //$result->free();
-                                    } else {
-                                        echo "error";
+                                   
+                                    while ($row = $result->fetch_assoc()) {
+                                        $field1name = $row["checkoutid"];
+                                        $fieldname = $row["name"];
+                                        $fielddate = $row["date"];
+                                        $field1img = $row["imgurl"];
+                                        $status = 0;
+                                        ?>     
+                                        <tr id="delete<?php echo $field1name; ?>"> 
+                                            <td><img class="img" src="<?php echo $row["imgurl"]; ?>" alt="cakes" width="100px" height="100px"></td>
+                                            <td><?php echo $fieldname; ?></td> 
+                                            <td><?php echo $fielddate; ?></td>
+                                            <td style="text-align:right;">                                    
+                                                <form action="deliveryedit.php" method="POST">
+                                                    <button name="editdate" value="<?php echo $field1name; ?>" >Change date</button>
+                                                </form>
+                                            </td>
+        <!--                                                <td style="text-align:right;">                                         
+                                                <button name="deletedate" onclick="deleteAjax(<?php //echo $field1name;  ?>)">Delete date</button>
+                                            </td>-->
+                                        </tr>
+                                        <?php
                                     }
-                                    ?>
+                                    //$result->free();
+                                } else {
+                                    echo "<a>No Delivery Found</a>";
+                                }
+                                ?>
                                 </tbody>
                                 <script type="text/javascript">
                                     function deleteAjax(id) {
@@ -83,13 +89,26 @@ include 'memberTraverseSecurity.php';
                                 </script>
                                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
                             </table>
+                            <?php
+                                if($status == 1)
+                                {
+                                    ?>
+                            <a id="todelete">No Delivery cakes found, <a href="catalogue.php" style="color: red;">Click here to add some cakes</a></a>
+                            <?php
+                                }
+                                else
+                                {
+                                    echo "";
+                                }
+                            ?>
+                           
                         </div>
                 </div>
             </div>
         </main>    
     </body>
-    <?php
-    include 'footer.php';
-    ?>
+<?php
+include 'footer.php';
+?>
 </html>
 
