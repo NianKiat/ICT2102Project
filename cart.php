@@ -230,7 +230,7 @@ include 'memberTraverseSecurity.php';
 
   </main>
   <!--Main layout-->
-  <script src="https://www.paypal.com/sdk/js?client-id=sb&disable-funding=credit,card"></script>
+  <script src="https://www.paypal.com/sdk/js?client-id=AUh4NMuhyjUVD1PGQsgBsNUEVgSq2NXdOgqQRLTbQ9roPyJwsMHLHvlStaj_NuGIP3VSyKoGm8GzUS7_&disable-funding=credit,card"></script>
     <script>
         paypal.Buttons({
             style :{
@@ -248,8 +248,12 @@ include 'memberTraverseSecurity.php';
             },
             onApprove:function(data, actions){
                 return actions.order.capture().then(function(details){
-                    console.log(details);
+                    console.log(details)
+                    window.location.replace("http://54.145.106.172/1004Project/delivery.php")
                 });
+            },
+            onCancel:function(data){
+                window.location.replace("http://54.145.106.172/1004Project/cart.php")
             }
         }).render('#paypal-payment-button');
     </script>
