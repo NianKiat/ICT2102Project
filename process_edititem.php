@@ -8,7 +8,6 @@ require 'dbconfig.php';
     <head>
         <?php
         include 'header.php';
-        include 'navbar.php';
         ?>
         <script>
             if (window.history.replaceState) {
@@ -18,6 +17,9 @@ require 'dbconfig.php';
         <title>Floured - Add New Items</title>
     </head>
     <body>
+        <?php
+        include 'navbar.php';
+        ?>
         <div class="jumbotron jumbotron-fluid">
             <div class="container">
                 <h1 class="display-4">Editing Item Details</h1>

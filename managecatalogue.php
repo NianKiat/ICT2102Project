@@ -6,12 +6,14 @@ include 'adminTraverseSecurity.php';
 <html lang = "en">
     <head>
         <?php
-        include 'navbar.php';
         include 'header.php';
         ?>
         <title>Floured - Manage Items</title>
     </head>
     <body>
+        <?php
+        include 'navbar.php';
+        ?>
         <div class="jumbotron jumbotron-fluid">
             <div class="container">
                 <h1 class="display-4">Manage Items</h1>
