@@ -81,7 +81,7 @@ function updatecart(cake) {
                price: price,
                name: name,
                quantity: quantity
-        },
+        }
     });
     //end Reset Numbers
     var quantity = document.getElementById('quantity');
