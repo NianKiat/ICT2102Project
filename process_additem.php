@@ -79,7 +79,8 @@ require 'dbconfig.php';
                         $errorMsg .= "Image is required in: jpeg, jpg, png format only.<br>";
                         $success = false;
                     } else {
-                        $imgurl = "/images/cakes/" . $file_name;
+                        $file_name = preg_replace('/\s+/', '_', $file_name);
+                        $imgurl = "images/cakes/" . $file_name;
                     }
                 } else {
                     $errorMsg .= "Image is required in: jpeg, jpg, png format only.<br>";

@@ -73,6 +73,8 @@ include 'memberTraverseSecurity.php';
                         }
                         if($status == "added")
                         {
+                            $sql3 = "DELETE FROM shoppingcart WHERE memberid = " . $id;
+                            $conn->query($sql3);    
                             echo $launch_date;
                             echo " has been selected.";
                         }

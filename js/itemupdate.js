@@ -207,7 +207,8 @@ function toggle(type) {
             'id':'iavailability',
             'name':'iavailability'
         });
-        dropdown.innerHTML = "<option>Available</option><option>Not Available</option>";
+        //dropdown.innerHTML = "<option>Available</option><option>Not Available</option>";
+        dropdown.innerHTML = "<option value='Available'>Available</option><option value='Not Available'>Not Available</option>";
         container.append(title);
         hidden.append(hidden_input);
         switch (type) {
@@ -263,16 +264,16 @@ function toggle(type) {
                 description.innerHTML = "updating availability of " + selected.length + " item(s).";
                 input.style.display = "none";
                 label.innerHTML = "Availability:";
-                    $(dropdown).attr({
-                    'type': 'number',
-                    'class': 'form-control',
-                    'name': 'iprice',
-                    'id': 'iprice',
-                    'placeholder': 'e.g. 10.5',
-                    'minlength': '1',
-                    'maxlength': '7',
-                    'required': true
-                    });
+//                    $(dropdown).attr({
+//                    'type': 'number',
+//                    'class': 'form-control',
+//                    'name': 'iprice',
+//                    'id': 'iprice',
+//                    'placeholder': 'e.g. 10.5',
+//                    'minlength': '1',
+//                    'maxlength': '7',
+//                    'required': true
+//                    });
                 break;
         }
         form.append(warning);
