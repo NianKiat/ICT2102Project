@@ -1,8 +1,11 @@
+<?php
+include 'sessiontest.php';
+include 'adminTraverseSecurity.php';
+?>
 <!DOCTYPE html>
 <html lang = "en">
     <head>
         <?php
-        include 'adminTraverseSecurity.php';
         include 'navbar.php';
         include 'header.php';
         ?>

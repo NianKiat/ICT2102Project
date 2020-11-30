@@ -1,15 +1,18 @@
+<?php
+include 'sessiontest.php';
+include 'adminTraverseSecurity.php';
+require 'dbconfig.php';
+?>
 <!DOCTYPE html>
 <html lang = "en">
     <head>
         <?php
-        include 'm.navbar.php';
-        require 'dbconfig.php';
         include 'header.php';
         include 'navbar.php';
         ?>
         <script>
             if (window.history.replaceState) {
-            window.history.replaceState(null, null, window.location.href);
+                window.history.replaceState(null, null, window.location.href);
             }
         </script>
         <title>Floured - Add New Items</title>

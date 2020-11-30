@@ -1,9 +1,12 @@
+<?php
+include 'sessiontest.php';
+include 'adminTraverseSecurity.php';
+require 'dbconfig.php';
+?>
 <!DOCTYPE html>
 <html lang = "en">
     <head>
         <?php
-        include 'm.navbar.php';
-        require 'dbconfig.php';
         include 'header.php';
         include 'navbar.php';
         ?>
@@ -41,7 +44,7 @@
                     $type = 'price';
                 } else if ($_POST['submit'] == 'Discount') {
                     $type = 'discount';
-                } else if ($_POST['submit'] == 'Availability'){
+                } else if ($_POST['submit'] == 'Availability') {
                     $type = 'availability';
                 } else if ($_POST['submit'] == 'Delete') {
                     $type = 'delete';
@@ -60,15 +63,15 @@
                             $discount = sanitize_input($safeData["idiscount"]);
                         }
                         break;
-                    case 'availability':{
+                    case 'availability': {
                             $availability = sanitize_input($safeData['iavailability']);
-                            if($availability == "Available"){
+                            if ($availability == "Available") {
                                 $avaialbility = "Yes";
-                            }else{
+                            } else {
                                 $avaialbility = "No";
                             }
-                        break;
-                    }
+                            break;
+                        }
                 }
 
                 if ($success) {
