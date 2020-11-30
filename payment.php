@@ -16,6 +16,19 @@ include 'memberTraverseSecurity.php';
         include 'navbar.php';
         ?>
         <main>
+        <?php
+            $conn = OpenCon();
+            // Check connection
+            if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+            }
+        
+            $sql2 = "SELECT (SUM(price*quantity)) AS totalsum FROM shoppingcart WHERE memberid = " . $_SESSION['memberID']; 
+            $result2 = $conn->query($sql2);
+            $row2 = mysqli_fetch_assoc($result2);
+            $sum = $row2['totalsum'];
+            
+        ?>
             
         <div class="container py-5">
     <!-- For demo purpose -->
@@ -59,12 +72,14 @@ include 'memberTraverseSecurity.php';
                                     </div>
                                 </div>
                                 <h6><strong>Total amount:</strong></h6>
-                                <p class="mb-0"><span><strong>$ <?php echo $_GET['totalamount'] ?></strong></span></p><br>
+                                <p class="mb-0"><span><strong>$ <?php echo $sum; ?></strong></span></p><br>
                                 <div class="card-footer"> <button type="button" class="subscribe btn btn-primary btn-block shadow-sm"> Confirm Payment </button>
                             </form>
                             <br>
-                            <h6><strong>Or pay using PayPal</strong></h6>
+                            <h5><strong>Or pay using PayPal</strong></h5>
+                            <br>
                             <div id="paypal-payment-button"></div>
+                            <br>
                         </div>
                     </div>
                 </div>
@@ -73,26 +88,30 @@ include 'memberTraverseSecurity.php';
     </div>
         
     </main>
-    <script src="https://www.paypal.com/sdk/js?client-id=sb&disable-funding=credit,card"></script>
+    <script src="https://www.paypal.com/sdk/js?client-id=AUh4NMuhyjUVD1PGQsgBsNUEVgSq2NXdOgqQRLTbQ9roPyJwsMHLHvlStaj_NuGIP3VSyKoGm8GzUS7_&disable-funding=credit,card"></script>
     <script>
         paypal.Buttons({
             style :{
                 color:'blue',
-                shape:'pill'
+                shape:'pill',
             },
             createOrder:function(data, actions){
                 return actions.order.create({
                     purchase_units:[{
                         amount:{
-                            value:'<?php echo $_GET['totalamount'] ?>'
+                            value:'<?php echo $sum; ?>'
                         }
                     }]
                 });
             },
             onApprove:function(data, actions){
                 return actions.order.capture().then(function(details){
-                    console.log(details);
+                    console.log(details)
+                    window.location.replace("http://54.145.106.172/1004Project/delivery.php")
                 });
+            },
+            onCancel:function(data){
+                window.location.replace("http://54.145.106.172/1004Project/cart.php")
             }
         }).render('#paypal-payment-button');
     </script>

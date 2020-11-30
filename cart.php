@@ -42,9 +42,7 @@ include 'memberTraverseSecurity.php';
       <div class="jumbotron color-grey-light mt-70">
       <div class="d-flex align-items-center h-100">
         <div class="container text-center py-1">
-          <h3 class="mb-0">Checkout here using PayPal!</h3>
-          <br>
-          <div class="mb-0" id="paypal-payment-button" style="width:30%;margin:0px auto"></div>
+            <h2 class="mb-0"><strong>Shopping Cart</strong></h2>
         </div>
       </div>
     </div>
@@ -214,6 +212,9 @@ include 'memberTraverseSecurity.php';
                         </strong></span>
                   </li>
                 </ul>
+                <form action="payment.php" method="POST">
+                    <button type="submit" class="btn btn-primary btn-block waves-effect waves-light">Checkout</button>
+                </form>
               </div>
             </div>
           </div>
@@ -230,33 +231,6 @@ include 'memberTraverseSecurity.php';
 
   </main>
   <!--Main layout-->
-  <script src="https://www.paypal.com/sdk/js?client-id=AUh4NMuhyjUVD1PGQsgBsNUEVgSq2NXdOgqQRLTbQ9roPyJwsMHLHvlStaj_NuGIP3VSyKoGm8GzUS7_&disable-funding=credit,card"></script>
-    <script>
-        paypal.Buttons({
-            style :{
-                color:'blue',
-                shape:'pill',
-            },
-            createOrder:function(data, actions){
-                return actions.order.create({
-                    purchase_units:[{
-                        amount:{
-                            value:'<?php echo $sum; ?>'
-                        }
-                    }]
-                });
-            },
-            onApprove:function(data, actions){
-                return actions.order.capture().then(function(details){
-                    console.log(details)
-                    window.location.replace("http://54.145.106.172/1004Project/delivery.php")
-                });
-            },
-            onCancel:function(data){
-                window.location.replace("http://54.145.106.172/1004Project/cart.php")
-            }
-        }).render('#paypal-payment-button');
-    </script>
 </body>
 
 <?php
