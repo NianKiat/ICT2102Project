@@ -93,7 +93,7 @@ include 'memberTraverseSecurity.php';
         paypal.Buttons({
             style :{
                 color:'blue',
-                shape:'pill',
+                shape:'pill'
             },
             createOrder:function(data, actions){
                 return actions.order.create({
