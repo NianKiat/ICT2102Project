@@ -106,12 +106,12 @@ include 'memberTraverseSecurity.php';
             },
             onApprove:function(data, actions){
                 return actions.order.capture().then(function(details){
-                    console.log(details)
-                    window.location.replace("http://54.145.106.172/1004Project/delivery.php")
+                    console.log(details);
+                    window.location.replace("http://54.145.106.172/1004Project/delivery.php");
                 });
             },
             onCancel:function(data){
-                window.location.replace("http://54.145.106.172/1004Project/cart.php")
+                window.location.replace("http://54.145.106.172/1004Project/cart.php");
             }
         }).render('#paypal-payment-button');
     </script>
