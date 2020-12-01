@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark" id="navbar">
     <a class="navbar-brand" href="index.php">
 <!--        <img class="logo" src="" alt="Floured"
              title="Homepage"/>-->
@@ -21,7 +21,7 @@
     <div class="collapse navbar-collapse" id="expand">  
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
 
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link" href="index.php">Home<span class="sr-only">(current)</span></a>
 
             </li> 

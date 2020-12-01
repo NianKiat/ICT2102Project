@@ -6,12 +6,132 @@ include "sessiontest.php";
     <head>
         <?php
         include "header.php";
-        include "navbar.php";
         ?>
         <script defer src="js/catalogue.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <style>
+            .capsfont {
+                font-family: 'Alegreya Sans SC', sans-serif;
+            }
+        </style>
     </head>
+    <body>
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark" id="navbar">
+    <a class="navbar-brand" href="index.php">
+<!--        <img class="logo" src="" alt="Floured"
+             title="Homepage"/>-->
+        <?php
+        if (isset($_SESSION['fname'])) {
+            if ($_SESSION['role'] == 'Admin') {
+                echo "Floured! Admin";
+            }
+        } else {
+            echo "Floured!";
+        }
+        ?>
 
+    </a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#expand" aria-controls="expand" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="expand">  
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+
+            <li class="nav-item">
+                <a class="nav-link" href="index.php">Home<span class="sr-only">(current)</span></a>
+
+            </li> 
+            <?php
+            if (isset($_SESSION['fname'])) {
+                if ($_SESSION['role'] == 'Admin') {
+                    ?>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="manageuser.php">User Management<span class="sr-only"></span></a>
+                    </li> 
+
+                    <li class="nav-item active">
+                        <a class="nav-link" href="managecatalogue.php">Product Management<span class="sr-only"></span></a>
+                    </li> 
+                    <?php
+                } else if ($_SESSION['role'] == 'Member'){ ?>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="viewdelivery.php">Delivery<span class="sr-only"></span></a>
+                    </li>
+                <?php
+                
+                }
+            }
+            ?>
+            <li class="nav-item active">
+                <a class="nav-link" href="catalogue.php">Catalogue</a>
+            </li> 
+
+            <li class="nav-item">
+                <a class="nav-link" href="EmbeddedMaps.php">Store Information</a>
+            </li>    
+
+
+
+        </ul>
+        <ul class="navbar-nav">
+
+            <?php
+            if (isset($_SESSION['fname'])) {
+                if ($_SESSION['role'] == 'Member') {
+                    ?>
+                    <li class="nav-item" >
+                        <a class="nav-link" href="cart.php"><i style="font-size:20px;" class="fas fa-shopping-cart"></i> Cart</a>
+                    </li> 
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i style="font-size:20px;" class="fa fa-user"></i> <?php echo $_SESSION['fname'] ?></a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="profile.php">My Profile</a>
+                            <a class="dropdown-item" href="passwordchange.php">Change my Password</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="settings.php">Settings</a>
+                        </div>
+                    </li
+                    <li class="nav-item">
+
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="logout.php"><i style="font-size:20px;" class="fas fa-sign-out-alt"></i> Logout</a>
+                    </li>
+
+                    <?php
+                }
+                if ($_SESSION['role'] == 'Admin') {
+                    ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="management.php"><i style="font-size:20px;" class="fas fa-sliders-h"></i> Management Settings</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="logout.php"><i style="font-size:20px;" class="fas fa-sign-out-alt"></i> Logout</a>
+                    </li>
+                    <?php
+                }
+            } else {
+                ?>
+                <li class="nav-item" >
+                    <a class="nav-link" href="cart.php"><i style="font-size:20px;" class="fas fa-shopping-cart"></i> Cart</a>
+                </li> 
+                <li class="nav-item">
+                    <a class="nav-link" href="register.php"><i style="font-size:20px;" class="fa fa-user"></i> Register</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="login.php"><i style="font-size:20px;" class="fa fa-sign-in-alt"></i> Login</a>
+                </li>
+            <?php }
+            ?> 
+
+
+        </ul>
+    </div>
+</nav>
+<br>
+<br>
     <main>
         <header id="catalogue">
             <title>Catalogue</title>
@@ -19,33 +139,33 @@ include "sessiontest.php";
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <div class="row menu frame_over_image">
                 <div class="w-100"></div>
-                <div class="col">
+                <div class="col capsfont">
                     <a href="#cakes" onclick="refreshitems('Cake')">Cakes</a>
                 </div>
-                <div class="col">
+                <div class="col capsfont">
                     <a href="#cakes" onclick="refreshitems('Wedding Cake')">Wedding</a>
                 </div>
                 <div class="w-100"></div>
-                <div class="col">
+                <div class="col capsfont">
                     <a href="#cakes" onclick="refreshitems('Ice-cream Cake')">Ice-cream</a>
                 </div>
-                <div class="col">
+                <div class="col capsfont">
                     <a href="#cakes" onclick="refreshitems('All')">All Cakes</a>
                 </div>
             </div>
         </header>
         <section id="cakes">
-            <section class="jumbotron text-center">
+            <section class="jumbotron text-center" style="background-color:white;">
                 <div class="container">
-                    <h1 class="jumbotron-heading" id="jumbo_header"></h1>
+                    <h1 class="jumbotron-heading section_heading" id="jumbo_header"></h1>
                     <div class="container" id="container_placeholder">
-
                     </div>
                 </div>
             </section>
 
         </section>
     </main>
+    </body>
     <?php
     include "footer.php";
     ?>
