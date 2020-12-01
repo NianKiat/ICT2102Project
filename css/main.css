@@ -354,12 +354,20 @@ ul {
     list-style-type: none;
 }
 
+.flex-md-row{
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1em;
+}
+
 .list-group-item{
     padding:5%;
     height: 100%;
+    border:none;
 }
 
 li img{
+    position: relative;
     max-width: 300px;
     max-height: 300px;
     height:auto;

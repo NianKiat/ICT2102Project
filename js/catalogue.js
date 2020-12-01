@@ -122,7 +122,7 @@ function additems(type) {
     if (type === "All") {
         $.each(data_all, function (key, val) {
             if (val.availability === "yes")
-            items.push("<li id='" + key + "' class='list-group-item' name='" + key + "'>" +
+            items.push("<li id='" + key + "' class='list-group-item list-catalogue' name='" + key + "'>" +
                     "<img src=" + val.imgurl + " alt='" + val.name + "' name='" + key +
                     "'/>" + wrapPrice(key) + "</li>");
         });
@@ -137,7 +137,7 @@ function additems(type) {
     console.log(items);
     console.log(data_all);
     $("<ul/>", {
-        "class": "list-group list-group-horizontal-md",
+        "class": "list-group flex-md-row",
         "id": "productlist",
         html: items.join("")
     }).appendTo("#container_placeholder");
