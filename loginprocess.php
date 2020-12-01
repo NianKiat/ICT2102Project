@@ -57,11 +57,14 @@
                     $_SESSION['gender'] = $gender;
                     $_SESSION['verified'] = $verified;
                     
+                    include "navbar.php"; 
                     echo "<br>";
-                    echo "<h1>Login successful!</h1>";
-                    echo "<h4 style='text-decoration: none'>Welcome back, $fname $lname</h4>";
+                    echo "<h1 class='section_heading' style='text-align:center'>Login successful!</h1>";
+                    echo "<br>";
+                    echo "<h4 style='text-align:center'>Welcome back, $fname $lname</h4>";
+                    echo "<br>";
                     echo "<div class='form-group'>";
-                    ?> <button class='btn btn-success' onclick="window.location.href = 'index.php'" style='background-colour: green;' type='button'>Start Browsing!
+                    ?> <button class='btn btn-info btn-lg btn-block' onclick="window.location.href = 'index.php'" style='background-colour: green;' type='button'>Start Browsing!
                     <?php
                     echo "</div>";
                     

@@ -1,13 +1,15 @@
-<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark" id="navbar">
+<nav class="navbar navbar-expand-lg fixed-top navbar-light" style="background-color: #CEF6F5;" id="navbar">
     <a class="navbar-brand" href="index.php">
 
         <?php
         if (isset($_SESSION['fname'])) {
             if ($_SESSION['role'] == 'Admin') {
-                echo "Floured! Admin";
+                echo "<img src='images/cake.ico' width='30'height='30' class='d-inline-block align-top' alt='' loading='lazy'>";
+                echo " Floured! Admin";
             }
         } else {
-            echo "Floured!";
+            echo "<img src='images/cake.ico' width='30'height='30' class='d-inline-block align-top' alt='' loading='lazy'>";
+            echo " Floured!";
         }
         ?>
 
@@ -18,12 +20,12 @@
     </button>
 
     <div class="collapse navbar-collapse" id="expand">  
-        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0" >
             <?php
             if (isset($_SESSION['fname'])) {
                 if ($_SESSION['role'] != 'Admin') {
                     ?>
-                    <li class = "nav-item active">
+            <li class = "nav-item active" style="color: black;">
                         <a class = "nav-link" href = "index.php">Home<span class = "sr-only"></span></a>
                     </li>
                     <?php
@@ -89,7 +91,6 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i style="font-size:20px;" class="fas fa-sliders-h"></i> Management Settings</a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="management.php">Management Overview</a>
                             <a class="dropdown-item" href="manageuser.php">User Management</a>
                             <a class="dropdown-item" href="managecatalogue.php">Product Management</a>
                             <a class="dropdown-item" href="managedelivery.php">Delivery Management</a>

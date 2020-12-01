@@ -17,6 +17,3 @@
 <script src="js/main.js" type="text/javascript"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<!--<div class="alert alert-warning" role="alert">
-  A simple warning alert—check it out!
-</div>-->

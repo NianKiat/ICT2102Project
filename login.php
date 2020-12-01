@@ -33,7 +33,7 @@ die();
                            required name="pwd" placeholder="Enter password">             
                 </div>
                 <div>
-                    <button class="btn submit_button" type="submit">Submit</button>   
+                    <button class="btn btn-dark submit_button" type="submit">Submit</button>   
                 </div>
                 <div>
                     <br>
