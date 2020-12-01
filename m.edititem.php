@@ -46,7 +46,7 @@ include 'adminTraverseSecurity.php';
                         </div>
                         <div class='row'>
                             <input class="form-control col-md" type="number" id="iprice" required
-                                   minlength="1" maxlength=7 name="iprice" placeholder="e.g. 10.5">
+                                   minlength="1" maxlength=7 name="iprice" placeholder="e.g. 10.5" step="0.01">
                             <input class="form-control col-md" type="text" id="idiscount" value='0'
                                    minlength="1" maxlength=7 name="idiscount" placeholder="e.g. $40 or 50%">
                         </div>

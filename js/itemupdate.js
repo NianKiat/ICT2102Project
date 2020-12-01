@@ -229,7 +229,8 @@ function toggle(type) {
                         'placeholder': 'e.g. 10.5',
                         'minlength': '1',
                         'maxlength': '7',
-                        'required': true
+                        'required': true,
+                        'step':'0.01'
                     });
                 }
                 break;

@@ -466,6 +466,11 @@ li img{
     float: right;
 }
 
+#list-catalogue{
+    height:inherit;
+    width:inherit;
+}
+
 /*
 For inputs in pop up window
 */

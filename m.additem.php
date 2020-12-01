@@ -34,7 +34,7 @@ include 'adminTraverseSecurity.php';
                         <br>
                         <label for="iprice">Price:</label>
                         <input class="form-control" type="number" id="iprice" required
-                               minlength="1" maxlength=7 name="iprice" placeholder="e.g. 10.5">
+                               minlength="1" maxlength=7 name="iprice" placeholder="e.g. 10.5" step="0.01">
                         <br>
                         <label for="idimension">Item Size:</label>
                         <div class='row'>
