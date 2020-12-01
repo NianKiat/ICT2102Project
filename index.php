@@ -100,14 +100,11 @@ include 'sessiontest.php';
                 <div class="row">
                     <div class="col-md-4">
                         <div class="card mb-4 shadow-sm">
-                            <img class="card-img-top" src="images/download.svg" alt="Card image cap">
+                            <img class="card-img-top card-thumbnail-img" src="images/cakes/Quad_Stacked_Cake.jpg" alt="Stacked Cake">
                             <div class="card-body">
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                <a href="https://commons.wikimedia.org/wiki/File:Cake_Competition_(2).jpg">Image Source</a>
+                                <p class="card-text">Who said only wedding cakes can be stacked up tall? This cake is meant for large parties and it tastes as great as it looks.</p>
                                 <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                                    </div>
                                     <small class="text-muted">9 mins</small>
                                 </div>
                             </div>
@@ -115,14 +112,11 @@ include 'sessiontest.php';
                     </div>
                     <div class="col-md-4">
                         <div class="card mb-4 shadow-sm">
-                            <img class="card-img-top" src="images/download.svg" alt="Card image cap">
+                            <img class="card-img-top card-thumbnail-img" src="images/cakes/red_cake.jpg" alt="Red Rose Cake">
                             <div class="card-body">
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                <a href="http://gebicakes.ru/">Image Source</a>
+                                <p class="card-text">A red cake made up of red roses for your special someone on a very special day. The best memories is created by the best cake.</p>
                                 <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                                    </div>
                                     <small class="text-muted">9 mins</small>
                                 </div>
                             </div>
@@ -130,14 +124,11 @@ include 'sessiontest.php';
                     </div>
                     <div class="col-md-4">
                         <div class="card mb-4 shadow-sm">
-                            <img class="card-img-top" src="images/download.svg" alt="Card image cap">
+                            <img class="card-img-top card-thumbnail-img" src="images/cakes/blue_cake.jpg" alt="Blue Galaxy Cake">
                             <div class="card-body">
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                <a href="http://gebicakes.ru/">Image Source</a>
+                                <p class="card-text">The blue galaxy cake, coated with a thin layer of edible coating. The beauty of this cake is like its design, out of this world.</p>
                                 <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                                    </div>
                                     <small class="text-muted">9 mins</small>
                                 </div>
                             </div>
