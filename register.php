@@ -253,9 +253,9 @@ include 'sessiontest.php';
                     </label>            
                 </div>
 
-
+                <br>
                 <div>
-                    <button class="btn submit_button" type="submit">Submit</button>   
+                    <button class="btn btn-dark btn-info" type="submit">Submit</button>   
                 </div>
             </form>    
         </main>    
