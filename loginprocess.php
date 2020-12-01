@@ -55,6 +55,7 @@
                     $_SESSION['email'] = $email;
                     $_SESSION['address'] = $address;
                     $_SESSION['gender'] = $gender;
+                    $_SESSION['verified'] = $verified;
                     
                     echo "<br>";
                     echo "<h1>Login successful!</h1>";
@@ -87,7 +88,7 @@
                  */
 
                 function authenticateUser() {
-                    global $fname, $lname, $email, $pwd_hashed, $errorMsg, $success, $memberID, $role, $contact, $address, $gender;
+                    global $fname, $lname, $email, $pwd_hashed, $errorMsg, $success, $memberID, $role, $contact, $address, $gender, $verified;
 // Create database connection.
 //                    $config = parse_ini_file('../../private/db-config.ini');
 //                    $conn = new mysqli($config['servername'], $config['username'],
@@ -117,6 +118,7 @@
                             $contact = $row["contact"];
                             $address = $row["address"];
                             $gender = $row["gender"];
+                            $verified = $row["verified"];
 
 
 
