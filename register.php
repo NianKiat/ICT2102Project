@@ -4,6 +4,7 @@ include 'sessiontest.php';
 <html>
     <head> 
         <?php
+        include 'navbar.php';
         include "header.php";
         ?>
         <script language="javascript">
