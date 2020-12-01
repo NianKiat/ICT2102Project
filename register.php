@@ -370,7 +370,7 @@ include 'sessiontest.php';
 
 
                 <div>
-                    <button class="btn btn-dark submit_button" type="submit">Submit</button>   
+                    <button class="btn submit_button" type="submit">Submit</button>   
                 </div>
             </form>    
         </main>    

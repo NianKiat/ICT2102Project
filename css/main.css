@@ -91,6 +91,8 @@ h1, h2, h3, h4, h5, h6, p {
     #banner_button_right {
         float:left; 
         font-weight: bold;
+        margin-top:0;
+        width:192px;
     }
 }
 
@@ -110,13 +112,6 @@ h1, h2, h3, h4, h5, h6, p {
     }
 }
 
-/* this fixes that single pixel width where buttons don't margin properly. must be last one in this series! */
-@media (max-width:768px) and (min-width:767px) {
-    #banner_button_right {
-        margin-top:1rem;
-        width:192px;
-    }
-}​
 
 .fit-image{
 width: 100%;

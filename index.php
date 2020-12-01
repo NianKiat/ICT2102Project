@@ -10,8 +10,25 @@ include 'sessiontest.php';
         ?>
         <title>Floured! Homepage</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <script>
+            function check_width() {
+                width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+                //alert(width);
+                var button = document.getElementById("banner_button_right");
+                if (width >= 768) {
+                    button.style.marginTop = "0px";
+                }
+                else if (width < 768) {
+                    button.style.marginTop = "1rem";
+                    if (width === 767) {
+                        button.style.width = "192px";
+                    }
+                }
+                else {}
+            }
+        </script>
     </head>
-    <body>
+    <body onresize="check_width()">
         <div id="banner_image" class="jumbotron jumbotron-fluid" role="main">
             <div class="container center">
                 <h1 id="banner-header" style="color:lightblue">Singapore's Best Cake Delivery Outlet</h1>
