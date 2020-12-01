@@ -9,10 +9,9 @@ include 'sessiontest.php';
         include 'header.php';
         ?>
         <title>Floured! Homepage</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     </head>
     <body>
-
-
         <div id="banner_image" class="jumbotron jumbotron-fluid" role="main">
             <div class="container center">
                 <h1 id="banner-header" style="color:lightblue">Singapore's Best Cake Delivery Outlet</h1>
