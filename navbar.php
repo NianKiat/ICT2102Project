@@ -36,6 +36,9 @@
                     <li class="nav-item active">
                         <a class="nav-link" href="managecatalogue.php">Product Management<span class="sr-only"></span></a>
                     </li> 
+                    <li class="nav-item active">
+                        <a class="nav-link" href="managedelivery.php">Delivery Management<span class="sr-only"></span></a>
+                    </li> 
                     <?php
                 } else if ($_SESSION['role'] == 'Member'){ ?>
                     <li class="nav-item active">
