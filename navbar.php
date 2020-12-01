@@ -1,7 +1,6 @@
 <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark" id="navbar">
     <a class="navbar-brand" href="index.php">
-<!--        <img class="logo" src="" alt="Floured"
-             title="Homepage"/>-->
+
         <?php
         if (isset($_SESSION['fname'])) {
             if ($_SESSION['role'] == 'Admin') {
@@ -21,8 +20,8 @@
     <div class="collapse navbar-collapse" id="expand">  
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
 
-            <li class="nav-item">
-                <a class="nav-link" href="index.php">Home<span class="sr-only">(current)</span></a>
+            <li class="nav-item active">
+                <a class="nav-link" href="index.php">Home<span class="sr-only"></span></a>
 
             </li> 
             <?php
@@ -39,21 +38,20 @@
                     <li class="nav-item active">
                         <a class="nav-link" href="managedelivery.php">Delivery Management<span class="sr-only"></span></a>
                     </li> 
-                    <?php
-                } else if ($_SESSION['role'] == 'Member'){ ?>
+                    <?php } else if ($_SESSION['role'] == 'Member') {
+                    ?>
                     <li class="nav-item active">
                         <a class="nav-link" href="viewdelivery.php">Delivery<span class="sr-only"></span></a>
                     </li>
-                <?php
-                
+                    <?php
                 }
             }
             ?>
-            <li class="nav-item ">
+            <li class="nav-item active">
                 <a class="nav-link" href="catalogue.php">Catalogue</a>
             </li> 
 
-            <li class="nav-item">
+            <li class="nav-item active">
                 <a class="nav-link" href="EmbeddedMaps.php">Store Information</a>
             </li>    
 

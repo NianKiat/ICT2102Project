@@ -1,9 +1,17 @@
 <html>
     <head>
         <?php
+        include 'navbar.php';
         include 'header.php';
         ?>
         <title>Store Information</title>
+        <noscript>
+            <style>
+                #toggle {display:none;}
+                /*#map_canvas {display:none;}*/
+                .gmap_canvas {width:540px; height:490px;}
+            </style>
+        </noscript>
         <script> <!-- refreshes the maps when resized to support responsiveness -->
             $(document).on("resize", function(){
             $("#gmap_canvas").hide().show();
@@ -178,7 +186,9 @@
                 #mobile-only-div {
                     display:initial;
                 }
-                
+                #toggle_alt_text {
+                    display:none;
+                }
             }
             @media only screen and (max-width: 767px) {
                 .gmap_canvas_mobile {
@@ -245,122 +255,7 @@
     </head>
     
     <body onresize="check_width_and_clear_img()">
-        <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark" id="navbar">
-    <a class="navbar-brand" href="index.php">
-<!--        <img class="logo" src="" alt="Floured"
-             title="Homepage"/>-->
-        <?php
-        if (isset($_SESSION['fname'])) {
-            if ($_SESSION['role'] == 'Admin') {
-                echo "Floured! Admin";
-            }
-        } else {
-            echo "Floured!";
-        }
-        ?>
 
-    </a>
-
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#expand" aria-controls="expand" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="expand">  
-        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-
-            <li class="nav-item">
-                <a class="nav-link" href="index.php">Home<span class="sr-only">(current)</span></a>
-
-            </li> 
-            <?php
-            if (isset($_SESSION['fname'])) {
-                if ($_SESSION['role'] == 'Admin') {
-                    ?>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="manageuser.php">User Management<span class="sr-only"></span></a>
-                    </li> 
-
-                    <li class="nav-item active">
-                        <a class="nav-link" href="managecatalogue.php">Product Management<span class="sr-only"></span></a>
-                    </li> 
-                    <?php
-                } else if ($_SESSION['role'] == 'Member'){ ?>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="viewdelivery.php">Delivery<span class="sr-only"></span></a>
-                    </li>
-                <?php
-
-                }
-            }
-            ?>
-            <li class="nav-item">
-                <a class="nav-link" href="catalogue.php">Catalogue</a>
-            </li> 
-
-            <li class="nav-item active">
-                <a class="nav-link" href="EmbeddedMaps.php">Store Information</a>
-            </li>    
-
-
-
-        </ul>
-        <ul class="navbar-nav">
-
-            <?php
-            if (isset($_SESSION['fname'])) {
-                if ($_SESSION['role'] == 'Member') {
-                    ?>
-                    <li class="nav-item" >
-                        <a class="nav-link" href="cart.php"><i style="font-size:20px;" class="fas fa-shopping-cart"></i> Cart</a>
-                    </li> 
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i style="font-size:20px;" class="fa fa-user"></i> <?php echo $_SESSION['fname'] ?></a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="profile.php">My Profile</a>
-                            <a class="dropdown-item" href="passwordchange.php">Change my Password</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="settings.php">Settings</a>
-                        </div>
-                    </li
-                    <li class="nav-item">
-
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="logout.php"><i style="font-size:20px;" class="fas fa-sign-out-alt"></i> Logout</a>
-                    </li>
-
-                    <?php
-                }
-                if ($_SESSION['role'] == 'Admin') {
-                    ?>
-                    <li class="nav-item">
-                        <a class="nav-link" href="management.php"><i style="font-size:20px;" class="fas fa-sliders-h"></i> Management Settings</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="logout.php"><i style="font-size:20px;" class="fas fa-sign-out-alt"></i> Logout</a>
-                    </li>
-                    <?php
-                }
-            } else {
-                ?>
-                <li class="nav-item" >
-                    <a class="nav-link" href="cart.php"><i style="font-size:20px;" class="fas fa-shopping-cart"></i> Cart</a>
-                </li> 
-                <li class="nav-item">
-                    <a class="nav-link" href="register.php"><i style="font-size:20px;" class="fa fa-user"></i> Register</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="login.php"><i style="font-size:20px;" class="fa fa-sign-in-alt"></i> Login</a>
-                </li>
-            <?php }
-            ?> 
-
-
-        </ul>
-    </div>
-    </nav>
-    <br>
-    <br>
         <br>
         <main class="container"> 
             <section id ="store_info">
@@ -409,17 +304,19 @@
                                 <div style="text-align: center; margin-bottom:16px;">
                                     <button onclick="toggleme()" id = "toggle" type = "button" style="font-family: 'Alegreya Sans SC', sans-serif;">view maps/image</button>
                                     <br id="togglespace" style="display:none;">
+                                    <p id="toggle_alt_text" style="text-align:center; padding-bottom: 5px;"> Click <a href="https://drive.google.com/file/d/10AdimEhoBEtcjmZ-fNrRTDu0qdEykMr_/view?usp=sharing" target="_blank">here</a> to view our shopfront. </p>
                                 </div>
                             </div>
                         </div>
                         <div id="map_col" class="col-lg-6 d-flex justify-content-center">
                             <div id="map-div" class="mapouter">
-                                <div class="gmap_canvas">
+                                <!--<p id="nomaps_text" style="padding-top:5rem;"> Please enable Javascript to view our Maps.</p>-->
+                                <div id="map_canvas" class="gmap_canvas">
                                     <iframe id="gmap_canvas" src="https://maps.google.com/maps?q=sit%20nyp&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
                                     </iframe>
                                 </div>
                             </div>
-                            <div class="mapouter_mobile">
+                            <div id="map-div" class="mapouter_mobile">
                                 <div class="gmap_canvas_mobile">
                                     <iframe id="gmap_canvas_mobile" src="https://maps.google.com/maps?q=sit%20nyp&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
                                     </iframe>
@@ -453,7 +350,7 @@
         ?>
         <script>
             window.onload = check_width_onload(); // if the page loads onto the breakpoint, we want to remove the button as per design.
-            
+            window.onload = remove_noJS_element();
             function check_width_onload() {
                 var myWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
                 var toggle_button = document.getElementById("toggle");
@@ -461,6 +358,12 @@
                     toggle_button.style.display = "none";                    
                 }
                 else {}
+            }
+            function remove_noJS_element() {
+                var toggle_text = document.getElementById("toggle_alt_text");
+                toggle_text.style.display = "none";
+                var nomaps = document.getElementById("nomaps_text");
+                nomaps_text.style.display = "none";
             }
             
             var firstloop = true;
@@ -491,7 +394,7 @@
                 else {
                     map.style.display = "false";
                 }
-            }
+            };
         </script>
     </body>
 </html>

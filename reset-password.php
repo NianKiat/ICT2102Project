@@ -36,7 +36,10 @@ include 'sessiontest.php';
                 <?php
                 if (isset($_GET["reset"])){
                     if ($_GET["reset"] == "success") {
-                        echo '<p style="color:green;" class="signupsuccess">E-mail has been successfully sent!</p>';
+                        echo '<p style="color:green;" >E-mail has been successfully sent!</p>';
+                    }
+                    if ($_GET["reset"] == "unknown") {
+                        echo '<p style="color:red;">There is no account associated with that e-mail!</p>';
                     }
                 }
                 
