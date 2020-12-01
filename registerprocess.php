@@ -184,7 +184,8 @@ require 'PHPMailer/src/SMTP.php';
                     echo "<br>";
                     echo "<h1 class='section_heading' style='text-align:center'>Registration is successful!</h1>";
                     echo "<br>";
-                    echo "<h4 style='text-align:center'>Amazing cakes await you!, $fname $lname</h2>";
+                    echo "<h4 style='text-align:center'>Amazing cakes await you!, $fname $lname</h4>";
+                    echo "<h2 style='text-align:center'>Verify your account to allow e-mail based functions!</h2>";
                     echo "<br>";
                     echo "<div class='form-group'>";
                     if (isset($_SESSION['role'])) {

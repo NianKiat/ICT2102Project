@@ -1,4 +1,5 @@
 <?php
+include 'sessiontest.php';
 require "dbconfig.php";
 if (isset($_GET['vkey'])) {
     $vkey = $_GET['vkey'];
@@ -9,11 +10,16 @@ if (isset($_GET['vkey'])) {
         $update = $conn->query("UPDATE fmembers SET verified = 1 WHERE vkey='$vkey' LIMIT 1");
 
         if ($update) {
-            ?>
+            if(isset($_SESSION['role'])){
+                session_destroy();
+            }
+                ?>
+            
             <!DOCTYPE html>
             <html lang = "en">
                 <head>
                     <?php
+                    
                     include 'header.php';
                     ?>
                     <title>Floured</title>
@@ -25,9 +31,10 @@ if (isset($_GET['vkey'])) {
 
                     <div class="jumbotron jumbotron-fluid">
                         <div class="container">
-                            <h1>Congratulations!</h1>
-                            <h3>Your account has been verified!</h3>
-                            <button class='btn btn-success' onclick="window.location.href = 'login.php'" style='background-colour: green;' type='button'>Login Now!
+                            <h1 class='section_heading' style='text-align:center'>Congratulations!</h1>
+                            <br>
+                            <h4 style='text-align:center'>Your account has been verified!</h4>
+                            <button class='btn btn-info btn-block' onclick="window.location.href = 'login.php'" style='background-colour: green;' type='button'>Login Now!
                         </div>
                     </div>
                 </body>

@@ -123,9 +123,11 @@ if (isset($_POST["reset-request-submit"])) {
                 <br>
                 <br>
                 <main class="container">  
-                    <h1>Error:</h1>
-                    <h3><?php echo $errorMsg; ?></h3>
-                    <button type="button" onclick="goBack()" class="btn btn-dark">Return to Previous Page</button>
+                    <h1 class='section_heading' style='text-align:center'>Error:</h1>
+                    <br>
+                    <h3 style='text-align:center'><?php echo $errorMsg; ?></h3>
+                    <br>
+                    <button type="button" onclick="goBack()" class="btn btn-info btn-lg btn-block">Return to Previous Page</button>
                 </main>
                 <script>
                     function goBack() {

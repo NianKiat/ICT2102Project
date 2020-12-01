@@ -16,8 +16,6 @@ include 'sessiontest.php';
         <br>
         <main class="container"> 
             <br>
-            <br>
-            <br>
             <h1>Password Reset</h1>
             <p> 
                 An e-mail will be sent to you with instructions on how to reset your password.        
@@ -44,6 +42,8 @@ include 'sessiontest.php';
                 }
             }
             ?>
+            <br>
+            <br>
         </main>    
     </body>
             <?php

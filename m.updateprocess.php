@@ -156,11 +156,17 @@
                                 echo "<br>";
                         } else {
                             echo "<br>";
-                            echo "<h1>Profile is Successfully Updated!</h1>";
-                            echo "<h2 style='text-decoration: none'>Account with email: $email, has been updated</h2>";
+                            echo "<h1 class='section_heading' style='text-align:center'>Profile is Successfully Updated!</h1>";
+                            echo "<br>";
+                            echo "<h4 style='text-align:center'>Account with email: $email, has been updated</h4>";
+                            echo "<br>";
                             echo "<div class='form-group'>";
-                            echo "<button class='btn btn-success' style='background-colour: red;' type='button'>Log-in";
-                            echo "</div>";
+                            ?> <button class='btn btn-success btn-block' onclick="window.location.href = 'manageuser.php'" style='background-colour: red;' type='button'>Go back
+                            
+                                <?php
+                                
+                                echo "</div>";
+                                echo "<br>";
                         }
                     } else {
                         echo "<br>";

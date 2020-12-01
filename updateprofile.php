@@ -116,6 +116,7 @@ include 'memberTraverseSecurity.php';
                         </div>
                     </div>
                 </main>    
+            </div>
                 <?php
                 include "footer.php";
                 ?>

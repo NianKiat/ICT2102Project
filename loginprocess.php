@@ -69,12 +69,14 @@
                     echo "</div>";
                     
                 } else {
+                    include "navbar.php"; 
                     echo "<br>";
-                    echo "<h1>Oops!</h1>";
-                    echo "<h2 style='text-decoration: none'>The following input errors were detected:</h2>";
-                    echo "<p>" . $errorMsg . "</p>";
+                    echo "<h1 class='section_heading' style='text-align:center'>CAKED!</h1>";
+                    echo "<br>";
+                    echo "<h4 style='text-align:center'>The following input errors were detected:</h2>";
+                    echo "<p style='text-align:center'>" . $errorMsg . "</p>";
                     echo "<div class='form-group'>";
-                    echo "<button onclick='history.back()' type='button' class='btn btn-danger' style='background-colour: yellow;' type='button'>Return to Sign Up</button>";
+                    echo "<button onclick='history.back()' type='button' class='btn btn-info btn-block' style='background-colour: yellow;' type='button'>Return to Sign Up</button>";
                     echo "</div>";
                 }
 

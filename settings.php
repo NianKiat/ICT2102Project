@@ -28,7 +28,7 @@ include 'memberTraverseSecurity.php';
                     <?php } 
                     if(isset($_GET["sent"])){
                         if($_GET["sent"] == "success") {
-                            echo '<h2 style="color: green;">Validation E-mail has been sent!</h2>';
+                            echo '<h2 style="color: green;">Verification E-mail has been sent!</h2>';
                         } else if ($_GET["sent"] == "nosuccess"){
                             echo '<h2 style="color: red;">Your request is unsuccessful.</h2>';
                         }

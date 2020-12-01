@@ -207,7 +207,7 @@ function getUser() {
 
                         <?php } else {
                             ?>
-                            <h1>There is no such user.</h1>
+                            <h1 class='section_heading' style='text-align:center'>There is no such user!</h1>
 
                         <?php }
                         ?>
@@ -215,6 +215,7 @@ function getUser() {
                     </div>
                 </div>
             </main>    
+        </div>
     </body>
     <?php
     include 'footer.php';

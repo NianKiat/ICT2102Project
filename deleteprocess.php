@@ -66,15 +66,16 @@ include 'memberTraverseSecurity.php';
                 if ($success) {
                     if ($_SESSION['role'] == "Member") {
                         session_destroy();
+                        include 'navbar.php';
                     }
                     ?>
                     <br>
                     <h1 class='section_heading' style='text-align:center'>User has been removed!</h1>
                     <br>
-                    <h4 style='text-align:center'>Goodbye!</h2>
+                    <h4 style='text-align:center'>Goodbye!</h4>
                         <br>
                         <div class='form-group'><?php if ($_SESSION['role'] == "Admin") { ?>
-                                <button type="button" onclick="window.location.href = 'manageusers.php'" class="btn btn-success btn-block">Return to Manage Users</button></div>
+                                <button type="button" onclick="window.location.href = 'manageuser.php'" class="btn btn-success btn-block">Return to Manage Users</button></div>
                         <?php } else { ?>
                             <button type="button" onclick="window.location.href = 'index.php'" class="btn btn-success btn-block">Redirect me to home!</button></div>
 

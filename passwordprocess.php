@@ -18,11 +18,7 @@ include 'memberTraverseSecurity.php';
         <main class="container">
             <div>
                 <?php
-                if ($_SESSION['role'] == "Admin") {
-                    $id = $_SESSION['updatekey'];
-                } else {
-                    $id = $_SESSION['memberID'];
-                }
+                $id = $_SESSION['memberID'];
 
                 $pwd = $pwderrorMsg = "";
                 $pwd_old = "";
@@ -74,73 +70,78 @@ include 'memberTraverseSecurity.php';
 
                 if ($pwdsuccess && $pcsuccess && $pwdoldsuccess && $success) {
                     echo "<br>";
-                    echo "<h1>Password Successfully Updated!</h1>";
-                    ?> <button class='btn btn-success' onclick="window.location.href = 'index.php'" style='background-colour: red;' type='button'>Redirect me to home!
-                    <?php
-                    echo "</div>";
-                } else {
+                    echo "<h1 class='section_heading' style='text-align:center'>Success!</h1>";
                     echo "<br>";
-                    echo "<h1>Oops!</h1>";
-                    echo "<h2 style='text-decoration: none'>The following input errors were detected:</h2>";
-                    echo "<p>" . $pwdolderrorMsg . $pwderrorMsg . $pcerrorMsg . $errorMsg . "</p>";
+                    echo "<h4 style='text-align:center'>Password has been changed.</h4>";
+                    echo "<br>";
                     echo "<div class='form-group'>";
-                    echo "<button onclick='history.back()' type='button' class='btn btn-danger' style='background-colour: red;' type='button'>Return to Sign Up</button>";
-                    echo "</div>";
-                }
+                    ?> <button class='btn btn-info btn-lg btn-block' onclick="window.location.href = 'index.php'" style='background-colour: green;' type='button'>Redirect me to home!
+                        <?php
+                        echo "</div>";
+                    } else {
 
-                function authenticateUser() {
-                    global $id, $pwd_hashed, $pwd_old, $errorMsg, $pwd_check, $success;
+                        echo "<br>";
+                        echo "<h1 class='section_heading' style='text-align:center'>CAKED!</h1>";
+                        echo "<h4 style='text-align:center'>The following input errors were detected:</h4>";
+                        echo "<p style='text-align:center'>" . $pwdolderrorMsg . $pwderrorMsg . $pcerrorMsg . $errorMsg . "</p>";
+                        echo "<div class='form-group'>";
+                        echo "<button onclick='history.back()' type='button' class='btn btn-info btn-block' style='background-colour: yellow;' type='button'>Go Back</button>";
+                        echo "</div>";
+                    }
+
+                    function authenticateUser() {
+                        global $id, $pwd_hashed, $pwd_old, $errorMsg, $pwd_check, $success;
 // Create database connection.
 //                    $config = parse_ini_file('../../private/db-config.ini');
 //                    $conn = new mysqli($config['servername'], $config['username'],
 //                            $config['password'], $config['dbname']);
 //                            
 // Check connection
-                    $conn = OpenCon();
-                    if ($conn->connect_error) {
-                        $errorMsg = "Connection failed: " . $conn->connect_error;
-                        $success = false;
-                    } else {
+                        $conn = OpenCon();
+                        if ($conn->connect_error) {
+                            $errorMsg = "Connection failed: " . $conn->connect_error;
+                            $success = false;
+                        } else {
 // Prepare the statement:
-                        $stmt = $conn->prepare("SELECT * FROM fmembers WHERE memberID=?");
+                            $stmt = $conn->prepare("SELECT * FROM fmembers WHERE memberID=?");
 // Bind & execute the query statement:
-                        $stmt->bind_param("i", $id);
-                        $stmt->execute();
-                        $result = $stmt->get_result();
-                        if ($result->num_rows > 0) {
+                            $stmt->bind_param("i", $id);
+                            $stmt->execute();
+                            $result = $stmt->get_result();
+                            if ($result->num_rows > 0) {
 // Note that email field is unique, so should only have
 // one row in the result set.
-                            $row = $result->fetch_assoc();
-                            $pwd_check = $row["password"];
+                                $row = $result->fetch_assoc();
+                                $pwd_check = $row["password"];
 
 
 // Check if the password matches:
-                            if (!password_verify($pwd_old, $pwd_check)) {
+                                if (!password_verify($pwd_old, $pwd_check)) {
 // Don't be too specific with the error message - hackers don't
 // need to know which one they got right or wrong. :)
-                                $errorMsg = "Incorrect Password";
-                                $success = false;
-                            } else {
-                                $stmt = $conn->prepare("UPDATE fmembers SET password='$pwd_hashed' WHERE memberID='$id'");
-                                
-                                if (!$stmt->execute()) {
-                                    $errorMsg = "Execute failed: (" . $stmt->errno . ") " . $stmt->error;
+                                    $errorMsg = "Incorrect Password";
                                     $success = false;
-                                }
-                            }
-                        } else {
-                            $errorMsg = "Email not found";
-                            $success = false;
-                        }
-                        $stmt->close();
-                    }
-                    $conn->close();
-                }
+                                } else {
+                                    $stmt = $conn->prepare("UPDATE fmembers SET password='$pwd_hashed' WHERE memberID='$id'");
 
-                /*
-                 * Helper function to update the data to the DB
-                 */
-                ?>
+                                    if (!$stmt->execute()) {
+                                        $errorMsg = "Execute failed: (" . $stmt->errno . ") " . $stmt->error;
+                                        $success = false;
+                                    }
+                                }
+                            } else {
+                                $errorMsg = "Email not found";
+                                $success = false;
+                            }
+                            $stmt->close();
+                        }
+                        $conn->close();
+                    }
+
+                    /*
+                     * Helper function to update the data to the DB
+                     */
+                    ?>
             </div>
         </main>
         <?php

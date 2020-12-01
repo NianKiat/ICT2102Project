@@ -207,13 +207,14 @@ include 'memberTraverseSecurity.php';
                                 <br>
                                 <br>
                                 <div>
-                                    <button class="btn btn-primary mb1 bg-teal" type="submit">Update My Profile</button>   
+                                    <button class="btn btn-info" type="submit">Update My Profile</button>   
                                 </div>
                                 </form>    
                             </div>
                         </div>
                     </div>
                 </main>    
+            </div>
                 <?php
                 include "footer.php";
                 ?>
