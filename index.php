@@ -57,7 +57,7 @@ include 'sessiontest.php';
             <div class="container center">
                 <h1 id="banner-header">Singapore's Best Cake Delivery Outlet</h1>
                 <h2 id="banner-subheader">same day delivery | no minimum order | award winning</h2>
-                <h2 id="subheading" class="lead" style='color:lightpink; font-weight: 600; font-style:italic; opacity:1;'>Floured! brings you freshly-baked artisanal cakes delivered islandwide</h2>
+                <h2 id="subheading" class="lead">Floured! brings you freshly-baked artisanal cakes delivered islandwide</h2>
             </div>
             <br>
             <div class="container center">
