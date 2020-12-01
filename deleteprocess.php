@@ -71,7 +71,7 @@ include 'memberTraverseSecurity.php';
                     <br>
                     <h1 class='section_heading' style='text-align:center'>User has been removed!</h1>
                     <br>
-                    <h4 style='text-align:center'>Goodbye!</h2>
+                    <h4 style='text-align:center'>Goodbye!</h4>
                         <br>
                         <div class='form-group'><?php if ($_SESSION['role'] == "Admin") { ?>
                                 <button type="button" onclick="window.location.href = 'manageusers.php'" class="btn btn-success btn-block">Return to Manage Users</button></div>
