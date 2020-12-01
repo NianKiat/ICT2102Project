@@ -19,26 +19,22 @@
 
     <div class="collapse navbar-collapse" id="expand">  
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-
-            <li class="nav-item active">
-                <a class="nav-link" href="index.php">Home<span class="sr-only"></span></a>
-
-            </li> 
             <?php
             if (isset($_SESSION['fname'])) {
-                if ($_SESSION['role'] == 'Admin') {
+                if ($_SESSION['role'] != 'Admin') {
                     ?>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="manageuser.php">User Management<span class="sr-only"></span></a>
-                    </li> 
+                    <li class = "nav-item active">
+                        <a class = "nav-link" href = "index.php">Home<span class = "sr-only"></span></a>
+                    </li>
+                    <?php
+                }
+            }
+            ?>
 
-                    <li class="nav-item active">
-                        <a class="nav-link" href="managecatalogue.php">Product Management<span class="sr-only"></span></a>
-                    </li> 
-                    <li class="nav-item active">
-                        <a class="nav-link" href="managedelivery.php">Delivery Management<span class="sr-only"></span></a>
-                    </li> 
-                    <?php } else if ($_SESSION['role'] == 'Member') {
+
+            <?php
+            if (isset($_SESSION['fname'])) {
+                if ($_SESSION['role'] == 'Member') {
                     ?>
                     <li class="nav-item active">
                         <a class="nav-link" href="viewdelivery.php">Delivery<span class="sr-only"></span></a>
@@ -75,7 +71,7 @@
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="settings.php">Settings</a>
                         </div>
-                    </li
+                    </li>
                     <li class="nav-item">
 
                     </li>
@@ -87,8 +83,16 @@
                 }
                 if ($_SESSION['role'] == 'Admin') {
                     ?>
-                    <li class="nav-item">
-                        <a class="nav-link" href="management.php"><i style="font-size:20px;" class="fas fa-sliders-h"></i> Management Settings</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i style="font-size:20px;" class="fas fa-sliders-h"></i> Management Settings</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="management.php">Management Overview</a>
+                            <a class="dropdown-item" href="manageuser.php">User Management</a>
+                            <a class="dropdown-item" href="managecatalogue.php">Product Management</a>
+                            <a class="dropdown-item" href="managedelivery.php">Delivery Management</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="settings.php">Settings</a>
+                        </div>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="logout.php"><i style="font-size:20px;" class="fas fa-sign-out-alt"></i> Logout</a>
