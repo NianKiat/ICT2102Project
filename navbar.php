@@ -28,11 +28,14 @@
                     </li>
                     <?php
                 }
+            } else {
+                ?>
+                <li class = "nav-item active">
+                    <a class = "nav-link" href = "index.php">Home<span class = "sr-only"></span></a>
+                </li>
+
+                <?php
             }
-            ?>
-
-
-            <?php
             if (isset($_SESSION['fname'])) {
                 if ($_SESSION['role'] == 'Member') {
                     ?>
