@@ -360,8 +360,9 @@ ul {
 }
 
 li img{
-    max-width: -webkit-fill-available;
-    max-height: -webkit-fill-available;
+    max-width: 300px;
+    max-height: 300px;
+    height:auto;
 }
 
 
