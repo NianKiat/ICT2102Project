@@ -1,5 +1,12 @@
 <?php
 include 'sessiontest.php';
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require 'PHPMailer/src/Exception.php';
+require 'PHPMailer/src/PHPMailer.php';
+require 'PHPMailer/src/SMTP.php';
 ?>
 <html>
 
@@ -23,7 +30,7 @@ include 'sessiontest.php';
                 $address = $addresserrorMsg = "";
                 $contact = $contacterrorMsg = "";
                 $role = "";
-                $gender =$gendererrorMsg= "";
+                $gender = $gendererrorMsg = "";
                 $pwd = $pwderrorMsg = "";
                 $pwd_confirm = $pcerrorMsg = "";
                 $lnamesuccess = true;
@@ -49,7 +56,7 @@ include 'sessiontest.php';
                         $fnamesuccess = false;
                     }
                 }
-                
+
                 if (empty($_POST["gender"])) {
                     $gendererrorMsg .= "Gender is required.<br>";
                     $gendersuccess = false;
@@ -99,9 +106,9 @@ include 'sessiontest.php';
                 } else {
                     $role = sanitize_input($_POST["role"]);
                 }
-                
-                
-                
+
+
+
                 if (empty($_POST["pwd"])) {
                     $pwderrorMsg .= "Password is required.<br>";
                     $pwdsuccess = false;
@@ -122,6 +129,7 @@ include 'sessiontest.php';
                     $emailsuccess = false;
                 } else {
                     $email = sanitize_input($_POST["email"]);
+                    $vkey = md5(time() . $email);
 // Additional check to make sure e-mail address is well-formed.
                     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
                         $emailerrorMsg .= "Invalid email format.<br>";
@@ -142,60 +150,91 @@ include 'sessiontest.php';
                 }
 
                 if ($contactsuccess && $addresssuccess && $emailsuccess && $lnamesuccess && $fnamesuccess && $pwdsuccess && $pcsuccess && $success && $gendersuccess) {
+
+                    //send verification e-mail:
+                    $to = $email;
+                    $subject = "Floured E-mail Verification!";
+//                    $url = "localhost:8000/verify.php?vkey=$vkey";
+                    $url = "http://54.145.106.172/1004Project/verify.php?vkey=$vkey";
+                    $message = '<p>Thank you for registering with Floured!. The link to verify your e-mail is below. If you did not make this request, you can ignore this email</p>';
+                    $message .= '<p>Here is your e-mail verification link: </br>';
+
+                    $message .= '<a href="' . $url . '">' . $url . '</a></p>';
+
+
+
+                    $mail = new PHPMailer(true);
+                    $mail->isSMTP();
+                    $mail->Mailer = "smtp";
+                    $mail->SMTPAuth = true;
+                    $mail->SMTPSecure = 'tls';
+                    $mail->Host = 'smtp.gmail.com';
+                    $mail->Port = '587';
+                    $mail->isHTML();
+                    $mail->Username = 'floured1004@gmail.com';
+                    $mail->Password = 'ICT1004ICT1004';
+                    $mail->SetFrom("floured1004@gmail.com");
+                    $mail->Subject = $subject;
+                    $mail->Body = $message;
+                    $mail->AddAddress($to);
+
+                    $mail->Send();
+
+
                     echo "<br>";
                     echo "<h1>Your registration is successful!</h1>";
                     echo "<h2 style='text-decoration: none'>Amazing Cakes Await you!, $fname $lname</h2>";
                     echo "<div class='form-group'>";
                     ?> <button class='btn btn-success' onclick="window.location.href = 'login.php'" style='background-colour: green;' type='button'>Login Now!
-                    <?php
-                    echo "</div>";
-                } else {
-                    echo "<br>";
-                    echo "<h1>Oops!</h1>";
-                    echo "<h2 style='text-decoration: none'>The following input errors were detected:</h2>";
-                    echo "<p>" . $emailerrorMsg . $fnameerrorMsg . $addresserrorMsg . $contacterrorMsg . $lnameerrorMsg . $pwderrorMsg . $pcerrorMsg . $gendererrorMsg . $errorMsg . "</p>";
-                    echo "<div class='form-group'>";
-                    echo "<button onclick='history.back()' type='button' class='btn btn-danger' style='background-colour: red;' type='button'>Return to Sign Up</button>";
-                    echo "</div>";
-                }
+                        <?php
+                        echo "</div>";
+                    } else {
+                        echo "<br>";
+                        echo "<h1>Oops!</h1>";
+                        echo "<h2 style='text-decoration: none'>The following input errors were detected:</h2>";
+                        echo "<p>" . $emailerrorMsg . $fnameerrorMsg . $addresserrorMsg . $contacterrorMsg . $lnameerrorMsg . $pwderrorMsg . $pcerrorMsg . $gendererrorMsg . $errorMsg . "</p>";
+                        echo "<div class='form-group'>";
+                        echo "<button onclick='history.back()' type='button' class='btn btn-danger' style='background-colour: red;' type='button'>Return to Sign Up</button>";
+                        echo "</div>";
+                    }
 
 //Helper function that checks input for malicious or unwanted content.
-                function sanitize_input($data) {
-                    $data = trim($data);
-                    $data = stripslashes($data);
-                    $data = htmlspecialchars($data);
-                    return $data;
-                }
+                    function sanitize_input($data) {
+                        $data = trim($data);
+                        $data = stripslashes($data);
+                        $data = htmlspecialchars($data);
+                        return $data;
+                    }
 
-                /*
-                 * Helper function to write the member data to the DB
-                 */
+                    /*
+                     * Helper function to write the member data to the DB
+                     */
 
-                function saveMemberToDB() {
-                    global $fname, $lname, $email, $pwd_hashed, $errorMsg, $success, $address, $contact, $role, $gender;
+                    function saveMemberToDB() {
+                        global $fname, $lname, $email, $pwd_hashed, $errorMsg, $success, $address, $contact, $role, $gender, $vkey;
 // Create database connection.
-                    //$config = parse_ini_file('../../private/db-config.ini');
-                    // $conn = new mysqli($config['servername'], $config['username'],
-                    //        $config['password'], $config['dbname']);
-                    $conn = OpenCon();
+                        //$config = parse_ini_file('../../private/db-config.ini');
+                        // $conn = new mysqli($config['servername'], $config['username'],
+                        //        $config['password'], $config['dbname']);
+                        $conn = OpenCon();
 // Check connection
-                    if ($conn->connect_error) {
-                        $errorMsg = "Connection failed: " . $conn->connect_error;
-                        $success = false;
-                    } else {
+                        if ($conn->connect_error) {
+                            $errorMsg = "Connection failed: " . $conn->connect_error;
+                            $success = false;
+                        } else {
 // Prepare the statement:
 // Bind & execute the query statements           
-                        $stmt = $conn->prepare("INSERT INTO fmembers (fname, lname, email, password, address, contact, role, gender) VALUES (?,?,?,?,?,?,?,?)");
-                        $stmt->bind_param('sssssiss', $fname, $lname, $email, $pwd_hashed, $address, $contact, $role, $gender);
-                        if (!$stmt->execute()) {
-                            $errorMsg = "Execute failed: (" . $stmt->errno . ") " . $stmt->error;
-                            $success = false;
+                            $stmt = $conn->prepare("INSERT INTO fmembers (fname, lname, email, password, address, contact, role, gender, vkey) VALUES (?,?,?,?,?,?,?,?,?)");
+                            $stmt->bind_param('sssssisss', $fname, $lname, $email, $pwd_hashed, $address, $contact, $role, $gender, $vkey);
+                            if (!$stmt->execute()) {
+                                $errorMsg = "Execute failed: (" . $stmt->errno . ") " . $stmt->error;
+                                $success = false;
+                            }
+                            $stmt->close();
                         }
-                        $stmt->close();
+                        $conn->close();
                     }
-                    $conn->close();
-                }
-                ?>
+                    ?>
             </div>
         </main>
         <?php

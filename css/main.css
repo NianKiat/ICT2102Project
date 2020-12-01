@@ -360,9 +360,8 @@ ul {
 }
 
 li img{
-    max-width: 300px;
-    max-height: 300px;
-    height:auto;
+    max-width: -webkit-fill-available;
+    max-height: -webkit-fill-available;
 }
 
 
@@ -464,6 +463,11 @@ li img{
 
 #updatecart {
     float: right;
+}
+
+#list-catalogue{
+    height:inherit;
+    width:inherit;
 }
 
 /*

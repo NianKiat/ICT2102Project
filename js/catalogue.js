@@ -129,7 +129,7 @@ function additems(type) {
     } else {
         $.each(data_all, function (key, val) {
             if (val.type === type && val.availability === "yes")
-                items.push("<li id='" + key + "' class='list-group-item' name='" + key + "'>" +
+                items.push("<li id='" + key + "' class='list-group-item list-catalogue' name='" + key + "'>" +
                         "<img src=" + val.imgurl + " alt='" + val.name + "' name='" + key +
                         "'/></li>");
         });
