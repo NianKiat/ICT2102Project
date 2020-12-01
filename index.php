@@ -55,9 +55,9 @@ include 'sessiontest.php';
     <body onresize="check_width()">
         <div id="banner_image" class="jumbotron jumbotron-fluid" role="main">
             <div class="container center">
-                <h1 id="banner-header" style="color:lightblue">Singapore's Best Cake Delivery Outlet</h1>
+                <h1 id="banner-header">Singapore's Best Cake Delivery Outlet</h1>
                 <h2 id="banner-subheader">same day delivery | no minimum order | award winning</h2>
-                <h2 id="subheading" class="lead" style='color:lightpink; font-weight: 500; font-style:italic;'>Floured! brings you freshly-baked artisanal cakes delivered islandwide</h2>
+                <h2 id="subheading" class="lead" style='color:lightpink; font-weight: 600; font-style:italic; opacity:1;'>Floured! brings you freshly-baked artisanal cakes delivered islandwide</h2>
             </div>
             <br>
             <div class="container center">

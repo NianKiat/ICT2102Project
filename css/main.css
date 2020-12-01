@@ -15,6 +15,11 @@ h1, h2, h3, h4, h5, h6, p {
     font-family: 'Roboto', sans-serif;
 }
 
+#translucent {
+    background-color: #FFFFFF;
+    opacity: 0.6;
+}
+
 .subtext {
     font-style: italic;
     color:grey;
@@ -36,10 +41,16 @@ h1, h2, h3, h4, h5, h6, p {
 
 #banner_button_left {
     font-weight: bold;
+    color:#FFFFFF;
+    background-color:#0B505B;
+    border-color:#0B505B;
 }
 
 #banner_button_right {
     font-weight: bold;
+    color:#FFFFFF;
+    background-color:#0B505B;
+    border-color:#0B505B;
 }
 
 .center {
@@ -53,16 +64,22 @@ h1, h2, h3, h4, h5, h6, p {
 
 #banner-header {
     font-family: 'Alegreya Sans SC', sans-serif;
-    color:white;
+    color:lightblue;
     font-size:50px;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 #banner-subheader {
     font-family: 'Alegreya Sans SC', sans-serif;
     color:lightgoldenrodyellow; 
     font-size:30px;
-    font-weight: 500;
+    font-weight: 600;
+}
+
+#subheading {
+    color:lightpink; 
+    font-weight: 600; 
+    font-style:italic;
 }
 
 @media only screen and (max-width: 992px) {
@@ -133,7 +150,7 @@ object-fit: cover;
 
 .section_heading {
     font-family: 'Alegreya Sans SC', sans-serif;
-    color: #5bc0de;    
+    color: #155366;    
     font-size: 45px;
 }
 
@@ -141,7 +158,7 @@ object-fit: cover;
     width:27%;
     border-top: 2px solid;
     margin-top:0px;
-    color: #5bc0de;
+    color: #155366;
 }
 
 .pt-5, .py-5 {
@@ -155,6 +172,8 @@ object-fit: cover;
     font-size: 30px;
     padding-top: 4px;
     padding-bottom: 4px;
+    background-color:#0B505B;
+    border-color:#0B505B;
 }
 
 .card-header {
