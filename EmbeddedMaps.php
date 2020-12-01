@@ -4,6 +4,13 @@
         include 'header.php';
         ?>
         <title>Store Information</title>
+        <noscript>
+            <style>
+                #toggle {display:none;}
+                /*#map_canvas {display:none;}*/
+                .gmap_canvas {width:540px; height:490px;}
+            </style>
+        </noscript>
         <script> <!-- refreshes the maps when resized to support responsiveness -->
             $(document).on("resize", function(){
             $("#gmap_canvas").hide().show();
@@ -178,7 +185,9 @@
                 #mobile-only-div {
                     display:initial;
                 }
-                
+                #toggle_alt_text {
+                    display:none;
+                }
             }
             @media only screen and (max-width: 767px) {
                 .gmap_canvas_mobile {
@@ -409,17 +418,19 @@
                                 <div style="text-align: center; margin-bottom:16px;">
                                     <button onclick="toggleme()" id = "toggle" type = "button" style="font-family: 'Alegreya Sans SC', sans-serif;">view maps/image</button>
                                     <br id="togglespace" style="display:none;">
+                                    <p id="toggle_alt_text" style="text-align:center; padding-bottom: 5px;"> Click <a href="https://drive.google.com/file/d/10AdimEhoBEtcjmZ-fNrRTDu0qdEykMr_/view?usp=sharing" target="_blank">here</a> to view our shopfront. </p>
                                 </div>
                             </div>
                         </div>
                         <div id="map_col" class="col-lg-6 d-flex justify-content-center">
                             <div id="map-div" class="mapouter">
-                                <div class="gmap_canvas">
+                                <!--<p id="nomaps_text" style="padding-top:5rem;"> Please enable Javascript to view our Maps.</p>-->
+                                <div id="map_canvas" class="gmap_canvas">
                                     <iframe id="gmap_canvas" src="https://maps.google.com/maps?q=sit%20nyp&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
                                     </iframe>
                                 </div>
                             </div>
-                            <div class="mapouter_mobile">
+                            <div id="map-div" class="mapouter_mobile">
                                 <div class="gmap_canvas_mobile">
                                     <iframe id="gmap_canvas_mobile" src="https://maps.google.com/maps?q=sit%20nyp&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
                                     </iframe>
@@ -453,7 +464,7 @@
         ?>
         <script>
             window.onload = check_width_onload(); // if the page loads onto the breakpoint, we want to remove the button as per design.
-            
+            window.onload = remove_noJS_element();
             function check_width_onload() {
                 var myWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
                 var toggle_button = document.getElementById("toggle");
@@ -461,6 +472,12 @@
                     toggle_button.style.display = "none";                    
                 }
                 else {}
+            }
+            function remove_noJS_element() {
+                var toggle_text = document.getElementById("toggle_alt_text");
+                toggle_text.style.display = "none";
+                var nomaps = document.getElementById("nomaps_text");
+                nomaps_text.style.display = "none";
             }
             
             var firstloop = true;
@@ -491,7 +508,7 @@
                 else {
                     map.style.display = "false";
                 }
-            }
+            };
         </script>
     </body>
 </html>
