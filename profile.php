@@ -78,9 +78,12 @@ include 'memberTraverseSecurity.php';
                             </div>
                         </div>
                     </div>
-                </main>    
-                <?php
-                include "footer.php";
-                ?>
+                </main>  
+            </div>
         </body>
+
+
     </html>
+            <?php
+        include "footer.php";
+        ?>
