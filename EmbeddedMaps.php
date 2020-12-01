@@ -268,8 +268,8 @@
                                 <br>
                                 <div id="outer_wrapper">
 <!-- accessibility main -->         <div id="wrapper" role="main">
-                                        <span class="left bold">Order Hotline:</span> 
-                                        <span class="right bold"> +65 6592 2589</span>
+                                        <span class="left bold" style="color:maroon;">Order Hotline:</span> 
+                                        <span class="right bold" style="color:maroon;"> +65 6592 2589</span>
                                         <span class="spacing"> &nbsp; </span>
                                         <span class="mobile bold"> +65 6592 2589</span>
                                         <span class="mobile_spacing"> &nbsp; </span>
@@ -283,13 +283,13 @@
                                         <!--<span class="center_space"> &nbsp; </span>-->
 
                                         <span class="left"> Business Email: </span> 
-                                        <span class="right"> <a href="mailto:contact@floured.co">contact@floured.co</a> </span>
-                                        <span class="mobile"> <a href="mailto:contact@floured.co">contact@floured.co</a> </span>
+                                        <span class="right"> <a href="mailto:contact@floured.co" style="color:darkblue;">contact@floured.co</a> </span>
+                                        <span class="mobile"> <a href="mailto:contact@floured.co" style="color:darkblue;">contact@floured.co</a> </span>;
                                         <!--<span class="center_space"> &nbsp; </span>-->
                                     </div>
                                 </div>
                                 <hr style="width:66.7%">
-                                <h2 class="center caps" style="color:orange;"> Hours & Address </h2>
+                                <h2 class="center caps" style="color:purple;"> Hours & Address </h2>
                                 <p class="center" style="color:green;">
                                     Daily 7am ~ 11pm 
                                 </p>
