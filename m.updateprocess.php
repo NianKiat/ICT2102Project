@@ -143,12 +143,17 @@
                             $_SESSION['gender'] = $gender;
 
                             echo "<br>";
-                            echo "<h1>Your Profile is Successfully Updated!</h1>";
-                            echo "<h4 style='text-decoration: none'>Account with email: $email, has been updated</h4>";
+                            echo "<h1 class='section_heading' style='text-align:center'>Your Profile is Successfully Updated!</h1>";
+                            echo "<br>";
+                            echo "<h4 style='text-align:center'>Account with email: $email, has been updated</h4>";
+                            echo "<br>";
                             echo "<div class='form-group'>";
-                            ?> <button class='btn btn-success' onclick="window.location.href = 'index.php'" style='background-colour: red;' type='button'>Redirect me to home!
-                            <?php
+                            ?> <button class='btn btn-success btn-block' onclick="window.location.href = 'index.php'" style='background-colour: red;' type='button'>Redirect me to home!
+                            
+                                <?php
+                                
                                 echo "</div>";
+                                echo "<br>";
                         } else {
                             echo "<br>";
                             echo "<h1>Profile is Successfully Updated!</h1>";

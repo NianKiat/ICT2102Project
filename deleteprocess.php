@@ -13,8 +13,8 @@ include 'memberTraverseSecurity.php';
     </head>
     <body>
         <?php
-        if ($_SESSION['role'] == "Admin"){
-           include 'navbar.php'; 
+        if ($_SESSION['role'] == "Admin") {
+            include 'navbar.php';
         }
         ?>
         <main class="container">
@@ -44,17 +44,16 @@ include 'memberTraverseSecurity.php';
                             $success = false;
                         }
                     }
-                } else if ($_SESSION['role'] == "Member"){
-                    if(empty($_POST["confirmdelete"])){
+                } else if ($_SESSION['role'] == "Member") {
+                    if (empty($_POST["confirmdelete"])) {
                         $emailerrorMsg .= "Please enter 'Yes' if you wish to delete your account.";
                         $success = false;
-                    } else{
+                    } else {
                         $check = sanitize_input($_POST["confirmdelete"]);
-                        if ($check == "yes" || $check == "Yes"){
+                        if ($check == "yes" || $check == "Yes") {
                             $userid = $_SESSION['memberID'];
                             $success = true;
                         }
-                        
                     }
                 }
 
@@ -65,71 +64,79 @@ include 'memberTraverseSecurity.php';
                     deletefromdb();
                 }
                 if ($success) {
-                    if ($_SESSION['role'] == "Member"){
+                    if ($_SESSION['role'] == "Member") {
                         session_destroy();
                     }
-                    echo "<br>";
-                    echo "<h1>User has been removed.</h1>";
-                    echo "<br>";
-                    //echo "<h2 style='text-decoration: none'>Thank You for joining PETS!, $fname $lname</h2>";
-                    echo "<div class='form-group'>"; ?>
-                <button type="button" onclick="window.location.href = 'index.php'" class="btn btn-success">Redirect me to home!</button></div>
-               
-                    <?php 
-               
-                } else {
-                    echo "<br>";
-                    echo "<h1>Oops!</h1>";
-                    echo "<h2 style='text-decoration: none'>The following input errors were detected:</h2>";
-                    echo "<p>" . $emailerrorMsg . $useriderrorMsg . "</p>";
-                    echo "<div class='form-group'>";
-                    echo "<button onclick='history.back()' type='button' class='btn btn-danger' style='background-colour: red;' type='button'>Return to Sign Up</button>";
-                    echo "</div>";
-                }
+                    ?>
+                    <br>
+                    <h1 class='section_heading' style='text-align:center'>User has been removed!</h1>
+                    <br>
+                    <h4 style='text-align:center'>Goodbye!</h2>
+                        <br>
+                        <div class='form-group'><?php if ($_SESSION['role'] == "Admin") { ?>
+                                <button type="button" onclick="window.location.href = 'manageusers.php'" class="btn btn-success btn-block">Return to Manage Users</button></div>
+                        <?php } else { ?>
+                            <button type="button" onclick="window.location.href = 'index.php'" class="btn btn-success btn-block">Redirect me to home!</button></div>
+
+                <?php } ?>
+
+                <?php
+            } else {
+                echo "<br>";
+                echo "<h1 class='section_heading' style='text-align:center'>CAKED!</h1>";
+                echo "<h4 style='text-align:center'>The following input errors were detected:</h2>";
+                echo "<br>";
+                echo "<p>" . $emailerrorMsg . $useriderrorMsg . "</p>";
+                echo "<br>";
+                echo "<div class='form-group'>";
+                echo "<br>";
+                echo "<button onclick='history.back()' type='button' class='btn btn-danger btn-block' style='background-colour: red;' type='button'>Return to Sign Up</button>";
+                echo "</div>";
+            }
 
 //Helper function that checks input for malicious or unwanted content.
-                function sanitize_input($data) {
-                    $data = trim($data);
-                    $data = stripslashes($data);
-                    $data = htmlspecialchars($data);
-                    return $data;
-                }
+            function sanitize_input($data) {
+                $data = trim($data);
+                $data = stripslashes($data);
+                $data = htmlspecialchars($data);
+                return $data;
+            }
 
-                /*
-                 * Helper function to write the member data to the DB
-                 */
+            /*
+             * Helper function to write the member data to the DB
+             */
 
-                function deletefromdb() {
-                    global $email, $userid;
+            function deletefromdb() {
+                global $email, $userid;
 // Create database connection.
-                    //$config = parse_ini_file('../../private/db-config.ini');
-                    // $conn = new mysqli($config['servername'], $config['username'],
-                    //        $config['password'], $config['dbname']);
-                    $conn = OpenCon();
+                //$config = parse_ini_file('../../private/db-config.ini');
+                // $conn = new mysqli($config['servername'], $config['username'],
+                //        $config['password'], $config['dbname']);
+                $conn = OpenCon();
 // Check connection
-                    if ($conn->connect_error) {
-                        $errorMsg = "Connection failed: " . $conn->connect_error;
-                        $success = false;
-                    } else {
+                if ($conn->connect_error) {
+                    $errorMsg = "Connection failed: " . $conn->connect_error;
+                    $success = false;
+                } else {
 // Prepare the statement:
 // Bind & execute the query statements           
-                        $stmt = $conn->prepare("DELETE FROM fmembers WHERE memberID=? OR email=?");
-                        $stmt->bind_param('is', $userid, $email);
-                        if (!$stmt->execute()) {
-                            $errorMsg = "Execute failed: (" . $stmt->errno . ") " . $stmt->error;
-                            $success = false;
-                        }
-                        $stmt->close();
+                    $stmt = $conn->prepare("DELETE FROM fmembers WHERE memberID=? OR email=?");
+                    $stmt->bind_param('is', $userid, $email);
+                    if (!$stmt->execute()) {
+                        $errorMsg = "Execute failed: (" . $stmt->errno . ") " . $stmt->error;
+                        $success = false;
                     }
-                    $conn->close();
+                    $stmt->close();
                 }
-                ?>
-            </div>
-        </main>
-        <?php
-        include "footer.php";
-        ?>
-    </body>
+                $conn->close();
+            }
+            ?>
+        </div>
+    </main>
+    <?php
+    include "footer.php";
+    ?>
+</body>
 </html>
 
 

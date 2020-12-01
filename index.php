@@ -17,17 +17,41 @@ include 'sessiontest.php';
                 var button = document.getElementById("banner_button_right");
                 if (width >= 768) {
                     button.style.marginTop = "0px";
-                }
-                else if (width < 768) {
+                } else if (width < 768) {
                     button.style.marginTop = "1rem";
                     if (width === 767) {
                         button.style.width = "192px";
                     }
+                } else {
                 }
-                else {}
             }
         </script>
+        <Style>
+            .alert {
+                position: relative;
+                padding: .75rem 1.25rem;
+                margin-bottom: 0rem;
+                border: 1px solid transparent;
+                border-radius: .25rem;
+            }
+        </style>
     </head>
+    <?php
+    if (isset($_SESSION['verified'])) {
+        if ($_SESSION['verified'] == 0) {
+            ?>
+            <div class = "alert alert-warning alert-dismissible fade show" role = "alert">
+                <strong style='text-align: center'>You're about to get caked!</strong> Please verify your e-mail! Verifying your e-mail allows for password recovery!            <a href="settings.php" class="alert-link">Resend Verification E-mail</a>
+                <button type = "button" class = "close" data-dismiss = "alert" aria-label = "Close">
+                    <span aria-hidden = "true">&times;
+                    </span>
+                </button>
+            </div>
+            <?php
+        }
+    }
+    ?>
+
     <body onresize="check_width()">
         <div id="banner_image" class="jumbotron jumbotron-fluid" role="main">
             <div class="container center">

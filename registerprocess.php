@@ -182,66 +182,77 @@ require 'PHPMailer/src/SMTP.php';
 
 
                     echo "<br>";
-                    echo "<h1>Your registration is successful!</h1>";
-                    echo "<h2 style='text-decoration: none'>Amazing Cakes Await you!, $fname $lname</h2>";
+                    echo "<h1 class='section_heading' style='text-align:center'>Registration is successful!</h1>";
+                    echo "<br>";
+                    echo "<h4 style='text-align:center'>Amazing cakes await you!, $fname $lname</h2>";
+                    echo "<br>";
                     echo "<div class='form-group'>";
-                    ?> <button class='btn btn-success' onclick="window.location.href = 'login.php'" style='background-colour: green;' type='button'>Login Now!
-                        <?php
-                        echo "</div>";
+                    if (isset($_SESSION['role'])) {
+                        if ($_SESSION['role'] == 'Admin') {
+                            ?> <button class='btn btn-success btn-block' onclick="window.location.href = 'manageuser.php'" style='background-colour: green;' type='button'>Return to manage Users
+                            <?php
+                        }
                     } else {
-                        echo "<br>";
-                        echo "<h1>Oops!</h1>";
-                        echo "<h2 style='text-decoration: none'>The following input errors were detected:</h2>";
-                        echo "<p>" . $emailerrorMsg . $fnameerrorMsg . $addresserrorMsg . $contacterrorMsg . $lnameerrorMsg . $pwderrorMsg . $pcerrorMsg . $gendererrorMsg . $errorMsg . "</p>";
-                        echo "<div class='form-group'>";
-                        echo "<button onclick='history.back()' type='button' class='btn btn-danger' style='background-colour: red;' type='button'>Return to Sign Up</button>";
-                        echo "</div>";
-                    }
+                        ?> <button class='btn btn-success btn-block' onclick="window.location.href = 'login.php'" style='background-colour: green;' type='button'>Login Now!
+                                <?php
+                            }
+
+                            echo "</div>";
+                        } else {
+                            echo "<br>";
+                            echo "<h1 class='section_heading' style='text-align:center'>CAKED!</h1>";
+                            echo "<br>";
+                            echo "<h4 style='text-align:center'>The following input errors were detected:</h2>";
+                            echo "<p style='text-align:center'>" . $emailerrorMsg . $fnameerrorMsg . $addresserrorMsg . $contacterrorMsg . $lnameerrorMsg . $pwderrorMsg . $pcerrorMsg . $gendererrorMsg . $errorMsg . "</p>";
+                            echo "<div class='form-group'>";
+                            echo "<button onclick='history.back()' type='button' class='btn btn-danger btn-block' style='background-colour: red;' type='button'>Return to Sign Up</button>";
+                            echo "</div>";
+                        }
 
 //Helper function that checks input for malicious or unwanted content.
-                    function sanitize_input($data) {
-                        $data = trim($data);
-                        $data = stripslashes($data);
-                        $data = htmlspecialchars($data);
-                        return $data;
-                    }
+                        function sanitize_input($data) {
+                            $data = trim($data);
+                            $data = stripslashes($data);
+                            $data = htmlspecialchars($data);
+                            return $data;
+                        }
 
-                    /*
-                     * Helper function to write the member data to the DB
-                     */
+                        /*
+                         * Helper function to write the member data to the DB
+                         */
 
-                    function saveMemberToDB() {
-                        global $fname, $lname, $email, $pwd_hashed, $errorMsg, $success, $address, $contact, $role, $gender, $vkey;
+                        function saveMemberToDB() {
+                            global $fname, $lname, $email, $pwd_hashed, $errorMsg, $success, $address, $contact, $role, $gender, $vkey;
 // Create database connection.
-                        //$config = parse_ini_file('../../private/db-config.ini');
-                        // $conn = new mysqli($config['servername'], $config['username'],
-                        //        $config['password'], $config['dbname']);
-                        $conn = OpenCon();
+                            //$config = parse_ini_file('../../private/db-config.ini');
+                            // $conn = new mysqli($config['servername'], $config['username'],
+                            //        $config['password'], $config['dbname']);
+                            $conn = OpenCon();
 // Check connection
-                        if ($conn->connect_error) {
-                            $errorMsg = "Connection failed: " . $conn->connect_error;
-                            $success = false;
-                        } else {
+                            if ($conn->connect_error) {
+                                $errorMsg = "Connection failed: " . $conn->connect_error;
+                                $success = false;
+                            } else {
 // Prepare the statement:
 // Bind & execute the query statements           
-                            $stmt = $conn->prepare("INSERT INTO fmembers (fname, lname, email, password, address, contact, role, gender, vkey) VALUES (?,?,?,?,?,?,?,?,?)");
-                            $stmt->bind_param('sssssisss', $fname, $lname, $email, $pwd_hashed, $address, $contact, $role, $gender, $vkey);
-                            if (!$stmt->execute()) {
-                                $errorMsg = "Execute failed: (" . $stmt->errno . ") " . $stmt->error;
-                                $success = false;
+                                $stmt = $conn->prepare("INSERT INTO fmembers (fname, lname, email, password, address, contact, role, gender, vkey) VALUES (?,?,?,?,?,?,?,?,?)");
+                                $stmt->bind_param('sssssisss', $fname, $lname, $email, $pwd_hashed, $address, $contact, $role, $gender, $vkey);
+                                if (!$stmt->execute()) {
+                                    $errorMsg = "Execute failed: (" . $stmt->errno . ") " . $stmt->error;
+                                    $success = false;
+                                }
+                                $stmt->close();
                             }
-                            $stmt->close();
+                            $conn->close();
                         }
-                        $conn->close();
-                    }
-                    ?>
-            </div>
-        </main>
-        <?php
-        include "footer.php";
-        ?>
-    </body>
-</html>
+                        ?>
+                        </div>
+                        </main>
+                        <?php
+                        include "footer.php";
+                        ?>
+                        </body>
+                        </html>
 
 
 

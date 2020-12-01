@@ -6,7 +6,9 @@ include 'memberTraverseSecurity.php';
 <html lang = "en">
     <head>
         <?php
+        include 'navbar.php';
         include 'header.php';
+        
         ?>
         <title>Floured</title>
     </head>
@@ -28,8 +30,9 @@ include 'memberTraverseSecurity.php';
                            placeholder="Type 'yes' to confirm your deletion">            
                 </div>
                 <div>
-                    <button class="btn btn-primary mb1 bg-teal" type="submit">Confirm</button>   
+                    <button class="btn btn-info btn-block" type="submit">Confirm</button>   
                 </div>
+                <br>
             </form>
             
         </div>

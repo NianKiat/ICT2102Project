@@ -1,5 +1,5 @@
 
-
+<link rel="icon" type="image/png" href="images/favicon.ico"/>
 <!-- Bootstrap -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 
@@ -13,7 +13,7 @@
 <script src="https://kit.fontawesome.com/637efcbb1d.js" crossorigin="anonymous"></script>
 
 <link rel="stylesheet" href="css/main.css">
-<link rel="icon" type="image/png" href="images/cake.ico"/>
+
 <script src="js/main.js" type="text/javascript"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
