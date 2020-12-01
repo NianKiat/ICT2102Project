@@ -104,9 +104,6 @@ include 'sessiontest.php';
                             <div class="card-body">
                                 <a href="https://commons.wikimedia.org/wiki/File:Cake_Competition_(2).jpg">Image Source</a>
                                 <p class="card-text">Who said only wedding cakes can be stacked up tall? This cake is meant for large parties and it tastes as great as it looks.</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <small class="text-muted">9 mins</small>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -116,9 +113,6 @@ include 'sessiontest.php';
                             <div class="card-body">
                                 <a href="http://gebicakes.ru/">Image Source</a>
                                 <p class="card-text">A red cake made up of red roses for your special someone on a very special day. The best memories is created by the best cake.</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <small class="text-muted">9 mins</small>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -128,9 +122,6 @@ include 'sessiontest.php';
                             <div class="card-body">
                                 <a href="http://gebicakes.ru/">Image Source</a>
                                 <p class="card-text">The blue galaxy cake, coated with a thin layer of edible coating. The beauty of this cake is like its design, out of this world.</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <small class="text-muted">9 mins</small>
-                                </div>
                             </div>
                         </div>
                     </div>
