@@ -150,8 +150,8 @@ include 'sessiontest.php';
                         <div class="card mb-4 shadow-sm">
                             <img class="card-img-top card-thumbnail-img" src="images/cakes/Quad_Stacked_Cake.jpg" alt="Stacked Cake">
                             <div class="card-body">
-                                <a href="http://gebicakes.ru/">Image Source</a>
-                                <p class="card-text">A red cake made up of red roses for your special someone on a very special day. The best memories is created by the best cake.</p>
+                                <a href="https://commons.wikimedia.org/wiki/File:Cake_Competition_(2).jpg">Image Source</a>
+                                <p class="card-text">Who said only wedding cakes can be stacked up tall? This cake is meant for large parties and it tastes as great as it looks.</p>
                             </div>
                         </div>
                     </div>
@@ -159,8 +159,8 @@ include 'sessiontest.php';
                         <div class="card mb-4 shadow-sm">
                             <img class="card-img-top card-thumbnail-img" src="images/cakes/red_cake.jpg" alt="Red Rose Cake">
                             <div class="card-body">
-                                <a href="https://commons.wikimedia.org/wiki/File:Cake_Competition_(2).jpg">Image Source</a>
-                                <p class="card-text">Who said only wedding cakes can be stacked up tall? This cake is meant for large parties and it tastes as great as it looks.</p>
+                                <a href="http://gebicakes.ru/">Image Source</a>
+                                <p class="card-text">A red cake made up of red roses for your special someone on a very special day. The best memories is created by the best cake.</p>
                             </div>
                         </div>
                     </div>
