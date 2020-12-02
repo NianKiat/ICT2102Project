@@ -27,8 +27,8 @@ include 'sessiontest.php';
                     <br>
                     <br>
                     <br>
-                    <h1>Reset Password</h1>
-                    <p> 
+                    <h1 class="section_heading" style="text-align: center">Reset Password</h1>
+                    <p style="text-align: center"> 
                         Fill in the fields below to set a new password for your FLOURED account!     
                     </p> 
                     <form action="reset-password.inc.php" method="post">
@@ -45,9 +45,9 @@ include 'sessiontest.php';
                             <label for="pwd-repeat">Confirm Password:</label>  
                             <input class="form-control" required type="password" name="pwd-repeat" placeholder="Confirm new password">
                         </div>
-
+                        <br>
                         <div>
-                            <button class="btn btn-info button_forms" type="submit" name="reset-password-submit">Reset Password</button>
+                            <button class="btn btn-info button_forms btn-block" type="submit" name="reset-password-submit">Reset Password</button>
                         </div>
                     </form> 
                     <br>

@@ -70,7 +70,7 @@ include 'adminTraverseSecurity.php';
                     <br>
                     <label>
                         <input type="checkbox" required name="agree">
-                        Agree to terms and conditions
+                        By registering this user, you permit access to his/her information under the PDPA act.  
                     </label>
                 </div>
                 <br>
