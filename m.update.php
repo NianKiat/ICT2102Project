@@ -22,7 +22,7 @@ include 'adminTraverseSecurity.php';
                 <div class="form-group">
                     <label for="email">Email:</label>
                     <input class="form-control" type="email" id="email"
-                           name="email" placeholder="Enter email">
+                           name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="Enter email">
                 </div>
                 <br>
                 <h2 class="section_heading" style="text-align: center">OR</h2>
@@ -30,7 +30,7 @@ include 'adminTraverseSecurity.php';
                 <div class="form-group">
                     <label for="userid">User ID:</label>
                     <input class="form-control" type="text" id="userid"
-                           name="userid" placeholder="Enter User ID">
+                           name="userid" pattern="[0-9]{,8}" title="number characters only!" placeholder="Enter User ID">
                 </div>
 
                 <br>

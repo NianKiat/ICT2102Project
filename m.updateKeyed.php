@@ -133,12 +133,12 @@ function getUser() {
 
                                             <div class="form-group">
                                                 <label for="fname">First Name:</label>            
-                                                <input class="form-control" type="text" id="fname" name="fname"                   
+                                                <input class="form-control" type="text" id="fname" name="fname" pattern="[A-Za-z]{2,45}" title="2-45 Alphabetical Characters Only."                   
                                                        placeholder="Enter first name" value="<?php echo $thisfName ?>">            
                                             </div>
                                             <div class="form-group">
                                                 <label for="lname">Last Name:</label>             
-                                                <input class="form-control" type="text" id="lname" name="lname"                   
+                                                <input class="form-control" type="text" id="lname" name="lname" pattern="[A-Za-z]{2,45}" title="2-45 Alphabetical Characters Only."                  
                                                        required name="lname" placeholder="Enter last name" value="<?php echo $thislName ?>">             
                                             </div>
                                             <div class="form-group">
@@ -165,12 +165,12 @@ function getUser() {
                                     <div class="col">
                                         <div class="form-group">
                                             <label for="email">Email:</label>            
-                                            <input class="form-control" type="email" id="email" name="email"                   
+                                            <input class="form-control" type="email" id="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"                  
                                                    required name="email" placeholder="Enter email" value="<?php echo $thisemail ?>">            
                                         </div>
                                         <div class="form-group">
                                             <label for="contact">Contact:</label>            
-                                            <input class="form-control" type="contact" id="contact" name="contact"                   
+                                            <input class="form-control" type="contact" id="contact" name="contact" pattern="[0-9]{8}" title="8 number characters only!"                  
                                                    required name="number" placeholder="Enter contact" value="<?php echo $thiscontact ?>">            
                                         </div>
                                         <div class="form-group">

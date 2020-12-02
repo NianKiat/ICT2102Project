@@ -7,7 +7,7 @@ include 'sessiontest.php';
         include 'navbar.php';
         include "header.php";
         ?>
-        <script language="javascript">
+        <script>
 
             var m_strUpperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
             var m_strLowerCase = "abcdefghijklmnopqrstuvwxyz";
@@ -187,13 +187,13 @@ include 'sessiontest.php';
             <form action="registerprocess.php" method="post">            
                 <div class="form-group">
                     <label for="fname">First Name:</label>            
-                    <input class="form-control" type="text" id="fname" required name="fname"                   
+                    <input class="form-control" type="text" id="fname" required name="fname" pattern="[A-Za-z]{2,45}" title="2-45 Alphabetical Characters Only."                  
                            placeholder="Enter first name">            
                 </div>
                 <div class="form-group">
                     <label for="lname">Last Name:</label>             
                     <input class="form-control" type="text" id="lname" name="lname"                   
-                           required name="lname" placeholder="Enter last name">             
+                           required name="lname" pattern="[A-Za-z]{2,45}" title="2-45 Alphabetical Characters Only." placeholder="Enter last name">             
                 </div>
                 <div class="form-group">
                     <p>Please select your gender:</p>
@@ -201,17 +201,17 @@ include 'sessiontest.php';
                     <label for="male">Male</label><br>
                     <input type="radio" id="female" name="gender" value="Female">
                     <label for="female">Female</label><br>
-                         
+
                 </div>
                 <div class="form-group">
                     <label for="email">Email:</label>            
                     <input class="form-control" type="email" id="email" name="email"                   
-                           required name="email" placeholder="Enter email">            
+                           pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title='Use Proper E-mail Format!' required name="email" placeholder="Enter email">            
                 </div>
                 <div class="form-group">
                     <label for="contact">Contact:</label>            
                     <input class="form-control" type="contact" id="contact" name="contact"                   
-                           required name="number" placeholder="Enter contact">            
+                           required pattern="[0-9]{8}" title="8 number characters only!" name="number" placeholder="Enter contact">            
                 </div>
                 <div class="form-group">
                     <label for="address">Address:</label>            
@@ -238,14 +238,15 @@ include 'sessiontest.php';
                         </tr>
                     </table>
                     <input class="form-control" type="password" id="pwd" onkeyup="return checkPwdStrength();"                 
-                           required name="pwd" placeholder="Enter password">             
+                           required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                           title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters" name="pwd" placeholder="Enter password">             
                 </div>
                 <div class="form-group">
                     <label for="pwd_confirm">Confirm Password:</label>            
                     <input class="form-control" type="password" id="pwd_confirm"                   
                            required name="pwd_confirm" placeholder="Confirm password">            
                 </div>
-                
+
                 <div class="form-check" style="padding-left:0px!important;">
                     <label>                
                         <input type="checkbox" name="agree" required name="agree">                
