@@ -4,10 +4,8 @@ include 'sessiontest.php';
 include 'memberTraverseSecurity.php';
 ?>
 
-
 <!DOCTYPE html>
 <html lang = "en">
-
     <head>
         <?php
         include 'navbar.php';
@@ -15,15 +13,9 @@ include 'memberTraverseSecurity.php';
         ?>
         <title>Floured</title>
     </head>
-
     <body class="skin-light">
-        <br>
-        <br>
-
     </header>
     <!--Main Navigation-->
-
-
     <!--Main layout-->
     <main>
 
@@ -41,26 +33,18 @@ include 'memberTraverseSecurity.php';
         <div class="jumbotron color-grey-light mt-70">
             <div class="d-flex align-items-center h-100">
                 <div class="container text-center py-1">
-                    <h2 class="mb-0"><strong>Shopping Cart</strong></h2>
+                    <h1 class="mb-0"><strong>Shopping Cart</strong></h1>
                 </div>
             </div>
         </div>
-
         <div class="container" id="mydiv">
-
             <!--Section: Block Content-->
             <section class="mt-5 mb-4">
-
                 <!--Grid row-->
                 <div class="row">
-
                     <!--Grid column-->
                     <div class="col-lg-8">
-
                         <!-- Card -->
-
-
-                        <h5 class="mb-4">Shopping Cart items:</h5>
                         <?php
                         while ($row = mysqli_fetch_array($result)) {
                             ?>
@@ -76,29 +60,24 @@ include 'memberTraverseSecurity.php';
                                             <div>
                                                 <div class="d-flex justify-content-between">
                                                     <div>
-                                                        <h5><?php echo $row["name"]; ?></h5>
+                                                        <p><b><?php echo $row["name"]; ?></b></p>
                                                         <p class="mb-2 text-muted text-uppercase small"><?php echo "Dimension: " . $row["dimension"]; ?></p>
                                                     </div>
                                                     <div>
                                                         <div>
-                                                            <button type="submit" name="increase" id="increase" class="fa fa-plus" onclick="increaseAjax(<?php echo $row["cartid"]; ?>,<?php echo $row["quantity"]; ?>)"
+                                                            <button type="submit" class="fa fa-plus" onclick="increaseAjax(<?php echo $row["cartid"]; ?>,<?php echo $row["quantity"]; ?>)"
                                                                     style="border-color:transparent; background-color:transparent; float:right; height:30px"></button>
-
-                                                            <input onchange="updateAjax(<?php echo $row["cartid"]; ?>, this.value)" min="0" id="quantity" name="quantity" value="<?php echo $row["quantity"]; ?>" 
+                                                            <input onchange="updateAjax(<?php echo $row["cartid"]; ?>, this.value)" min="0" value="<?php echo $row["quantity"]; ?>" 
                                                                    type="number" style="text-align:center; width:50%; float:right; height:30px">
-
-                                                            <button type="submit" name="decrease" id="decrease" class="fa fa-minus" onclick="decreaseAjax(<?php echo $row["cartid"]; ?>,<?php echo $row["quantity"]; ?>)"
+                                                            <button type="submit" class="fa fa-minus" onclick="decreaseAjax(<?php echo $row["cartid"]; ?>,<?php echo $row["quantity"]; ?>)"
                                                                     style="border-color:transparent; background-color:transparent; float:right; height:30px" ></button>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="d-flex justify-content-between align-items-center">
                                                     <div>
-
                                                         <button style="border-color:transparent; background-color:transparent; color:blue;" id="deleteItem" name="deleteItem" type="submit" class="card-link-secondary small text-uppercase mr-3" 
                                                                 onclick="deleteAjax(<?php echo $row["cartid"]; ?>)" ><i class="fas fa-trash-alt mr-1" ></i>Remove Item</button>
-
-
                                                     </div>
                                                     <p class="mb-0"><span><strong>$ <?php echo $row["price"]; ?></strong></span></p>
                                                 </div>
@@ -157,30 +136,20 @@ include 'memberTraverseSecurity.php';
                         </script>
                         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
                         <!-- Card -->
-
-                        <!-- Card -->
-                        <!-- Card -->
-
-                        <!-- Card -->
                         <div class="card mb-4">
                             <div class="card-body">
-                                <h5 class="mb-4">We accept</h5>
-                                <img class="img-responsive cc-img" src="http://www.prepbootstrap.com/Content/images/shared/misc/creditcardicons.png" width='200px'>
+                                <div class="mb-4"><b>We accept</b></div>
+                                <img alt="Credit card options" class="img-responsive cc-img" src="http://www.prepbootstrap.com/Content/images/shared/misc/creditcardicons.png" width='200'>
                             </div>
                         </div>
                         <!-- Card -->
-
                     </div>
                     <!--Grid column-->
-
-                    <!--Grid column-->
                     <div class="col-lg-4">
-
                         <!-- Card -->
                         <div class="card mb-4">
                             <div class="card-body">
-
-                                <h5 class="mb-3">Total amount:</h5>
+                                <div class="mb-3"><b>Total amount:</b></div>
                                 <?php
                                 $sql = "SELECT name, (price*quantity) AS tPrice FROM shoppingcart WHERE memberid = " . $_SESSION['memberID'];
                                 $result = $conn->query($sql);
@@ -212,26 +181,20 @@ include 'memberTraverseSecurity.php';
                                     </li>
                                 </ul>
                                 <form action="payment.php" method="POST">
-                                    <button type="submit" class="btn btn-primary btn-block waves-effect waves-light">Checkout</button>
+                                    <button type="submit" class="btn btn-primary btn-block waves-effect waves-light" style="background-color: darkblue">Checkout</button>
                                 </form>
                             </div>
                         </div>
                     </div>
                     <!--Grid column-->
-
                 </div>
                 <!--Grid row-->
-
             </section>
             <!--Section: Block Content-->
-
         </div>
-
-
     </main>
     <!--Main layout-->
 </body>
-
 <?php
 include 'footer.php';
 ?>
