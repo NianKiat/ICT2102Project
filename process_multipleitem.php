@@ -94,7 +94,7 @@ require 'dbconfig.php';
                 }
 
                 function processDB($type) {
-                    global $type, $price, $discount, $cakeid, $avaialbility;
+                    global $type, $price, $discount, $cakeid, $availability;
                     $conn = OpenCon();
                     if ($conn->connect_error) {
                         $errorMsg = "Connection failed: " . $conn->connect_error;
@@ -111,7 +111,7 @@ require 'dbconfig.php';
                                 break;
                             case 'availability':
                                 $stmt = $conn->prepare("UPDATE catalogue SET availability=? WHERE cakeid IN (" . $cakeid . ")");
-                                $rc = $stmt->bind_param("s", $avaialbility);
+                                $rc = $stmt->bind_param("s", $availability);
                                 break;
                             case 'delete';
                                 $stmt = $conn->prepare("DELETE FROM catalogue WHERE cakeid IN (" . $cakeid . ")");
