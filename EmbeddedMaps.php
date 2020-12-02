@@ -3,8 +3,8 @@
 <html lang = "en">
     <head>
         <?php
-        include 'navbar.php';
         include 'header.php';
+        include 'navbar.php';
         ?>
         <title>Store Information</title>
         <noscript>
