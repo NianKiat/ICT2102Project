@@ -27,13 +27,16 @@
                 var image = document.getElementById("myDIV");
                 var map = document.getElementById("map-div");
                 var button = document.getElementById("toggle");
+                var map1 = document.getElementById("map-div1");
                 if (width < 992) {
                     map.style.display = "none";
                     image.style.display = "none";
-                    button.style.display = "none";                    
+                    button.style.display = "none";
+                    map1.style.display = "initial";
                 }
                 else {
                     button.style.display = "initial";
+                    map1.style.display = "none";
                     if (image.style.display === "initial") {
                         // do nothing.
                     }
@@ -378,6 +381,7 @@
                 var map = document.getElementById("map-div");
                 var map1 = document.getElementById("map-div1");
                 if (width >= 992) {
+                    alert("here");
                     if (firstloop === true) {
                         image.style.display = "none";
                         map.style.display = "initial";
@@ -390,16 +394,25 @@
                       map.style.display = "none";
                       map1.style.display = "none";
                       onmaps = false;
-                    } else {
+                    } 
+                    
+                    else if (map.style.display === "none") {
                       image.style.display = "none";
                       map.style.display = "initial";
-                      map1.style.display = "initial";
-                      onmaps = true;
+                      map1.style.display = "none";
+                      onmaps = false;
+                    }
+                    
+                    else {
+                      image.style.display = "initial";
+                      map.style.display = "none";
+                      map1.style.display = "none";
+                      onmaps = false;
                     }
                 }
                 else {
-                    map.style.display = "false";
-                    map1.style.display = "false";
+                    map.style.display = "none";
+                    map1.style.display = "initial";
                 }
             };
         </script>
