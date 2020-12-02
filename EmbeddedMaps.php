@@ -127,7 +127,7 @@
                 }
                 
                 #gmap_canvas {
-                    width:540px; height:562px;
+                    width:540px; height:586px;
                 }
                 
                 #myDIV {
@@ -271,7 +271,7 @@
                                         <span class="left bold" style="color:maroon;">Order Hotline:</span> 
                                         <span class="right bold" style="color:maroon;"> +65 6592 2589</span>
                                         <span class="spacing"> &nbsp; </span>
-                                        <span class="mobile bold"> +65 6592 2589</span>
+                                        <span class="mobile bold" style="color:maroon;"> +65 6592 2589</span>
                                         <span class="mobile_spacing"> &nbsp; </span>
                                         <!--<span class="center_space"> &nbsp; </span>-->
 
@@ -309,7 +309,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div id="map_col" class="col-lg-6 d-flex justify-content-center">
+                        <aside id="map_col" class="col-lg-6 d-flex justify-content-center">
                             <div id="map-div" class="mapouter">
                                 <!--<p id="nomaps_text" style="padding-top:5rem;"> Please enable Javascript to view our Maps.</p>-->
                                 <div id="map_canvas" class="gmap_canvas">
@@ -327,7 +327,7 @@
                             <div id="myDIV">
                                 <!-- leave this empty! -->
                             </div>
-                        </div>
+                        </aside>
                     </div>
                     <br id="picmobile_break mobile-only">
                     <div class="row mobile-only">
