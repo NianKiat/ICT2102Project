@@ -137,7 +137,7 @@ function sort_items() {
 //functions to add items after sorting
 function add_item(key, val) {
     var img_str = "<img src='" + val.imgurl + "' class=mini_thumbnail alt='" + val.name + " thumbnail'/>";
-    var check_box = "<input type='checkbox' class='checkbox_item' value='" + Object.keys(data_all)[key] + "'/>";
+    var check_box = "<label for='checkbox_"+ Object.keys(data_all)[key] +"'></label><input id='checkbox_" + Object.keys(data_all)[key] + "' name='checkbox_" + Object.keys(data_all)[key] + "' type='checkbox' class='checkbox_item' value='" + Object.keys(data_all)[key] + "'/>";
     var button_edit = "<a href='m.edititem.php?cakeid=" + Object.keys(data_all)[key] + "' class='btn btn-dark'>edit</a>";
     return ("<tr><td>" + img_str + "</td><td>" + val.name + "</td><td>" +
             val.price + "</td><td>" + val.discount + "</td><td>" +
@@ -254,12 +254,13 @@ function toggle(type) {
                 break;
             case "Delete":
                 title.innerHTML = "Deletion";
-                description.innerHTML = "deleting " + selected.length + "item(s).";
                 label.style.display = "none";
                 input.style.display = "none";
                 dropdown.style.display = "none";
-                warning.innerHTML = "WARNING: items can be set to disabled. However, deleting is permanent and is not reversible.";
+                warning.innerHTML = "WARNING: Item availability can be set to disabled. <br>However, deleting is permanent and is not reversible.";
+                description.innerHTML = "Confirm deletion of " + selected.length + "item(s)?";
                 btn_submit.setAttribute("class",'float-right btn btn-danger');
+                break;
             case "Availability":
                 title.innerHTML = "Availability";
                 description.innerHTML = "updating availability of " + selected.length + " item(s).";
