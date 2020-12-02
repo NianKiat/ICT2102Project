@@ -37,6 +37,7 @@ include 'adminTraverseSecurity.php';
                     <button class="btn button_forms btn-info btn-block" type="submit">Delete</button>
                 </div>
                 <br>
+            </form>
         </main>
     </body>
     <?php

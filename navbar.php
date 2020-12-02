@@ -4,14 +4,14 @@
         <?php
         if (isset($_SESSION['fname'])) {
             if ($_SESSION['role'] == 'Admin') {
-                echo "<img src='images/favicon.ico' width='30'height='30' class='d-inline-block align-top' alt='' loading='lazy'>";
+                echo "<img src='images/favicon.ico' width='30' height='30' class='d-inline-block align-top' alt='' loading='lazy'>";
                 echo " Floured! Admin";
             } else {
-                echo "<img src='images/favicon.ico' width='30'height='30' class='d-inline-block align-top' alt='' loading='lazy'>";
+                echo "<img src='images/favicon.ico' width='30' height='30' class='d-inline-block align-top' alt='' loading='lazy'>";
                 echo " Floured!";
             }
         } else {
-            echo "<img src='images/favicon.ico' width='30'height='30' class='d-inline-block align-top' alt='' loading='lazy'>";
+            echo "<img src='images/favicon.ico' width='30' height='30' class='d-inline-block align-top' alt='' loading='lazy'>";
             echo " Floured!";
         }
         ?>

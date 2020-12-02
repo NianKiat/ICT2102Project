@@ -75,7 +75,7 @@ include 'memberTraverseSecurity.php';
                     echo "<h2 style='text-align:center'>Password has been changed.</h2>";
                     echo "<br>";
                     echo "<div class='form-group'>";
-                    ?> <button class='btn btn-info button_forms btn-lg btn-block' onclick="window.location.href = 'index.php'" style='background-colour: green;' type='button'>Redirect me to home!
+                    ?> <button class='btn btn-info button_forms btn-lg btn-block' onclick="window.location.href = 'index.php'">Redirect me to home!</button>
                         <?php
                         echo "</div>";
                     } else {

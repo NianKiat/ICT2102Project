@@ -5,8 +5,9 @@ if (isset($_SESSION['fname'])) {
     die();
 }
 ?>
+<!DOCTYPE html>
 <html lang="en">
-    <div class="wrapper">
+
     <head>
         <?php
         include 'navbar.php';
@@ -17,14 +18,6 @@ if (isset($_SESSION['fname'])) {
     <body>    
         <br>
         <br>
-        <style>
-            .wrapper {
-                min-height: 100%;
-                display: grid;
-                grid-template-rows: auto 1fr auto;
-            }
-
-        </style>
         <main class="container">        
             <h1 class="section_heading" style="margin-bottom:0px;">Member Login</h1>
             <p class="subtext" style="color: black"> 
@@ -34,7 +27,7 @@ if (isset($_SESSION['fname'])) {
                 <div class="form-group">
                     <label for="email">Email:</label>            
                     <input class="form-control" type="email" id="email" name="email"                   
-                           required name="email" placeholder="Enter email">            
+                           required placeholder="Enter email">            
                 </div>
                 <div class="form-group ">
                     <label for="pwd">Password:</label>            
@@ -48,9 +41,9 @@ if (isset($_SESSION['fname'])) {
                     <br>
                     <?php
                     if (isset($_GET["newpwd"])) {
-                        if ($_GET["newpwd"] == "passwordupdated") {
-                            echo '<h2 style="color: green;">Your password has been reset!</h2>';
-                        }
+                        if ($_GET["newpwd"] == "passwordupdated") { ?>
+                            <h2 style="color: green;">Your password has been reset!</h2>
+                      <?php  }
                     }
                     ?>
                     <a style="color: black" href ="reset-password.php"><strong>Forgot your password?</strong></a>
@@ -60,7 +53,7 @@ if (isset($_SESSION['fname'])) {
         </main>    
 
     </body><?php
-include "footer.php";
-?>
-    </div>
+    include "footer.php";
+    ?>
+
 </html>
