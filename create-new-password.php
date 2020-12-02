@@ -37,18 +37,21 @@ include 'sessiontest.php';
 
                         <div class="form-group">
                             <label for="pwd">New Password:</label>  
-                            <input class="form-control" type="password" name="pwd" placeholder="Enter a new password">
+                            <input class="form-control" required type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                           title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters"  name="pwd" placeholder="Enter a new password">
                         </div>
 
                         <div class="form-group">
                             <label for="pwd-repeat">Confirm Password:</label>  
-                            <input class="form-control" type="password" name="pwd-repeat" placeholder="Confirm new password">
+                            <input class="form-control" required type="password" name="pwd-repeat" placeholder="Confirm new password">
                         </div>
 
                         <div>
-                            <button class="btn btn-dark" type="submit" name="reset-password-submit">Reset Password</button>
+                            <button class="btn btn-info button_forms" type="submit" name="reset-password-submit">Reset Password</button>
                         </div>
                     </form> 
+                    <br>
+                    <br>
 
 
 

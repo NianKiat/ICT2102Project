@@ -191,7 +191,8 @@ include 'memberTraverseSecurity.php';
                                                     </td>
                                                 </tr>
                                             </table>
-                                            <input class="form-control" type="password" id="pwd" onkeyup="return checkPwdStrength();"                 
+                                            <input class="form-control" type="password" id="pwd" onkeyup="return checkPwdStrength();" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                           title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters"                
                                                    required name="pwd" placeholder="Enter new password">             
                                             <br>
                                             <div class="form-group">

@@ -21,12 +21,12 @@ include 'adminTraverseSecurity.php';
                 <div class="form-group">
                     <label for="fname">First Name:</label>
                     <input class="form-control" type="text" id="fname" 
-                           minlength="1" maxlength="45" name="fname" placeholder="Enter first name">
+                           minlength="1" maxlength="45" pattern="[A-Za-z]{2,45}" title="2-45 Alphabetical Characters Only." name="fname" placeholder="Enter first name">
                 </div>
                 <div class="form-group">
                     <label for="lname">Last Name:</label>
                     <input class="form-control" type="text" id="lname" required
-                           minlength="1" maxlength="45" name="lname" placeholder="Enter last name">
+                           minlength="1" maxlength="45" pattern="[A-Za-z]{2,45}" title="2-45 Alphabetical Characters Only." name="lname" placeholder="Enter last name">
                 </div>
                 <div class="form-group">
                     <p>Please select your gender:</p>
@@ -39,11 +39,11 @@ include 'adminTraverseSecurity.php';
                 <div class="form-group">
                     <label for="email">Email:</label>
                     <input class="form-control" type="email" id="email" required
-                           name="email" placeholder="Enter email">
+                           name="email"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="Enter email">
                 </div>
                 <div class="form-group">
                     <label for="contact">Contact:</label>            
-                    <input class="form-control" type="number" id="contact" name="contact"                   
+                    <input class="form-control" type="number" id="contact" name="contact" pattern="[0-9]{8}" title="8 number characters only!"                 
                            required placeholder="Enter contact">            
                 </div>
                 <div class="form-group">
@@ -54,7 +54,8 @@ include 'adminTraverseSecurity.php';
                 <div class="form-group">
                     <label for="pwd">Password:</label>
                     <input class="form-control" type="password" id="pwd" required
-                           name="pwd" placeholder="Enter password">
+                           name="pwd" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                           title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters" placeholder="Enter password">
                 </div>
                 <div class="form-group">
                     <label for="pwd_confirm">Confirm Password:</label>

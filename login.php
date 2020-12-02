@@ -26,7 +26,7 @@ if (isset($_SESSION['fname'])) {
             <form action="loginprocess.php" method="post">            
                 <div class="form-group">
                     <label for="email">Email:</label>            
-                    <input class="form-control" type="email" id="email" name="email"                   
+                    <input class="form-control" type="email" id="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"                 
                            required placeholder="Enter email">            
                 </div>
                 <div class="form-group ">
@@ -48,6 +48,8 @@ if (isset($_SESSION['fname'])) {
                     ?>
                     <a style="color: black" href ="reset-password.php"><strong>Forgot your password?</strong></a>
                 </div>
+                <br>
+                <br>
 
             </form>    
         </main>    

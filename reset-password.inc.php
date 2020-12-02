@@ -1,5 +1,4 @@
 <?php
-
 if (isset($_POST["reset-password-submit"])) {
 
     $selector = $_POST["selector"];
@@ -16,7 +15,7 @@ if (isset($_POST["reset-password-submit"])) {
         $success = false;
         $pcerrorMsg = 'Passwords do not Match!<br>';
     }
-    
+
     $currentDate = date("U");
 
     require 'dbconfig.php';
@@ -85,6 +84,36 @@ if (isset($_POST["reset-password-submit"])) {
                 }
             }
         }
+    } else if (!$success) {
+        ?>
+        <!DOCTYPE html>
+        <html lang = "en">
+            <head>
+                <?php
+                include 'header.php';
+                ?>
+                <title>Floured Unsuccessful</title>
+            </head>
+            <body>
+                <?php include "navbar.php"; ?>
+                <main class="container"> <?php
+                    echo "<br>";
+                    echo "<h1 class='section_heading' style='text-align:center'>CAKED!</h1>";
+                    echo "<br>";
+                    echo "<h2 style='text-align:center'>" . $pcerrorMsg . "</h2>";
+                    echo "<br>";
+                    echo "<div class='form-group'>";
+                    echo "<button onclick='history.back()' type='button' class='btn button_forms btn-info btn-block'>Go Back</button>";
+                    echo "</div>";
+                    echo "<br>";
+                    ?>
+                </main>
+            </body>
+            <?php
+            include 'footer.php';
+            ?>
+        </html>
+        <?php
     }
 } else {
     header("Location: index.php");

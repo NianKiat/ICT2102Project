@@ -72,8 +72,8 @@
                     echo "<br>";
                     echo "<h1 class='section_heading' style='text-align:center'>CAKED!</h1>";
                     echo "<br>";
-                    echo "<h2 style='text-align:center'>The following input errors were detected:</h2>";
-                    echo "<p style='text-align:center'>" . $errorMsg . "</p>";
+                    echo "<h2 style='text-align:center'>". $errorMsg ."</h2>";
+                    echo "<br>";
                     echo "<div class='form-group'>";
                     echo "<button onclick='history.back()' type='button' class='btn button_forms btn-info btn-lg btn-block'>Go Back</button>";
                     echo "</div>";
@@ -132,11 +132,11 @@
                             if (!password_verify($_POST["pwd"], $pwd_hashed)) {
 // Don't be too specific with the error message - hackers don't
 // need to know which one they got right or wrong. :)
-                                $errorMsg = "Email not found or password doesn't match...";
+                                $errorMsg = "Invalid E-mail/Password.";
                                 $success = false;
                             }
                         } else {
-                            $errorMsg = "Email not found or password doesn't match...";
+                            $errorMsg = "Invalid E-mail/Password.";
                             $success = false;
                         }
                         $stmt->close();

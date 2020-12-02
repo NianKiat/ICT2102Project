@@ -26,7 +26,7 @@ include 'memberTraverseSecurity.php';
 
                     <div class="form-group">
                         <label for="confirmdelete">Confirm Deletion of Account:</label>            
-                        <input class="form-control" type="text" id="confirmdelete" name="confirmdelete"                   
+                        <input class="form-control" type="text" id="confirmdelete" name="confirmdelete" pattern="[A-Za-z]{3}" title="Please input 'yes' if you wish to confirm."                  
                                placeholder="Type 'yes' to confirm your deletion">            
                     </div>
                     <br>

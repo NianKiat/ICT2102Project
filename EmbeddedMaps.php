@@ -1,5 +1,6 @@
 <?php include 'sessiontest.php';?>
-<html>
+<!DOCTYPE html>
+<html lang = "en">
     <head>
         <?php
         include 'navbar.php';
@@ -50,7 +51,7 @@
             #gmap_canvas {width:540px; height:490px;}
             #gmap_canvas_mobile {display:none;}
             #map_col {padding-right:0px;}
-            #locator_canvas {}
+            iframe { border: none; overflow:hidden; margin:0px;}
             #contact_us{padding-left: 15px; margin-top: 15px; margin-bottom:15px;}
             .center{text-align: center;}
             .grey_background{background-color: red;}
@@ -107,9 +108,6 @@
                 span.right {
                     display: none;
                 }
-                span.spacing {
-                    display: none;
-                }
                 span.left {
                     display: flex;
                     justify-content: center;
@@ -119,6 +117,9 @@
                     display: flex;
                     justify-content: center;
                     width: 100%;
+                }
+                span.spacing {
+                    display: none;
                 }
                 span.mobile_spacing {
                     display: flex;
@@ -252,7 +253,7 @@
                     height:400px;
                 }
             }​
-        </style>
+        </style>    
     </head>
     
     <body onresize="check_width_and_clear_img()">
@@ -269,22 +270,22 @@
                                 <div id="outer_wrapper">
 <!-- accessibility main -->         <div id="wrapper" role="main">
                                         <span class="left bold" style="color:maroon;">Order Hotline:</span> 
-                                        <span class="right bold" style="color:maroon;"> +65 6592 2589</span>
+                                        <span class="right bold" style="color:maroon;"> +65 6592 1004</span>
                                         <span class="spacing"> &nbsp; </span>
-                                        <span class="mobile bold"> +65 6592 2589</span>
+                                        <span class="mobile bold" style="color:maroon;"> +65 6592 1004</span>
                                         <span class="mobile_spacing"> &nbsp; </span>
                                         <!--<span class="center_space"> &nbsp; </span>-->
 
                                         <span class="left"> General Enquiries: </span> 
-                                        <span class="right"> +65 6550 1674 </span>
+                                        <span class="right"> +65 6550 1004 </span>
                                         <span class="spacing"> &nbsp; </span>
-                                        <span class="mobile"> +65 6550 1674 </span>
+                                        <span class="mobile"> +65 6550 1004 </span>
                                         <span class="mobile_spacing"> &nbsp; </span>
                                         <!--<span class="center_space"> &nbsp; </span>-->
 
                                         <span class="left"> Business Email: </span> 
                                         <span class="right"> <a href="mailto:contact@floured.co" style="color:darkblue;">contact@floured.co</a> </span>
-                                        <span class="mobile"> <a href="mailto:contact@floured.co" style="color:darkblue;">contact@floured.co</a> </span>;
+                                        <span class="mobile"> <a href="mailto:contact@floured.co" style="color:darkblue;">contact@floured.co</a> </span>
                                         <!--<span class="center_space"> &nbsp; </span>-->
                                     </div>
                                 </div>
@@ -313,13 +314,13 @@
                             <div id="map-div" class="mapouter">
                                 <!--<p id="nomaps_text" style="padding-top:5rem;"> Please enable Javascript to view our Maps.</p>-->
                                 <div id="map_canvas" class="gmap_canvas">
-                                    <iframe id="gmap_canvas" src="https://maps.google.com/maps?q=sit%20nyp&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+                                    <iframe id="gmap_canvas" src="https://maps.google.com/maps?q=sit%20nyp&t=&z=15&ie=UTF8&iwloc=&output=embed">
                                     </iframe>
                                 </div>
                             </div>
-                            <div id="map-div" class="mapouter_mobile">
+                            <div id="map-div1" class="mapouter_mobile">
                                 <div class="gmap_canvas_mobile">
-                                    <iframe id="gmap_canvas_mobile" src="https://maps.google.com/maps?q=sit%20nyp&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+                                    <iframe id="gmap_canvas_mobile" src="https://maps.google.com/maps?q=sit%20nyp&t=&z=15&ie=UTF8&iwloc=&output=embed">
                                     </iframe>
                                 </div>
                                 <br>
@@ -329,7 +330,7 @@
                             </div>
                         </div>
                     </div>
-                    <br id="picmobile_break mobile-only">
+                    <br class="mobile-only">
                     <div class="row mobile-only">
                         <div class="container" style="text-align:center;">
                             <h1 class="jumbotron-heading section_heading">our shopfront</h1>
@@ -375,25 +376,30 @@
                 width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
                 var image = document.getElementById("myDIV");
                 var map = document.getElementById("map-div");
+                var map1 = document.getElementById("map-div1");
                 if (width >= 992) {
                     if (firstloop === true) {
                         image.style.display = "none";
                         map.style.display = "initial";
+                        map1.style.display = "initial";
                         onmaps = true;
                         firstloop = false;
                     }
                     if (image.style.display === "none") {
                       image.style.display = "initial";
                       map.style.display = "none";
+                      map1.style.display = "none";
                       onmaps = false;
                     } else {
                       image.style.display = "none";
                       map.style.display = "initial";
+                      map1.style.display = "initial";
                       onmaps = true;
                     }
                 }
                 else {
                     map.style.display = "false";
+                    map1.style.display = "false";
                 }
             };
         </script>

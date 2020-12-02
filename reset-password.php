@@ -23,11 +23,11 @@ include 'sessiontest.php';
             <form action="reset-request.inc.php" method="post">            
                 <div class="form-group">
                     <label for="email">Email:</label>            
-                    <input class="form-control" type="text" id="email" name="email"                   
+                    <input class="form-control" type="text" id="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"                  
                            required name="email" placeholder="Enter your e-mail adress">   
                 </div>
                 <div>
-                    <button class="btn btn-dark" name="reset-request-submit" type="submit">Receive new password by e-mail</button>   
+                    <button class="btn btn-info button_forms" name="reset-request-submit" type="submit">Receive new password by e-mail</button>   
                 </div>
                 <br>
             </form>   
