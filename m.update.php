@@ -35,7 +35,7 @@ include 'adminTraverseSecurity.php';
 
                 <br>
                 <div class="form-group">
-                    <button class="btn btn-info button_forms" type="submit">Submit</button>
+                    <button class="btn btn-info button_forms btn-block" type="submit">Submit</button>
                 </div>
             </form>
         </main>
