@@ -108,9 +108,6 @@
                 span.right {
                     display: none;
                 }
-                span.spacing {
-                    display: none;
-                }
                 span.left {
                     display: flex;
                     justify-content: center;
@@ -120,6 +117,9 @@
                     display: flex;
                     justify-content: center;
                     width: 100%;
+                }
+                span.spacing {
+                    display: none;
                 }
                 span.mobile_spacing {
                     display: flex;
@@ -270,22 +270,22 @@
                                 <div id="outer_wrapper">
 <!-- accessibility main -->         <div id="wrapper" role="main">
                                         <span class="left bold" style="color:maroon;">Order Hotline:</span> 
-                                        <span class="right bold" style="color:maroon;"> +65 6592 2589</span>
+                                        <span class="right bold" style="color:maroon;"> +65 6592 1004</span>
                                         <span class="spacing"> &nbsp; </span>
-                                        <span class="mobile bold"> +65 6592 2589</span>
+                                        <span class="mobile bold" style="color:maroon;"> +65 6592 1004</span>
                                         <span class="mobile_spacing"> &nbsp; </span>
                                         <!--<span class="center_space"> &nbsp; </span>-->
 
                                         <span class="left"> General Enquiries: </span> 
-                                        <span class="right"> +65 6550 1674 </span>
+                                        <span class="right"> +65 6550 1004 </span>
                                         <span class="spacing"> &nbsp; </span>
-                                        <span class="mobile"> +65 6550 1674 </span>
+                                        <span class="mobile"> +65 6550 1004 </span>
                                         <span class="mobile_spacing"> &nbsp; </span>
                                         <!--<span class="center_space"> &nbsp; </span>-->
 
                                         <span class="left"> Business Email: </span> 
                                         <span class="right"> <a href="mailto:contact@floured.co" style="color:darkblue;">contact@floured.co</a> </span>
-                                        <span class="mobile"> <a href="mailto:contact@floured.co" style="color:darkblue;">contact@floured.co</a> </span>;
+                                        <span class="mobile"> <a href="mailto:contact@floured.co" style="color:darkblue;">contact@floured.co</a> </span>
                                         <!--<span class="center_space"> &nbsp; </span>-->
                                     </div>
                                 </div>
