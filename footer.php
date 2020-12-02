@@ -1,8 +1,9 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
-        <style type="text/css">
+        <style>
             footer .fa:hover {
                 /* Start the shake animation and make the animation last for 0.5 seconds */
                 animation: shake 0.7s;
@@ -26,18 +27,17 @@
                 90% { transform: translate(1px, 2px) rotate(0deg); }
                 100% { transform: translate(1px, -2px) rotate(-1deg); }
             }
-        </style>
-    </head>
-    <body>
 
-        <!-- Copyright -->
-        <style>
             footer.page-footer .footer-copyright {
                 overflow: hidden;
                 color: #FFFFFF;
                 background-color: #0B505B;
             }
         </style>
+        <title>Footer</title>
+    </head>
+    <body>
+
         <footer class="page-footer font-small blue">
             <div class="footer-copyright text-center py-3">
 
@@ -54,9 +54,8 @@
                 </ul>
             </div>
         </footer>
-        <!-- Copyright -->
-    </div>
 
 
-</body>
+
+    </body>
 </html>

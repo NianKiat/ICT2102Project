@@ -2,6 +2,7 @@
 include 'sessiontest.php';
 include 'memberTraverseSecurity.php';
 ?>
+<!DOCTYPE html>
 <html lang="en">
 
     <head>
@@ -147,7 +148,7 @@ include 'memberTraverseSecurity.php';
                         echo "<h2 style='text-align:center'>Account with email: $email, has been updated</h2>";
                         echo "<br>";
                         echo "<div class='form-group'>";
-                        ?> <button class='btn btn-info button_forms btn-block' onclick="window.location.href = 'index.php'" style='background-colour: red;' type='button'>Redirect me to home!
+                        ?> <button class='btn btn-info button_forms btn-block' onclick="window.location.href = 'index.php'">Redirect me to home!</button>
 
                             <?php
                             echo "</div>";
@@ -159,63 +160,63 @@ include 'memberTraverseSecurity.php';
                             echo "<h2 style='text-align:center'>Account with email: $email, has been updated</h2>";
                             echo "<br>";
                             echo "<div class='form-group'>";
-                            ?> <button class='btn btn-info button_forms btn-block' onclick="window.location.href = 'manageuser.php'" style='background-colour: red;' type='button'>Go back
+                            ?> <button class='btn btn-info button_forms btn-block' onclick="window.location.href = 'manageuser.php'">Go back</button>
 
-                            <?php
-                            echo "</div>";
+                                <?php
+                                echo "</div>";
+                                echo "<br>";
+                            }
+                        } else {
                             echo "<br>";
+                            echo "<h1 class='section_heading' style='text-align:center'>Oops!</h1>";
+                            echo "<br>";
+                            echo "<h2 style='text-decoration: none'>The following input errors were detected:</h2>";
+                            echo "<p>" . $emailerrorMsg . $fnameerrorMsg . $addresserrorMsg . $contacterrorMsg . $lnameerrorMsg . $errorMsg . $gendererrorMsg . "</p>";
+                            echo "<div class='form-group'>";
+                            echo "<button onclick='history.back()' type='button' class='btn btn-danger'>Return to Sign Up</button>";
+                            echo "</div>";
                         }
-                    } else {
-                        echo "<br>";
-                        echo "<h1 class='section_heading' style='text-align:center'>Oops!</h1>";
-                        echo "<br>";
-                        echo "<h2 style='text-decoration: none'>The following input errors were detected:</h2>";
-                        echo "<p>" . $emailerrorMsg . $fnameerrorMsg . $addresserrorMsg . $contacterrorMsg . $lnameerrorMsg . $errorMsg . $gendererrorMsg . "</p>";
-                        echo "<div class='form-group'>";
-                        echo "<button onclick='history.back()' type='button' class='btn btn-danger' style='background-colour: red;' type='button'>Return to Sign Up</button>";
-                        echo "</div>";
-                    }
 
 //Helper function that checks input for malicious or unwanted content.
-                    function sanitize_input($data) {
-                        $data = trim($data);
-                        $data = stripslashes($data);
-                        $data = htmlspecialchars($data);
-                        return $data;
-                    }
+                        function sanitize_input($data) {
+                            $data = trim($data);
+                            $data = stripslashes($data);
+                            $data = htmlspecialchars($data);
+                            return $data;
+                        }
 
-                    /*
-                     * Helper function to write the member data to the DB
-                     */
+                        /*
+                         * Helper function to write the member data to the DB
+                         */
 
-                    function updateMemberToDB() {
-                        global $role, $fname, $lname, $email, $errorMsg, $success, $address, $contact, $id, $gender;
+                        function updateMemberToDB() {
+                            global $role, $fname, $lname, $email, $errorMsg, $success, $address, $contact, $id, $gender;
 // Create database connection.
-                        //$config = parse_ini_file('../../private/db-config.ini');
-                        // $conn = new mysqli($config['servername'], $config['username'],
-                        //        $config['password'], $config['dbname']);
-                        $conn = OpenCon();
+                            //$config = parse_ini_file('../../private/db-config.ini');
+                            // $conn = new mysqli($config['servername'], $config['username'],
+                            //        $config['password'], $config['dbname']);
+                            $conn = OpenCon();
 // Check connection
-                        if ($conn->connect_error) {
-                            $errorMsg = "Connection failed: " . $conn->connect_error;
-                            $success = false;
-                        } else {
+                            if ($conn->connect_error) {
+                                $errorMsg = "Connection failed: " . $conn->connect_error;
+                                $success = false;
+                            } else {
 // Prepare the statement:   
 // Bind & execute the query statements           
-                            $stmt = $conn->prepare("UPDATE fmembers SET fname='$fname', lname='$lname', email='$email', address='$address', contact='$contact', role='$role', gender='$gender' WHERE memberID='$id'");
+                                $stmt = $conn->prepare("UPDATE fmembers SET fname='$fname', lname='$lname', email='$email', address='$address', contact='$contact', role='$role', gender='$gender' WHERE memberID='$id'");
 //                        $stmt->bind_param('sssssii', $fname, $lname, $email, $pwd_hashed, $address, $contact, $id);
 
-                            if (!$stmt->execute()) {
-                                $errorMsg = "Execute failed: (" . $stmt->errno . ") " . $stmt->error;
-                                $success = false;
+                                if (!$stmt->execute()) {
+                                    $errorMsg = "Execute failed: (" . $stmt->errno . ") " . $stmt->error;
+                                    $success = false;
+                                }
+
+
+                                $stmt->close();
                             }
-
-
-                            $stmt->close();
+                            $conn->close();
                         }
-                        $conn->close();
-                    }
-                    ?>
+                        ?>
                         </div>
                         </main>
                         <?php

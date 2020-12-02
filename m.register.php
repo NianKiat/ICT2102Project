@@ -34,7 +34,7 @@ include 'adminTraverseSecurity.php';
                     <label for="male">Male</label><br>
                     <input type="radio" id="female" name="gender" value="Female">
                     <label for="female">Female</label><br>
-                         
+
                 </div>
                 <div class="form-group">
                     <label for="email">Email:</label>
@@ -43,13 +43,13 @@ include 'adminTraverseSecurity.php';
                 </div>
                 <div class="form-group">
                     <label for="contact">Contact:</label>            
-                    <input class="form-control" type="contact" id="contact" name="contact"                   
-                           required name="number" placeholder="Enter contact">            
+                    <input class="form-control" type="number" id="contact" name="contact"                   
+                           required placeholder="Enter contact">            
                 </div>
                 <div class="form-group">
                     <label for="address">Address:</label>            
                     <input class="form-control" type="text" id="address" name="address"                   
-                           required name="address" placeholder="Enter address">            
+                           required placeholder="Enter address">            
                 </div>
                 <div class="form-group">
                     <label for="pwd">Password:</label>
@@ -76,10 +76,11 @@ include 'adminTraverseSecurity.php';
                 <div class="form-group">
                     <button class="btn btn-info button_forms " type="submit">Submit</button>
                 </div>
+            </form>
 
-                <script>
+            <script>
 
-                </script>
+            </script>
         </main>
     </body>
     <?php

@@ -2,6 +2,7 @@
 include 'sessiontest.php';
 include 'memberTraverseSecurity.php';
 ?>
+<!DOCTYPE html>
 <html lang="en">
 
     <head>
@@ -95,7 +96,7 @@ include 'memberTraverseSecurity.php';
                 echo "<br>";
                 echo "<div class='form-group'>";
                 echo "<br>";
-                echo "<button onclick='history.back()' type='button' class='btn button_forms btn-block btn-info' type='button'>Go Back</button>";
+                echo "<button onclick='history.back()' type='button' class='btn button_forms btn-block btn-info'>Go Back</button>";
                 echo "</div>";
             }
 
@@ -147,7 +148,6 @@ include 'memberTraverseSecurity.php';
                 $conn->close();
             }
             ?>
-        </div>
     </main>
     <?php
     include "footer.php";
