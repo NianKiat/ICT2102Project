@@ -284,7 +284,7 @@
 
                                         <span class="left"> Business Email: </span> 
                                         <span class="right"> <a href="mailto:contact@floured.co" style="color:darkblue;">contact@floured.co</a> </span>
-                                        <span class="mobile"> <a href="mailto:contact@floured.co" style="color:darkblue;">contact@floured.co</a> </span>;
+                                        <span class="mobile"> <a href="mailto:contact@floured.co" style="color:darkblue;">contact@floured.co</a> </span>
                                         <!--<span class="center_space"> &nbsp; </span>-->
                                     </div>
                                 </div>
