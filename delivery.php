@@ -77,6 +77,12 @@ include 'memberTraverseSecurity.php';
                             $conn->query($sql3);    
                             echo $launch_date;
                             echo " has been selected.";
+                            echo "<br>";
+                            echo "Cakes has been successfully purchased, click here to see your delivery's date";
+                            ?>
+                            <input type="button" value="delivery" onclick="window.location.href = 'viewdelivery.php';">
+                <?php
+                           
                         }
                         else
                         {

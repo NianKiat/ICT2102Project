@@ -4,9 +4,10 @@ include 'sessiontest.php';
 <!DOCTYPE html>
 <html lang = "en">
     <head>
+<!--        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />-->
         <?php
-        include 'navbar.php';
         include 'header.php';
+        include 'navbar.php';
         ?>
         <title>Floured! Homepage</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
