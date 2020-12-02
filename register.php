@@ -250,7 +250,7 @@ include 'sessiontest.php';
                 <div class="form-check" style="padding-left:0px!important;">
                     <label>                
                         <input type="checkbox" name="agree" required name="agree">                
-                        Agree to terms and conditions.   
+                        By Signing up, you permit access to your information under the PDPA act.   
                     </label>            
                 </div>
 
