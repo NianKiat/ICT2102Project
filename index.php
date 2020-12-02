@@ -42,7 +42,7 @@ include 'sessiontest.php';
             ?>
             <div class = "alert alert-warning alert-dismissible fade show" role = "alert">
                 <strong style='text-align: center'>You're about to get caked!</strong> Please verify your e-mail! Verifying your e-mail allows for password recovery!            <a href="settings.php" class="alert-link">Resend Verification E-mail</a>
-                <button type = "button" class = "close" data-dismiss = "alert" aria-label = "Close">
+                <button style=""type = "button" class = "close" data-dismiss = "alert" aria-label = "Close">
                     <span aria-hidden = "true">&times;
                     </span>
                 </button>

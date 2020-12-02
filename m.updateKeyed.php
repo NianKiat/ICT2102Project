@@ -1,3 +1,4 @@
+
 <?php
 require 'dbconfig.php';
 include 'sessiontest.php';
@@ -112,6 +113,8 @@ function getUser() {
         <div class="row">
 
             <main class="container">  
+                <h1 class='section_heading' style="text-align: center">Update <?php echo $thisfName; ?>'s Profile:</h1>
+                <br>
                 <div class ="card mb-3" >
                     <div class="row no-gutters">
                         <?php if ($success) { ?>
@@ -179,15 +182,15 @@ function getUser() {
                                             <label>
                                                 <?php if ($thisrole == 'Admin') { ?>
                                                     <p>Revert Admin Rights?:</p>
-                                                    <input type="radio" id="female" name="role" value="Member">
+                                                    <input type="radio" id="Member" name="role" value="Member">
                                                     <label for="role">Yes</label><br>
-                                                    <input type="radio" id="male" name="role" checked value="Admin">
+                                                    <input type="radio" id="Admin" name="role" checked value="Admin">
                                                     <label for="role">No</label><br>
                                                 <?php } else { ?>
                                                     <p>Make this user an Admin?:</p>
-                                                    <input type="radio" id="female" name="role" value="Admin">
+                                                    <input type="radio" id="Admin" name="role" value="Admin">
                                                     <label for="role">Yes</label><br>
-                                                    <input type="radio" id="male" name="role" checked value="Member">
+                                                    <input type="radio" id="Member" name="role" checked value="Member">
                                                     <label for="role">No</label><br>
                                                 <?php } ?>
 
@@ -200,7 +203,7 @@ function getUser() {
                                 </div>
                                 <br>
                                 <div>
-                                    <button class="btn btn-primary mb1 bg-teal" type="submit">Save Changes</button>   
+                                    <button class="btn btn-info button_forms" type="submit">Save Changes</button>   
                                 </div>
                                 </form>    
                             </div>
