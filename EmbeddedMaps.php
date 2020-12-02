@@ -1,5 +1,6 @@
 <?php include 'sessiontest.php';?>
-<html>
+<!DOCTYPE html>
+<html lang = "en">
     <head>
         <?php
         include 'navbar.php';
@@ -50,7 +51,7 @@
             #gmap_canvas {width:540px; height:490px;}
             #gmap_canvas_mobile {display:none;}
             #map_col {padding-right:0px;}
-            #locator_canvas {}
+            iframe { border: none; overflow:hidden; margin:0px;}
             #contact_us{padding-left: 15px; margin-top: 15px; margin-bottom:15px;}
             .center{text-align: center;}
             .grey_background{background-color: red;}
@@ -127,7 +128,7 @@
                 }
                 
                 #gmap_canvas {
-                    width:540px; height:586px;
+                    width:540px; height:562px;
                 }
                 
                 #myDIV {
@@ -252,7 +253,7 @@
                     height:400px;
                 }
             }​
-        </style>
+        </style>    
     </head>
     
     <body onresize="check_width_and_clear_img()">
@@ -313,13 +314,13 @@
                             <div id="map-div" class="mapouter">
                                 <!--<p id="nomaps_text" style="padding-top:5rem;"> Please enable Javascript to view our Maps.</p>-->
                                 <div id="map_canvas" class="gmap_canvas">
-                                    <iframe id="gmap_canvas" src="https://maps.google.com/maps?q=sit%20nyp&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+                                    <iframe id="gmap_canvas" src="https://maps.google.com/maps?q=sit%20nyp&t=&z=15&ie=UTF8&iwloc=&output=embed">
                                     </iframe>
                                 </div>
                             </div>
-                            <div id="map-div" class="mapouter_mobile">
+                            <div id="map-div1" class="mapouter_mobile">
                                 <div class="gmap_canvas_mobile">
-                                    <iframe id="gmap_canvas_mobile" src="https://maps.google.com/maps?q=sit%20nyp&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+                                    <iframe id="gmap_canvas_mobile" src="https://maps.google.com/maps?q=sit%20nyp&t=&z=15&ie=UTF8&iwloc=&output=embed">
                                     </iframe>
                                 </div>
                                 <br>
@@ -329,7 +330,7 @@
                             </div>
                         </aside>
                     </div>
-                    <br id="picmobile_break mobile-only">
+                    <br class="mobile-only">
                     <div class="row mobile-only">
                         <div class="container" style="text-align:center;">
                             <h1 class="jumbotron-heading section_heading">our shopfront</h1>
@@ -375,25 +376,30 @@
                 width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
                 var image = document.getElementById("myDIV");
                 var map = document.getElementById("map-div");
+                var map1 = document.getElementById("map-div1");
                 if (width >= 992) {
                     if (firstloop === true) {
                         image.style.display = "none";
                         map.style.display = "initial";
+                        map1.style.display = "initial";
                         onmaps = true;
                         firstloop = false;
                     }
                     if (image.style.display === "none") {
                       image.style.display = "initial";
                       map.style.display = "none";
+                      map1.style.display = "none";
                       onmaps = false;
                     } else {
                       image.style.display = "none";
                       map.style.display = "initial";
+                      map1.style.display = "initial";
                       onmaps = true;
                     }
                 }
                 else {
                     map.style.display = "false";
+                    map1.style.display = "false";
                 }
             };
         </script>
