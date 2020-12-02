@@ -27,7 +27,7 @@ include 'sessiontest.php';
                            required name="email" placeholder="Enter your e-mail adress">   
                 </div>
                 <div>
-                    <button class="btn btn-dark" name="reset-request-submit" type="submit">Receive new password by e-mail</button>   
+                    <button class="btn btn-info button_forms" name="reset-request-submit" type="submit">Receive new password by e-mail</button>   
                 </div>
                 <br>
             </form>   

@@ -48,6 +48,8 @@ if (isset($_SESSION['fname'])) {
                     ?>
                     <a style="color: black" href ="reset-password.php"><strong>Forgot your password?</strong></a>
                 </div>
+                <br>
+                <br>
 
             </form>    
         </main>    
