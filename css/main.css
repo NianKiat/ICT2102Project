@@ -176,15 +176,6 @@ object-fit: cover;
     border-color:#0B505B;
 }
 
-.button_forms {
-    font-family: 'Alegreya Sans SC', sans-serif;
-    font-size: 20px;
-    padding-top: 4px;
-    padding-bottom: 4px;
-    background-color:#0B505B;
-    border-color:#0B505B;
-}
-
 .card-header {
     padding:0px;
 }

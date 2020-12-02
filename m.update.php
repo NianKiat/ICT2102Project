@@ -16,8 +16,8 @@ include 'adminTraverseSecurity.php';
         ?>
         <br>
         <main class="container">
-            <h1 class="section_heading" style="text-align: center">Update Member Information</h1>
-            <br>
+            <h1>Update Member Information</h1>
+            <h3>Enter User E-mail or ID</h3>
             <form action="m.updateKeyed.php" method="post">
                 <div class="form-group">
                     <label for="email">Email:</label>
@@ -25,7 +25,7 @@ include 'adminTraverseSecurity.php';
                            name="email" placeholder="Enter email">
                 </div>
                 <br>
-                <h2 class="section_heading" style="text-align: center">OR</h2>
+                <h2>OR</h2>
                 <br>
                 <div class="form-group">
                     <label for="userid">User ID:</label>
@@ -35,7 +35,7 @@ include 'adminTraverseSecurity.php';
 
                 <br>
                 <div class="form-group">
-                    <button class="btn btn-info button_forms" type="submit">Submit</button>
+                    <button class="btn btn-primary" type="submit">Submit</button>
                 </div>
         </main>
     </body>

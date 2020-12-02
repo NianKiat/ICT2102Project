@@ -8,7 +8,7 @@ require 'PHPMailer/src/Exception.php';
 require 'PHPMailer/src/PHPMailer.php';
 require 'PHPMailer/src/SMTP.php';
 ?>
-<html lang="en">
+<html>
 
     <head>
         <?php
@@ -184,17 +184,17 @@ require 'PHPMailer/src/SMTP.php';
                     echo "<br>";
                     echo "<h1 class='section_heading' style='text-align:center'>Registration is successful!</h1>";
                     echo "<br>";
-                    echo "<h2 style='text-align:center'>Amazing cakes await you!, $fname $lname</h2>";
-                    echo "<p style='text-align:center'>Verify your account to allow e-mail based functions!</p>";
+                    echo "<h4 style='text-align:center'>Amazing cakes await you!, $fname $lname</h4>";
+                    echo "<h2 style='text-align:center'>Verify your account to allow e-mail based functions!</h2>";
                     echo "<br>";
                     echo "<div class='form-group'>";
                     if (isset($_SESSION['role'])) {
                         if ($_SESSION['role'] == 'Admin') {
-                            ?> <button class='btn btn-info button_forms btn-block' onclick="window.location.href = 'manageuser.php'" style='background-colour: green;' type='button'>Return to manage Users
+                            ?> <button class='btn btn-success btn-block' onclick="window.location.href = 'manageuser.php'" style='background-colour: green;' type='button'>Return to manage Users
                             <?php
                         }
                     } else {
-                        ?> <button class='btn btn-info button_forms btn-block' onclick="window.location.href = 'login.php'" style='background-colour: green;' type='button'>Login Now!
+                        ?> <button class='btn btn-success btn-block' onclick="window.location.href = 'login.php'" style='background-colour: green;' type='button'>Login Now!
                                 <?php
                             }
 
@@ -203,7 +203,7 @@ require 'PHPMailer/src/SMTP.php';
                             echo "<br>";
                             echo "<h1 class='section_heading' style='text-align:center'>CAKED!</h1>";
                             echo "<br>";
-                            echo "<h2 style='text-align:center'>The following input errors were detected:</h2>";
+                            echo "<h4 style='text-align:center'>The following input errors were detected:</h2>";
                             echo "<p style='text-align:center'>" . $emailerrorMsg . $fnameerrorMsg . $addresserrorMsg . $contacterrorMsg . $lnameerrorMsg . $pwderrorMsg . $pcerrorMsg . $gendererrorMsg . $errorMsg . "</p>";
                             echo "<div class='form-group'>";
                             echo "<button onclick='history.back()' type='button' class='btn btn-danger btn-block' style='background-colour: red;' type='button'>Return to Sign Up</button>";

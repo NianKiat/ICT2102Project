@@ -28,16 +28,15 @@ if (isset($_GET['vkey'])) {
                     <?php
                     include 'navbar.php';
                     ?>
-                    <main>
+
                     <div class="jumbotron jumbotron-fluid">
                         <div class="container">
                             <h1 class='section_heading' style='text-align:center'>Congratulations!</h1>
                             <br>
-                            <h2 style='text-align:center'>Your account has been verified!</h2>
-                            <button class='btn btn-info button_forms btn-block' onclick="window.location.href = 'login.php'" style='background-colour: green;' type='button'>Login Now!
+                            <h4 style='text-align:center'>Your account has been verified!</h4>
+                            <button class='btn btn-info btn-block' onclick="window.location.href = 'login.php'" style='background-colour: green;' type='button'>Login Now!
                         </div>
                     </div>
-                    </main>
                 </body>
                 <?php
                 include 'footer.php';

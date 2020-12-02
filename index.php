@@ -42,7 +42,7 @@ include 'sessiontest.php';
             ?>
             <div class = "alert alert-warning alert-dismissible fade show" role = "alert">
                 <strong style='text-align: center'>You're about to get caked!</strong> Please verify your e-mail! Verifying your e-mail allows for password recovery!            <a href="settings.php" class="alert-link">Resend Verification E-mail</a>
-                <button style=""type = "button" class = "close" data-dismiss = "alert" aria-label = "Close">
+                <button type = "button" class = "close" data-dismiss = "alert" aria-label = "Close">
                     <span aria-hidden = "true">&times;
                     </span>
                 </button>
@@ -77,7 +77,7 @@ include 'sessiontest.php';
         </div>
         <section class="jumbotron text-center section_wrap" role="contentinfo" aria-label="What sets us apart">
             <div class="container">
-                <h2 class="jumbotron-heading section_heading">what sets us apart</h2>
+                <h1 class="jumbotron-heading section_heading">what sets us apart</h1>
                 <hr class="section_break">
             </div>
             <div class="container">
@@ -91,7 +91,7 @@ include 'sessiontest.php';
         </section>
         <section class="jumbotron text-center section_wrap" role="contentinfo" aria-label="Best Selling Cakes">
             <div class="container">
-                <h2 class="jumbotron-heading section_heading">best selling cakes</h2>
+                <h1 class="jumbotron-heading section_heading">best selling cakes</h1>
                 <hr class="section_break">
             </div>
         </section>
@@ -139,7 +139,7 @@ include 'sessiontest.php';
         <br>
         <section class="jumbotron text-center section_wrap" role="contentinfo" aria-label="Walk-in promotion">
             <div class="container">
-                <h2 class="jumbotron-heading section_heading">walk-in promotion</h2>
+                <h1 class="jumbotron-heading section_heading">walk-in promotion</h1>
                 <hr class="section_break">
             </div>
         </section>
@@ -204,7 +204,7 @@ include 'sessiontest.php';
         <br>
         <section class="jumbotron section_wrap" role="contentinfo" aria-label="Frequently Asked Questions">
             <div class="container">
-                <h2 class="jumbotron-heading section_heading" style="text-align:center;">frequently asked questions</h2>
+                <h1 class="jumbotron-heading section_heading" style="text-align:center;">frequently asked questions</h1>
                 <hr class="section_break" style="width:40%;">
             </div>
             <div class="jumbotron section_wrap" style="margin-left: 61.667px; margin-right: 61.667px; padding-left:30px; padding-right:30px;">

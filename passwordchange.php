@@ -153,10 +153,7 @@ include 'memberTraverseSecurity.php';
             <div class="row">
 
                 <main class="container">   
-                    <h1 class='section_heading' style="text-align: center">Update Password:</h1>
-                    <br>
                     <div class ="card mb-3" >
-                        
                         <div class="row no-gutters">
                             <?php if ($_SESSION['gender'] == 'Male') { ?>
                                 <img src="images/img_avatar.png" style="width: 500px" class="card-img-top" alt="profileimg"/>
@@ -210,7 +207,7 @@ include 'memberTraverseSecurity.php';
                                 <br>
                                 <br>
                                 <div>
-                                    <button class="btn btn-info button_forms" type="submit">Change Password</button>   
+                                    <button class="btn btn-info" type="submit">Update My Profile</button>   
                                 </div>
                                 </form>    
                             </div>

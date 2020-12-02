@@ -1,6 +1,4 @@
-<title>Login Successful</title>
-<html lang="en">
-    
+<html>
     <?php
     include 'sessiontest.php';
     require 'dbconfig.php';
@@ -45,6 +43,9 @@
                 authenticateUser();
                 ?>
                 <?php
+//                include "navbar.php";
+                ?>
+                <?php
                 if ($success) {
                     $_SESSION['fname'] = $fname;
                     $_SESSION['lname'] = $lname;
@@ -60,24 +61,23 @@
                     echo "<br>";
                     echo "<h1 class='section_heading' style='text-align:center'>Login successful!</h1>";
                     echo "<br>";
-                    echo "<h2 style='text-align:center'>Welcome back, $fname $lname</h2>";
+                    echo "<h4 style='text-align:center'>Welcome back, $fname $lname</h4>";
                     echo "<br>";
                     echo "<div class='form-group'>";
-                    ?> <button class='btn button_forms btn-info btn-lg btn-block' onclick="window.location.href = 'index.php'" type='button'>Start Browsing!
+                    ?> <button class='btn btn-info btn-lg btn-block' onclick="window.location.href = 'index.php'" style='background-colour: green;' type='button'>Start Browsing!
                     <?php
                     echo "</div>";
-                    echo "<br>";
+                    
                 } else {
                     include "navbar.php"; 
                     echo "<br>";
                     echo "<h1 class='section_heading' style='text-align:center'>CAKED!</h1>";
                     echo "<br>";
-                    echo "<h2 style='text-align:center'>The following input errors were detected:</h2>";
+                    echo "<h4 style='text-align:center'>The following input errors were detected:</h2>";
                     echo "<p style='text-align:center'>" . $errorMsg . "</p>";
                     echo "<div class='form-group'>";
-                    echo "<button onclick='history.back()' type='button' class='btn button_forms btn-info btn-lg btn-block' type='button'>Go Back</button>";
+                    echo "<button onclick='history.back()' type='button' class='btn btn-info btn-block' style='background-colour: yellow;' type='button'>Return to Sign Up</button>";
                     echo "</div>";
-                    echo "<br>";
                 }
 
                 //Helper function that checks input for malicious or unwanted content.

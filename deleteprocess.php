@@ -2,7 +2,7 @@
 include 'sessiontest.php';
 include 'memberTraverseSecurity.php';
 ?>
-<html lang="en">
+<html>
 
     <head>
         <?php
@@ -53,9 +53,6 @@ include 'memberTraverseSecurity.php';
                         if ($check == "yes" || $check == "Yes") {
                             $userid = $_SESSION['memberID'];
                             $success = true;
-                        } else {
-                            $emailerrorMsg .= "You did not confirm your account deletion.";
-                            $success = false;
                         }
                     }
                 }
@@ -75,27 +72,26 @@ include 'memberTraverseSecurity.php';
                     <br>
                     <h1 class='section_heading' style='text-align:center'>User has been removed!</h1>
                     <br>
-                    <h2 style='text-align:center'>Goodbye!</h2>
-                    <br>
-                    <div class='form-group'><?php if ($_SESSION['role'] == "Admin") { ?>
-                            <button type="button" onclick="window.location.href = 'manageuser.php'" class="btn button_forms btn-info btn-block">Return to Manage Users</button></div>
-                    <?php } else { ?>
-                        <button type="button" onclick="window.location.href = 'index.php'" class="btn button_forms btn-info btn-block">Redirect me to home!</button></div>
+                    <h4 style='text-align:center'>Goodbye!</h4>
+                        <br>
+                        <div class='form-group'><?php if ($_SESSION['role'] == "Admin") { ?>
+                                <button type="button" onclick="window.location.href = 'manageuser.php'" class="btn btn-success btn-block">Return to Manage Users</button></div>
+                        <?php } else { ?>
+                            <button type="button" onclick="window.location.href = 'index.php'" class="btn btn-success btn-block">Redirect me to home!</button></div>
 
                 <?php } ?>
 
                 <?php
             } else {
-                include 'navbar.php';
                 echo "<br>";
                 echo "<h1 class='section_heading' style='text-align:center'>CAKED!</h1>";
-                echo "<h2 style='text-align:center'>The following input errors were detected:</h2>";
+                echo "<h4 style='text-align:center'>The following input errors were detected:</h2>";
                 echo "<br>";
-                echo "<p style='text-align:center'>" . $emailerrorMsg . $useriderrorMsg . "</p>";
+                echo "<p>" . $emailerrorMsg . $useriderrorMsg . "</p>";
                 echo "<br>";
                 echo "<div class='form-group'>";
                 echo "<br>";
-                echo "<button onclick='history.back()' type='button' class='btn button_forms btn-block btn-info' type='button'>Go Back</button>";
+                echo "<button onclick='history.back()' type='button' class='btn btn-danger btn-block' style='background-colour: red;' type='button'>Return to Sign Up</button>";
                 echo "</div>";
             }
 
@@ -124,24 +120,13 @@ include 'memberTraverseSecurity.php';
                     $success = false;
                 } else {
 // Prepare the statement:
-// Bind & execute the query statements
-                    $stmt = $conn->prepare("SELECT * FROM fmembers WHERE memberID=? OR email=? ");
-// Bind & execute the query statement:
-                    $stmt->bind_param("is", $userid, $email);
-                    $stmt->execute();
-                    $result = $stmt->get_result();
-                    if ($result->num_rows > 0) {
-                        $stmt = $conn->prepare("DELETE FROM fmembers WHERE memberID=? OR email=?");
-                        $stmt->bind_param('is', $userid, $email);
-                        if (!$stmt->execute()) {
-                            $errorMsg = "Execute failed: (" . $stmt->errno . ") " . $stmt->error;
-                            $success = false;
-                        }
-                    } else if ($result->num_rows == 0){
-                        $errorMsg = "There is no such user: (" . $stmt->errno . ") " . $stmt->error;
+// Bind & execute the query statements           
+                    $stmt = $conn->prepare("DELETE FROM fmembers WHERE memberID=? OR email=?");
+                    $stmt->bind_param('is', $userid, $email);
+                    if (!$stmt->execute()) {
+                        $errorMsg = "Execute failed: (" . $stmt->errno . ") " . $stmt->error;
                         $success = false;
                     }
-
                     $stmt->close();
                 }
                 $conn->close();

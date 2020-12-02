@@ -12,28 +12,27 @@ include 'adminTraverseSecurity.php';
         <title>Floured - Manage User</title>
     </head>
     <body>
-        <main>
         <?php
         include 'navbar.php';
         ?>
-
+        
         <div class="jumbotron jumbotron-fluid">
             <div class="container">
                 <h1 class="display-4">Manage Users</h1>
                 <p class="lead">Navigate using the buttons below.</p>
 
-                <button type="button" onclick="window.location.href = 'm.register.php'" class="btn button_forms btn-info btn-lg btn-block">Register A User</button>
+                <button type="button" onclick="window.location.href = 'm.register.php'" class="btn btn-secondary btn-lg btn-block">Register A User</button>
 
-                <button type="button" onclick="window.location.href = 'm.update.php'" class="btn button_forms btn-info btn-lg btn-block">Update User Info</button>
+                <button type="button" onclick="window.location.href = 'm.update.php'" class="btn btn-secondary btn-lg btn-block">Update User Info</button>
 
-                <button type="button" onclick="window.location.href = 'm.delete.php'" class="btn button_forms btn-info btn-lg btn-block">Delete A User</button>
+                <button type="button" onclick="window.location.href = 'm.delete.php'" class="btn btn-secondary btn-lg btn-block">Delete A User</button>
                 <br>
                 <div class="card border-dark mb-3">
                     <div class="card-header">Registered Users</div>
                     <div class="card-body text-primary">
 
 
-                        
+                        <main role="main" class="col-md-9 ml-sm-auto col-lg-auto px-md-auto">
                             <div class="table-responsive">
                                 <table class="table table-striped table-sm">
                                     <thead>
@@ -86,7 +85,7 @@ include 'adminTraverseSecurity.php';
 
 
                 <div class="card border-dark mb-3">
-                    <div class="card-header"> Admin Users</div>
+                    <div class="card-header">Admin Users</div>
                     <div class="card-body text-primary">
                         <div class="table-responsive">
                             <table class="table table-striped table-sm">
@@ -135,12 +134,12 @@ include 'adminTraverseSecurity.php';
                                 </tbody>
                             </table>
                         </div>
-                   
+                        </main>
                     </div>
                 </div>
             </div>
         </div>
-        </main>
+
     </body>
     <?php
     include 'footer.php';

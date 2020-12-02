@@ -16,8 +16,8 @@ include 'adminTraverseSecurity.php';
         ?>
         <br>
         <main class="container">
-            <h1 class="section_heading" style="text-align: center">Delete Member From Floured!</h1>
-            <br>
+            <h1>Remove Member</h1>
+            <h3>Enter User E-mail or ID</h3>
             <form action="deleteprocess.php" method="post">
                 <div class="form-group">
                     <label for="email">Email:</label>
@@ -25,7 +25,7 @@ include 'adminTraverseSecurity.php';
                            name="email" placeholder="Enter email">
                 </div>
                 <br>
-                  <h2 class="section_heading" style="text-align: center">OR</h2>
+                <h2>OR</h2>
                 <br>
                 <div class="form-group">
                     <label for="userid">User ID:</label>
@@ -34,9 +34,8 @@ include 'adminTraverseSecurity.php';
                 </div>
                 <br>
                 <div class="form-group">
-                    <button class="btn button_forms btn-info btn-block" type="submit">Delete</button>
+                    <button class="btn btn-primary" type="submit">Delete</button>
                 </div>
-                <br>
         </main>
     </body>
     <?php

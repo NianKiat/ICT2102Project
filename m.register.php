@@ -16,7 +16,7 @@ include 'adminTraverseSecurity.php';
         ?>
         <br>
         <main class="container">
-            <h1 class="section_heading">Member Registration</h1>
+            <h1>Member Registration</h1>
             <form action="registerprocess.php" method="post">
                 <div class="form-group">
                     <label for="fname">First Name:</label>
@@ -74,7 +74,7 @@ include 'adminTraverseSecurity.php';
                 </div>
                 <br>
                 <div class="form-group">
-                    <button class="btn btn-info button_forms " type="submit">Submit</button>
+                    <button class="btn btn-primary" type="submit">Submit</button>
                 </div>
 
                 <script>

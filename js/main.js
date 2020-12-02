@@ -1,9 +1,8 @@
 $(document).ready(function (){
-
-//    activateMenu();
+    activateMenu();
 });
 
-
+$(".alert").alert('close');
 function activateMenu()
 {
     var current_page_URL = location.href;

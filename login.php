@@ -1,12 +1,11 @@
 <?php
 include 'sessiontest.php';
-if (isset($_SESSION['fname'])) {
-    header('Location: profile.php');
-    die();
+if(isset($_SESSION['fname'])){
+header('Location: profile.php');
+die(); 
 }
 ?>
-<html lang="en">
-    <div class="wrapper">
+<html>
     <head>
         <?php
         include 'navbar.php';
@@ -17,18 +16,10 @@ if (isset($_SESSION['fname'])) {
     <body>    
         <br>
         <br>
-        <style>
-            .wrapper {
-                min-height: 100%;
-                display: grid;
-                grid-template-rows: auto 1fr auto;
-            }
-
-        </style>
         <main class="container">        
             <h1 class="section_heading" style="margin-bottom:0px;">Member Login</h1>
-            <p class="subtext" style="color: black"> 
-                For new members, head to the <a style="color: black" href="register.php"><strong>Registration</strong></a> page to start your cake journey!        
+            <p class="subtext"> 
+                For new members, please go to the <a href="register.php">Registration</a> page.        
             </p>        
             <form action="loginprocess.php" method="post">            
                 <div class="form-group">
@@ -36,31 +27,30 @@ if (isset($_SESSION['fname'])) {
                     <input class="form-control" type="email" id="email" name="email"                   
                            required name="email" placeholder="Enter email">            
                 </div>
-                <div class="form-group ">
+                <div class="form-group">
                     <label for="pwd">Password:</label>            
                     <input class="form-control" type="password" id="pwd"                   
                            required name="pwd" placeholder="Enter password">             
                 </div>
                 <div>
-                    <button class="btn button_forms btn-info " type="submit">Submit</button>   
+                    <button class="btn btn-dark submit_button" type="submit">Submit</button>   
                 </div>
-                <div >
+                <div>
                     <br>
                     <?php
-                    if (isset($_GET["newpwd"])) {
-                        if ($_GET["newpwd"] == "passwordupdated") {
+                    if(isset($_GET["newpwd"])){
+                        if($_GET["newpwd"] == "passwordupdated") {
                             echo '<h2 style="color: green;">Your password has been reset!</h2>';
                         }
                     }
                     ?>
-                    <a style="color: black" href ="reset-password.php"><strong>Forgot your password?</strong></a>
+                <a href ="reset-password.php">Forgot your password?</a>
                 </div>
-
+                
             </form>    
         </main>    
-
-    </body><?php
-include "footer.php";
-?>
-    </div>
+        <?php
+        include "footer.php";
+        ?>
+    </body>
 </html>
