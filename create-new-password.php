@@ -47,9 +47,11 @@ include 'sessiontest.php';
                         </div>
 
                         <div>
-                            <button class="btn btn-dark" type="submit" name="reset-password-submit">Reset Password</button>
+                            <button class="btn btn-info button_forms" type="submit" name="reset-password-submit">Reset Password</button>
                         </div>
                     </form> 
+                    <br>
+                    <br>
 
 
 
