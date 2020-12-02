@@ -2,7 +2,7 @@
 include 'sessiontest.php';
 include 'memberTraverseSecurity.php';
 ?>
-<html>
+<html lang="en">
 
     <head>
         <?php
@@ -72,20 +72,20 @@ include 'memberTraverseSecurity.php';
                     echo "<br>";
                     echo "<h1 class='section_heading' style='text-align:center'>Success!</h1>";
                     echo "<br>";
-                    echo "<h4 style='text-align:center'>Password has been changed.</h4>";
+                    echo "<h2 style='text-align:center'>Password has been changed.</h2>";
                     echo "<br>";
                     echo "<div class='form-group'>";
-                    ?> <button class='btn btn-info btn-lg btn-block' onclick="window.location.href = 'index.php'" style='background-colour: green;' type='button'>Redirect me to home!
+                    ?> <button class='btn btn-info button_forms btn-lg btn-block' onclick="window.location.href = 'index.php'" style='background-colour: green;' type='button'>Redirect me to home!
                         <?php
                         echo "</div>";
                     } else {
 
                         echo "<br>";
                         echo "<h1 class='section_heading' style='text-align:center'>CAKED!</h1>";
-                        echo "<h4 style='text-align:center'>The following input errors were detected:</h4>";
+                        echo "<h2 style='text-align:center'>The following input errors were detected:</h2>";
                         echo "<p style='text-align:center'>" . $pwdolderrorMsg . $pwderrorMsg . $pcerrorMsg . $errorMsg . "</p>";
                         echo "<div class='form-group'>";
-                        echo "<button onclick='history.back()' type='button' class='btn btn-info btn-block' style='background-colour: yellow;' type='button'>Go Back</button>";
+                        echo "<button onclick='history.back()' type='button' class='btn button_forms btn-info btn-block' type='button'>Go Back</button>";
                         echo "</div>";
                     }
 

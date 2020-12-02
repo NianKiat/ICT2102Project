@@ -8,34 +8,36 @@ include 'memberTraverseSecurity.php';
         <?php
         include 'navbar.php';
         include 'header.php';
-        
         ?>
         <title>Floured</title>
     </head>
     <body>
-        <?php
+        <main>
+            <?php
 //        include 'navbar.php';
-        ?>
-        <div class="container">
-            <br>
-            <h1>Are you sure you wish to delete your account?</h1>
-            <h4>Your account will be deleted forever.</h4>
-            <br>
-            <p>Type "Yes" and click on the Confirm button below to confirm your deletion.</p>
-            <form action="deleteprocess.php" method="post"> 
+            ?>
+            <div class="container">
                 <br>
-                <div class="form-group">
-                    <label for="confirmdelete"></label>            
-                    <input class="form-control" type="text" id="confirmdelete" name="confirmdelete"                   
-                           placeholder="Type 'yes' to confirm your deletion">            
-                </div>
-                <div>
-                    <button class="btn btn-info btn-block" type="submit">Confirm</button>   
-                </div>
+                <h1 class="section_heading" style="text-align: center">Are you sure you wish to delete your account?</h1>
+                <h2 style="text-align: center">We hate to see you go!</h2>
                 <br>
-            </form>
-            
-        </div>
+                <p style="text-align: center">Type "Yes" and click on the Confirm button below to confirm your deletion.</p>
+                <form action="deleteprocess.php" method="post"> 
+
+                    <div class="form-group">
+                        <label for="confirmdelete">Confirm Deletion of Account:</label>            
+                        <input class="form-control" type="text" id="confirmdelete" name="confirmdelete"                   
+                               placeholder="Type 'yes' to confirm your deletion">            
+                    </div>
+                    <br>
+                    <div>
+                        <button class="btn button_forms btn-info btn-block" type="submit">Confirm</button>   
+                    </div>
+                    <br>
+                </form>
+
+            </div>
+        </main>
     </body>
     <?php
     include 'footer.php';

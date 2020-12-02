@@ -1,7 +1,7 @@
 <?php
 include 'sessiontest.php';
 ?>
-<html>
+<html lang="en">
     <head> 
         <?php
         include 'navbar.php';
@@ -181,8 +181,8 @@ include 'sessiontest.php';
         <br/>
         <main class="container">        
             <h1 class="section_heading"style="margin-bottom:0px;">Member Registration</h1>        
-            <p class="subtext"> For existing members, please go to the            
-                <a href="login.php">Sign In</a> page.        
+            <p class="subtext" style="color:black"> For existing members, please go to the            
+                <a style="color: black" href="login.php"><strong>Sign In</strong></a> page.        
             </p>        
             <form action="registerprocess.php" method="post">            
                 <div class="form-group">
@@ -255,7 +255,7 @@ include 'sessiontest.php';
 
                 <br>
                 <div>
-                    <button class="btn btn-dark btn-info" type="submit">Submit</button>   
+                    <button class="btn button_forms btn-info" type="submit">Submit</button>   
                 </div>
             </form>    
         </main>    
