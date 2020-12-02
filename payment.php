@@ -29,6 +29,13 @@ include 'memberTraverseSecurity.php';
             $sum = $row2['totalsum'];
             
         ?>
+            <div class="jumbotron color-grey-light mt-70">
+            <div class="d-flex align-items-center h-100">
+                <div class="container text-center py-1">
+                    <h1 class="mb-0"><strong>Payment</strong></h1>
+                </div>
+            </div>
+        </div>
             
         <div class="container py-5">
     <!-- For demo purpose -->
@@ -39,46 +46,80 @@ include 'memberTraverseSecurity.php';
                     <div class="bg-white shadow-sm pt-4 pl-2 pr-2 pb-2">
                         <!-- Credit card form tabs -->
                         <ul role="tablist" class="nav bg-light nav-pills rounded nav-fill mb-3">
-                            <li class="nav-item"> <a data-toggle="pill" href="#credit-card" class="nav-link active "> <i class="fas fa-credit-card mr-2"></i> Credit Card </a> </li>
+                            <li class="nav-item"> <a data-toggle="pill" href="#credit-card" class="nav-link active " style="background-color: darkblue"> <i class="fas fa-credit-card mr-2"></i> Credit Card </a> </li>
                         </ul>
                     </div> <!-- End -->
                     <!-- Credit card form content -->
                     <div class="tab-content">
                         <!-- credit card info-->
                         <div id="credit-card" class="tab-pane fade show active pt-3">
-                            <form role="form">
-                                <div class="form-group"> <label for="username">
-                                        <h6>Card Owner</h6>
-                                    </label> <input type="text" name="username" placeholder="Card Owner Name" required class="form-control "> </div>
-                                <div class="form-group"> <label for="cardNumber">
-                                        <h6>Card number</h6>
-                                    </label>
-                                    <div class="input-group"> <input type="text" name="cardNumber" placeholder="Valid card number" class="form-control " required>
-                                        <div class="input-group-append"> <span class="input-group-text text-muted"> <i class="fab fa-cc-visa mx-1"></i> <i class="fab fa-cc-mastercard mx-1"></i> <i class="fab fa-cc-amex mx-1"></i> </span> </div>
+                            <form>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="form-group"> 
+                                        <label for="username"><strong>Card Owner</strong></label>
+                                        <input type="text" name="username" id="username" placeholder="Card Owner Name" required class="form-control "> </div>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-sm-8">
-                                        <div class="form-group"> <label><span class="hidden-xs">
-                                                    <h6>Expiration Date</h6>
-                                                </span></label>
-                                            <div class="input-group"> <input type="number" placeholder="MM" name="" class="form-control" required> <input type="number" placeholder="YY" name="" class="form-control" required> </div>
+                                    <div class="col-sm-12">
+                                <div class="form-group"> 
+                                    <label for="cardNumber"><strong>Card number</strong></label>
+                                    <div class="input-group"> 
+                                        <input type="text" name="cardNumber" id="cardNumber" placeholder="Valid card number" class="form-control " required>
+                                        <div class="input-group-append"> 
+                                            <span class="input-group-text text-muted"> 
+                                                <i class="fab fa-cc-visa mx-1"></i> 
+                                                <i class="fab fa-cc-mastercard mx-1"></i> 
+                                                <i class="fab fa-cc-amex mx-1"></i> 
+                                            </span> 
                                         </div>
                                     </div>
-                                    <div class="col-sm-4">
-                                        <div class="form-group mb-4"> <label data-toggle="tooltip" title="Three digit CV code on the back of your card">
-                                                <h6>CVV</h6>
-                                            </label> <input type="text" required class="form-control"> </div>
+                                </div>
                                     </div>
                                 </div>
-                                <h6><strong>Total amount:</strong></h6>
-                                <p class="mb-0"><span><strong>$ <?php echo $sum; ?></strong></span></p><br>
-                                <div class="card-footer"> <button type="button" class="subscribe btn btn-primary btn-block shadow-sm"> Confirm Payment </button>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="form-group"> 
+                                            <label for="expiry">
+                                                <span class="hidden-xs">
+                                                    <strong>Expiration Date</strong>
+                                                </span>
+                                            </label>
+                                            <div class="input-group"> 
+                                                <input type="number" placeholder="MM" name="expiry" id="expiry" class="form-control" required> 
+                                                <input type="number" placeholder="YY" name="expiry2" id="expiry2" class="form-control" required> 
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="form-group mb-4"> 
+                                            <label data-toggle="tooltip" for="cvv" title="Three digit CV code on the back of your card">
+                                                <strong>CVV</strong>
+                                            </label> 
+                                            <input type="text" required class="form-control" id="cvv"> 
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <strong>Total amount:</strong>
+                                            <p class="mb-0"><span><strong>$ <?php echo $sum; ?></strong></span></p><br>
+                                            <div class="card-footer"> 
+                                                <button type="button" class="subscribe btn btn-primary btn-block shadow-sm" style="background-color: darkblue"> Confirm Payment </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </form>
-                            <br>
-                            <h5><strong>Or pay using PayPal</strong></h5>
-                            <br>
-                            <div id="paypal-payment-button"></div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <div id="paypal-payment-button"></div>
+                                    </div>
+                                </div>
+                            </div>
                             <br>
                         </div>
                     </div>
