@@ -381,7 +381,6 @@
                 var map = document.getElementById("map-div");
                 var map1 = document.getElementById("map-div1");
                 if (width >= 992) {
-                    alert("here");
                     if (firstloop === true) {
                         image.style.display = "none";
                         map.style.display = "initial";
