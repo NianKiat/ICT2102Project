@@ -68,9 +68,9 @@ require 'dbconfig.php';
                     case 'availability': {
                             $availability = sanitize_input($safeData['iavailability']);
                             if ($availability == "Available") {
-                                $avaialbility = "Yes";
+                                $availability = "Yes";
                             } else {
-                                $avaialbility = "No";
+                                $availability = "No";
                             }
                             break;
                         }
