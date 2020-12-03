@@ -121,14 +121,14 @@ function additems(type) {
     var items = [];
     if (type === "All") {
         $.each(data_all, function (key, val) {
-            if (val.availability === "yes")
+            if (val.availability === "Yes")
             items.push("<li id='" + key + "' class='list-group-item list-catalogue' name='" + key + "'>" +
                     "<img src=" + val.imgurl + " alt='" + val.name + "' name='" + key +
                     "'/>" + wrapPrice(key) + "</li>");
         });
     } else {
         $.each(data_all, function (key, val) {
-            if (val.type === type && val.availability === "yes")
+            if (val.type === type && val.availability === "Yes")
                 items.push("<li id='" + key + "' class='list-group-item list-catalogue' name='" + key + "'>" +
                         "<img src=" + val.imgurl + " alt='" + val.name + "' name='" + key +
                         "'/></li>");

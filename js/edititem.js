@@ -34,7 +34,7 @@ function populatepage() {
         }
         selectdropdown('sizeunit', unit);
 
-        if (availability === "yes") {
+        if (availability === "Yes") {
             document.getElementById("inlineRadio1").checked = true;
             document.getElementById("inlineRadio2").checked = false;
         } else {
