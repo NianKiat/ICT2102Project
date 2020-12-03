@@ -42,9 +42,9 @@ include "sessiontest.php";
         </header>
         <section id="cakes">
             <section class="jumbotron text-center" style="background-color:white;">
-                <div class="container">
+                <div class="container catalogue-responsive">
                     <h1 class="jumbotron-heading section_heading" id="jumbo_header"></h1>
-                    <div class="container" id="container_placeholder">
+                    <div class="container catalogue-responsive" id="container_placeholder">
                     </div>
                 </div>
             </section>

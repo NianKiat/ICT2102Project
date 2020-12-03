@@ -383,7 +383,7 @@ ul {
 
 .flex-md-row{
   display: grid !important;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   grid-gap: 1em;
 }
 
@@ -410,6 +410,10 @@ li img{
     background-color: white;
     border-radius: 25px;
     margin: auto;
+}
+
+.catalogue-responsive{
+    padding-left: 0px !important;
 }
 
 .btn-close {
