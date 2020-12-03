@@ -87,6 +87,8 @@ function updatecart(cake) {
     var quantity = document.getElementById('quantity');
     total.innerHTML = "Add to Cart $0";
     quantity.value = 0;
+    alert('cakes added to cart');
+    lightbox.classList.remove("active");
 }
 
 function refreshitems(type) {
