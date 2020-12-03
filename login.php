@@ -10,8 +10,8 @@ if (isset($_SESSION['fname'])) {
 
     <head>
         <?php
-        include 'navbar.php';
         include 'header.php';
+        include 'navbar.php';
         ?>
         <title>Floured - Login</title>
     </head>
