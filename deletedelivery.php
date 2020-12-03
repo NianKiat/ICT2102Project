@@ -10,6 +10,7 @@ include 'adminTraverseSecurity.php';
         }
    
   $id = $_POST['delete_id'];
-  $query = mysqli_query($conn,"DELETE FROM checkout WHERE checkoutid='$id'");
+  $query = mysqli_query($conn,"UPDATE checkout SET status = 'delivered' WHERE checkoutid='$id'");
+   //$sql2 = "UPDATE checkout SET date = '$launch_date' WHERE checkoutid = " . $rowid;
 ?>
 

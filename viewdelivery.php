@@ -35,7 +35,8 @@ include 'memberTraverseSecurity.php';
                                 <thead>
                                     <tr>
                                         <th>Cakes</th>
-                                        <th>flavor</th>
+                                        <th>Name</th>
+                                        <th>Quantity</th>
                                         <th>Date</th>
                                         <th>&nbsp;&nbsp;&nbsp;&nbsp;</th>
                                     </tr>
@@ -44,19 +45,21 @@ include 'memberTraverseSecurity.php';
                                     <?php
                                     $status = 1;
                                     $id = $_SESSION['memberID'];
-                                    $query = "SELECT * FROM checkout WHERE memberid = '$id'";
+                                    $query = "SELECT * FROM checkout WHERE memberid = '$id' and status = 'undelivered'";
                                     if ($result = $conn->query($query)) {
                                    
                                     while ($row = $result->fetch_assoc()) {
                                         $field1name = $row["checkoutid"];
                                         $fieldname = $row["name"];
+                                        $fieldquantity = $row["quantity"];
                                         $fielddate = $row["date"];
                                         $field1img = $row["imgurl"];
                                         $status = 0;
                                         ?>     
                                         <tr id="delete<?php echo $field1name; ?>"> 
                                             <td><img class="img" src="<?php echo $row["imgurl"]; ?>" alt="cakes" width="100px" height="100px"></td>
-                                            <td><?php echo $fieldname; ?></td> 
+                                            <td><?php echo $fieldname; ?></td>
+                                            <td><?php echo $fieldquantity; ?></td>
                                             <td><?php echo $fielddate; ?></td>
                                             <td style="text-align:right;">                                    
                                                 <form action="deliveryedit.php" method="POST">

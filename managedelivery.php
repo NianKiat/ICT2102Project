@@ -38,6 +38,7 @@ include 'adminTraverseSecurity.php';
                                                 <th>Cake</th>
                                                 <th>Quantity</th>
                                                 <th>Date</th>
+                                                <th>Status</th>
                                                 <th>&nbsp;&nbsp;&nbsp;&nbsp;</th>
                                             </tr>
                                         </thead>
@@ -46,7 +47,7 @@ include 'adminTraverseSecurity.php';
                                             $status = 1;
                                             //$id = $_SESSION['memberID'];
                                             //$query2 = "SELECT * FROM checkout WHERE memberid = '$id'";
-                                            $query = "SELECT checkout.checkoutid, fmembers.fname, fmembers.email, checkout.name, checkout.quantity, checkout.date 
+                                            $query = "SELECT checkout.checkoutid, fmembers.fname, fmembers.email, checkout.name, checkout.quantity, checkout.date, checkout.status 
 FROM Floured.checkout
 INNER JOIN Floured.fmembers ON checkout.memberid = fmembers.memberid";
                                             if ($result = $conn->query($query)) {
@@ -58,6 +59,7 @@ INNER JOIN Floured.fmembers ON checkout.memberid = fmembers.memberid";
                                                     $fieldcakename = $row["name"];
                                                     $fieldquantity = $row["quantity"];
                                                     $fielddate = $row["date"];
+                                                    $fieldstatus = $row["status"];
                                                     $status = 0;
                                                     ?>     
                                                     <tr id="delete<?php echo $field1id; ?>"> 
@@ -66,14 +68,23 @@ INNER JOIN Floured.fmembers ON checkout.memberid = fmembers.memberid";
                                                         <td><?php echo $fieldcakename; ?></td>
                                                         <td><?php echo $fieldquantity; ?></td>
                                                         <td><?php echo $fielddate; ?></td>
+                                                        <td><?php echo $fieldstatus; ?></td>
             <!--                                            <td style="text-align:right;">                                    
                                                             <form action="deliveryedit.php" method="POST">
                                                                 <button name="editdate" value="<?php echo $field1name; ?>" >Change date</button>
                                                             </form>
                                                         </td>-->
-                                                        <td style="text-align:right;">                                         
+                                                        <?php 
+                                                         if($fieldstatus == "undelivered")
+                                                         {
+                                                             ?>
+                                                         <td style="text-align:right;">                                         
                                                             <button name="deletedate" onclick="deleteAjax(<?php echo $field1id; ?>)">Delivered Cake</button>
                                                         </td>
+                                                        <?php
+                                                         }
+                                                        ?>
+                                                       
                                                     </tr>
                                                     <?php
                                                 }
@@ -86,14 +97,15 @@ INNER JOIN Floured.fmembers ON checkout.memberid = fmembers.memberid";
                                         <script type="text/javascript">
                                             
                                             function deleteAjax(id) {
-                                                var confirmalert = confirm("Are you sure?");
+                                                var confirmalert = confirm("Confirmed Delivery?");
                                             if (confirmalert == true) {
                                                 $.ajax({
                                                     type: 'post',
                                                     url: 'deletedelivery.php',
                                                     data: {delete_id: id},
                                                     success: function (data) {
-                                                        $('#delete' + id).hide('slow');
+                                                        //$('#delete' + id).hide('slow');
+                                                        location.reload();
                                                     }
                                                 });
                                             }

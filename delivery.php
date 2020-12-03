@@ -61,7 +61,7 @@ include 'memberTraverseSecurity.php';
                                 
                                 //echo $launch_date;
                                 //echo "Date Chosen !!!";
-                                $sql = "INSERT INTO checkout (name, date, memberid, price, quantity, imgurl) VALUES ('$fieldname', '$launch_date', '$id', '$fieldprice', '$fieldquantity', '$fieldimg')";
+                                $sql = "INSERT INTO checkout (name, date, memberid, price, quantity, imgurl, status) VALUES ('$fieldname', '$launch_date', '$id', '$fieldprice', '$fieldquantity', '$fieldimg', 'undelivered')";
                                 if (mysqli_query($conn, $sql)) {
                                     $status = "added";
                                 } else {
