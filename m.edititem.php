@@ -75,7 +75,7 @@ include 'adminTraverseSecurity.php';
                             <div class="row">
                                 <div class="col-md">Make Available:    
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="iavailability" id="inlineRadio1" value="yes" checked>
+                                        <input class="form-check-input" type="radio" name="iavailability" id="inlineRadio1" value="Yes" checked>
                                         <label class="form-check-label" for="inlineRadio1" >now</label>
                                     </div>
                                     <div class="form-check form-check-inline">
