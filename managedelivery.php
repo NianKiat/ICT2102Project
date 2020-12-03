@@ -84,9 +84,10 @@ INNER JOIN Floured.fmembers ON checkout.memberid = fmembers.memberid";
                                             ?>
                                         </tbody>
                                         <script type="text/javascript">
-                                            var confirmalert = confirm("Are you sure?");
-                                            if (confirmalert == true) {
+                                            
                                             function deleteAjax(id) {
+                                                var confirmalert = confirm("Are you sure?");
+                                            if (confirmalert == true) {
                                                 $.ajax({
                                                     type: 'post',
                                                     url: 'deletedelivery.php',

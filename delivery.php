@@ -80,7 +80,7 @@ include 'memberTraverseSecurity.php';
                             echo "<br>";
                             echo "Cakes has been successfully purchased, click here to see your delivery's date";
                             ?>
-                            <input type="button" value="delivery" onclick="window.location.href = 'viewdelivery.php';">
+                            <input type="button" value="Delivery" onclick="window.location.href = 'viewdelivery.php';">
                 <?php
                            
                         }
