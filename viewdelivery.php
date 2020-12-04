@@ -63,7 +63,7 @@ include 'memberTraverseSecurity.php';
                                             <td><?php echo $fielddate; ?></td>
                                             <td style="text-align:right;">                                    
                                                 <form action="deliveryedit.php" method="POST">
-                                                    <button name="editdate" value="<?php echo $field1name; ?>" >Change date</button>
+                                                    <button class="btn button_forms btn-info" name="editdate" value="<?php echo $field1name; ?>" >Change date</button>
                                                 </form>
                                             </td>
         <!--                                                <td style="text-align:right;">                                         

@@ -36,7 +36,7 @@ include 'memberTraverseSecurity.php';
                        echo date('Y-m-d', strtotime($Date . ' + 14 days'));
         ?>"
                        >
-                <input type="hidden" id="rowid" name="rowid" value="
+                <input  type="hidden" id="rowid" name="rowid" value="
                 <?php
                 if (isset($_POST['editdate'])) {
                     $rowid = $_POST['editdate'];
@@ -44,9 +44,9 @@ include 'memberTraverseSecurity.php';
                 }
                 ?>
                        ">
-                <input type="submit" name="submit">
+                <input class="btn button_forms btn-info" type="submit" name="submit">
                 <br>
-                <input type="button" value="Back" onclick="window.location.href = 'viewdelivery.php';">
+                <input class="btn button_forms btn-info" type="button" value="Back" onclick="window.location.href = 'viewdelivery.php';">
             </form>  
             <a style="color: red;">
                 <?php
