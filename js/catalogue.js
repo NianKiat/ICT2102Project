@@ -42,7 +42,7 @@ function quantitychange(type, i) {
         case '-':
             if (quantity_text.value > 0) {
                 quantity_text.value = number - 1;
-                number -=1;
+                number -= 1;
                 break;
             } else {
                 break;
@@ -55,8 +55,10 @@ function quantitychange(type, i) {
             } else {
                 break;
             }
+        default:
+            break;
     }
-    document.getElementById("updatecart").innerHTML = "Add to Cart $" + (calculateprice(i) * number);
+    document.getElementById("updatecart").innerHTML = "Add to Cart $" + (calculateprice(i) * number).toFixed(2);
 }
 
 function updatecart(cake) {
@@ -71,16 +73,16 @@ function updatecart(cake) {
     var dimension = data_all[cakeId].dimension;
     var name = data_all[cakeId].name;
     var price = "$" + calculateprice(cake);
-    
+
     $.ajax({
         type: 'post',
         url: 'insertCart.php',
         data: {cakeId: cakeId,
-               imgurl: imgurl,
-               dimension: dimension,
-               price: price,
-               name: name,
-               quantity: quantity
+            imgurl: imgurl,
+            dimension: dimension,
+            price: price,
+            name: name,
+            quantity: quantity
         }
     });
     //end Reset Numbers
@@ -124,9 +126,9 @@ function additems(type) {
     if (type === "All") {
         $.each(data_all, function (key, val) {
             if (val.availability === "Yes")
-            items.push("<li id='" + key + "' class='list-group-item list-catalogue' name='" + key + "'>" +
-                    "<img src=" + val.imgurl + " alt='" + val.name + "' name='" + key +
-                    "'/>" + wrapPrice(key) + "</li>");
+                items.push("<li id='" + key + "' class='list-group-item list-catalogue' name='" + key + "'>" +
+                        "<img src=" + val.imgurl + " alt='" + val.name + "' name='" + key +
+                        "'/>" + wrapPrice(key) + "</li>");
         });
     } else {
         $.each(data_all, function (key, val) {
@@ -186,7 +188,7 @@ function additems(type) {
         });
         $(button_remove).attr({
             "class": "btn button_forms btn-info",
-            "onclick": "quantitychange('-'," + str + ")"
+            "onclick": "quantitychange('-','" + str + "')"
         });
         $(button_updatecart).attr({
             "id": "updatecart",
@@ -215,11 +217,11 @@ function additems(type) {
             "id": "information"
         });
         $(button_close).attr({
-           "type":"button",
-           "class":"btn button_forms btn-info btn-close"
+            "type": "button",
+            "class": "btn button_forms btn-info btn-close"
         });
         button_close.innerHTML = "x";
-        button_close.addEventListener("click", e=>{
+        button_close.addEventListener("click", e => {
             lightbox.classList.remove("active");
         });
         product.setAttribute("id", "product");
@@ -249,7 +251,7 @@ function additems(type) {
         warning_label.innerHTML = "contains:";
         warning_info.innerHTML = data_all[str].warning;
         price_label.innerHTML = "Current Price:";
-        price_per.innerHTML = "$" + calculateprice(str);
+        price_per.innerHTML = "$" + calculateprice(str).toFixed(2);
 
 
         img.src = data_all[str].imgurl;
@@ -284,6 +286,10 @@ function additems(type) {
         product.append(container_img);
         product.append(container_details);
         lightbox.append(product);
+        var quantity = document.getElementById("quantity");
+        quantity.addEventListener('change', function (event) {
+            quantitychange("change", str);
+        });
     });
 }
 
