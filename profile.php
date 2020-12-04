@@ -64,7 +64,7 @@ include 'memberTraverseSecurity.php';
                                         <p><?php echo $_SESSION['address'] ?>   </p>         
                                     </div>
                                     <div>
-                                        <button class="btn button_forms btn-info" type="submit">Update My Profile</button>   
+                                        <button onclick="window.location.href='updateprofile.php'" type='button' class='btn button_forms btn-info'>Update My Profile</button>
                                     </div>
 
                                 </div>
