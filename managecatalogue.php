@@ -19,9 +19,9 @@ include 'adminTraverseSecurity.php';
                 <h1 class="display-4">Manage Items</h1>
                 <p class="lead">Navigate using the buttons below.</p>
 
-                <button type="button" onclick="window.location.href = 'm.additem.php'" class="btn btn-secondary btn-lg btn-block">Add New Item</button>
+                <button type="button" onclick="window.location.href = 'm.additem.php'" class="btn button_forms btn-info btn-block">Add New Item</button>
 
-                <button type="button" onclick="window.location.href = 'm.itemupdate.php'" class="btn btn-secondary btn-lg btn-block">Update/Remove Item Information</button>
+                <button type="button" onclick="window.location.href = 'm.itemupdate.php'" class="btn button_forms btn-info btn-block">Update/Remove Item Information</button>
 
             </div>
         </div>
