@@ -27,7 +27,7 @@ include 'sessiontest.php';
                 }
             }
         </script>
-        <Style>
+        <style>
             .alert {
                 position: relative;
                 padding: .75rem 1.25rem;
@@ -56,7 +56,7 @@ include 'sessiontest.php';
     <body onresize="check_width()">
         <div id="banner_image" class="jumbotron jumbotron-fluid" role="main">
             <div class="container center">
-                <h1 id="banner-header">Singapore's Best Cake Delivery Outlet</h1>
+                <h2 id="banner-header">Singapore's Best Cake Delivery Outlet</h2>
                 <h2 id="banner-subheader">same day delivery | no minimum order | award winning</h2>
                 <h2 id="subheading" class="lead">Floured! brings you freshly-baked artisanal cakes delivered islandwide</h2>
             </div>
@@ -78,7 +78,7 @@ include 'sessiontest.php';
         </div>
         <section class="jumbotron text-center section_wrap" role="contentinfo" aria-label="What sets us apart">
             <div class="container">
-                <h1 class="jumbotron-heading section_heading">what sets us apart</h1>
+                <h2 class="jumbotron-heading section_heading">what sets us apart</h2>
                 <hr class="section_break">
             </div>
             <div class="container">
@@ -92,7 +92,7 @@ include 'sessiontest.php';
         </section>
         <section class="jumbotron text-center section_wrap" role="contentinfo" aria-label="Best Selling Cakes">
             <div class="container">
-                <h1 class="jumbotron-heading section_heading">best selling cakes</h1>
+                <h2 class="jumbotron-heading section_heading">best selling cakes</h2>
                 <hr class="section_break">
             </div>
         </section>
@@ -140,7 +140,7 @@ include 'sessiontest.php';
         <br>
         <section class="jumbotron text-center section_wrap" role="contentinfo" aria-label="Walk-in promotion">
             <div class="container">
-                <h1 class="jumbotron-heading section_heading">walk-in promotion</h1>
+                <h2 class="jumbotron-heading section_heading">walk-in promotion</h2>
                 <hr class="section_break">
             </div>
         </section>
@@ -187,7 +187,7 @@ include 'sessiontest.php';
         <br>
         <section class="jumbotron section_wrap" role="contentinfo" aria-label="Frequently Asked Questions">
             <div class="container">
-                <h1 class="jumbotron-heading section_heading" style="text-align:center;">frequently asked questions</h1>
+                <h2 class="jumbotron-heading section_heading" style="text-align:center;">frequently asked questions</h2>
                 <hr class="section_break" style="width:40%;">
             </div>
             <div class="jumbotron section_wrap" style="margin-left: 61.667px; margin-right: 61.667px; padding-left:30px; padding-right:30px;">
