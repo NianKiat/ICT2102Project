@@ -45,8 +45,8 @@ include 'memberTraverseSecurity.php';
                 <div class="card-header">
                     <div class="bg-white shadow-sm pt-4 pl-2 pr-2 pb-2">
                         <!-- Credit card form tabs -->
-                        <ul role="tablist" class="nav bg-light nav-pills rounded nav-fill mb-3">
-                            <li class="nav-item"> <a data-toggle="pill" href="#credit-card" class="nav-link active " style="background-color: darkblue"> <i class="fas fa-credit-card mr-2"></i> Credit Card </a> </li>
+                        <ul role="tablist" class="btn button_forms btn-info btn-block">
+                            <li class="nav-item"> <a data-toggle="pill" href="#credit-card" class="nav-link active " style="color:white"> <i class="fas fa-credit-card mr-2" style="color:white"></i> Credit Card </a> </li>
                         </ul>
                     </div> <!-- End -->
                     <!-- Credit card form content -->
@@ -107,7 +107,7 @@ include 'memberTraverseSecurity.php';
                                             <strong>Total amount:</strong>
                                             <p class="mb-0"><span><strong>$ <?php echo $sum; ?></strong></span></p><br>
                                             <div class="card-footer"> 
-                                                <button type="button" class="subscribe btn btn-primary btn-block shadow-sm" style="background-color: darkblue"> Confirm Payment </button>
+                                                <button type="button" class="btn button_forms btn-info btn-block"> Confirm Payment </button>
                                             </div>
                                         </div>
                                     </div>

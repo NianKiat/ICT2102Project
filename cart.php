@@ -8,8 +8,8 @@ include 'memberTraverseSecurity.php';
 <html lang = "en">
     <head>
         <?php
-        include 'header.php';
         include 'navbar.php';
+        include 'header.php';
         ?>
         <title>Floured</title>
     </head>
@@ -181,7 +181,7 @@ include 'memberTraverseSecurity.php';
                                     </li>
                                 </ul>
                                 <form action="payment.php" method="POST">
-                                    <button type="submit" class="btn btn-primary btn-block waves-effect waves-light" style="background-color: darkblue">Checkout</button>
+                                    <button type="submit" class="btn button_forms btn-info btn-block">Checkout</button>
                                 </form>
                             </div>
                         </div>
