@@ -23,7 +23,7 @@ include 'sessiontest.php';
             <form action="reset-request.inc.php" method="post">            
                 <div class="form-group">
                     <label for="email">Email:</label>            
-                    <input class="form-control" type="text" id="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"                  
+                    <input class="form-control" type="text" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"                  
                            required name="email" placeholder="Enter your e-mail adress">   
                 </div>
                 <div>
@@ -44,9 +44,10 @@ include 'sessiontest.php';
             ?>
             <br>
             <br>
-        </main>    
+        </main>  
+        <?php
+        include 'footer.php';
+        ?>
     </body>
-            <?php
-            include 'footer.php';
-            ?>
+
 </html>
