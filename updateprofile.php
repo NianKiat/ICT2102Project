@@ -8,7 +8,7 @@ include 'memberTraverseSecurity.php';
         <?php
         include "header.php";
         ?>
-        <style type="text/css">
+        <style>
 
             .responsive {
                 width: 100%;
@@ -48,7 +48,7 @@ include 'memberTraverseSecurity.php';
                 <h1 class='section_heading' style="text-align: center">Update Profile:</h1>
                 <br>
                 <div class ="card mb-3" >
-                    
+
                     <div class="row no-gutters">
                         <?php if ($_SESSION['gender'] == 'Male') { ?>
                             <img src="images/img_avatar.png" style="width: 500px" class="card-img-top" alt="profileimg"/>
@@ -56,10 +56,11 @@ include 'memberTraverseSecurity.php';
                             <img src="images/img_avatar2.png" style="width: 500px" class="card-img-top" alt="profileimg"/>
                         <?php } ?>
                         <div class="card-body">
-                            <div class="row">
+                            <form action="m.updateprocess.php" method="post">  
+                                <div class="row">
 
-                                <div class="col">
-                                    <form action="m.updateprocess.php" method="post">            
+                                    <div class="col">
+
                                         <div class="form-group">
                                             <label for="fname">First Name:</label>            
                                             <input class="form-control" type="text" id="fname" required name="fname" pattern="[A-Za-z]{2,45}" title="2-45 Alphabetical Characters Only."                   
@@ -67,7 +68,7 @@ include 'memberTraverseSecurity.php';
                                         </div>
                                         <div class="form-group">
                                             <label for="lname">Last Name:</label>             
-                                            <input class="form-control" type="text" id="lname" name="lname" pattern="[A-Za-z]{2,45}" title="2-45 Alphabetical Characters Only."                   
+                                            <input class="form-control" type="text" id="lname" pattern="[A-Za-z]{2,45}" title="2-45 Alphabetical Characters Only."                   
                                                    required name="lname" placeholder="Enter last name" value="<?php echo $_SESSION['lname'] ?>">             
                                         </div>
                                         <div class="form-group">
@@ -83,39 +84,37 @@ include 'memberTraverseSecurity.php';
                                                 <input type="radio" id="female" name="gender" checked value="Female">
                                                 <label for="female">Female</label><br>
                                             <?php } ?>
-
-
                                         </div>
 
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="email">Email:</label>   
+                                            <input class="form-control" type="email" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"                  
+                                                   required name="email" placeholder="Enter email" value="<?php echo $_SESSION['email'] ?>">            
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="contact">Contact:</label>            
+                                            <input class="form-control" type="tel" id="contact" name="contact"                   
+                                                   required pattern="[0-9]{8}" title="8 number characters only!" placeholder="Enter contact" value="<?php echo $_SESSION['contact'] ?>">            
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="address">Address:</label>   
+                                            <input type="hidden" name="roleDefault" value="Member">
+                                            <input class="form-control" type="text" id="address"                 
+                                                   required name="address" placeholder="Enter address" value="<?php echo $_SESSION['address'] ?>">            
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="col">
-                                    <div class="form-group">
-                                        <label for="email">Email:</label>   
-                                        <input class="form-control" type="email" id="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"                  
-                                               required name="email" placeholder="Enter email" value="<?php echo $_SESSION['email'] ?>">            
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="contact">Contact:</label>            
-                                        <input class="form-control" type="contact" id="contact" name="contact"                   
-                                               required name="number" pattern="[0-9]{8}" title="8 number characters only!" placeholder="Enter contact" value="<?php echo $_SESSION['contact'] ?>">            
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="address">Address:</label>   
-                                        <input type="hidden" name="roleDefault" value="Member">
-                                        <input class="form-control" type="text" id="address" name="address"                   
-                                               required name="address" placeholder="Enter address" value="<?php echo $_SESSION['address'] ?>">            
-                                    </div>
+                                <div class="form-check">
                                 </div>
-                            </div>
-                            <div class="form-check">
-                            </div>
-                            <br>
-                            <div>
-                                <strong>Warning: Changing your email WILL reset your verification status.</strong>
                                 <br>
-                                <br>
-                                <button class="btn button_forms btn-info" type="submit">Save Changes</button>   
-                            </div>
+                                <div>
+                                    <strong>Warning: Changing your email WILL reset your verification status.</strong>
+                                    <br>
+                                    <br>
+                                    <button class="btn button_forms btn-info" type="submit">Save Changes</button>   
+                                </div>
                             </form>    
                         </div>
                     </div>
