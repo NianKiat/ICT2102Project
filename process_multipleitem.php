@@ -79,8 +79,8 @@ require 'dbconfig.php';
                 if ($success) {
                     processDB($type);
                     echo "<h1>Item successfully updated.<h1>";
-                    echo "<a href='m.itemupdate.php' class ='btn btn-dark mr-1' style='padding: 5x 10px;'>Return to Manage Items</a>";
-                    echo "<a href = 'management.php' class='btn btn-dark mr-1' style='padding: 5x 10px;'>Return to Management</a></p>";
+                    echo "<a href='m.itemupdate.php' class ='btn button_forms btn-info mr-1' style='padding: 5x 10px;'>Return to Manage Items</a>";
+                    echo "<a href = 'management.php' class='btn button_forms btn-info mr-1' style='padding: 5x 10px;'>Return to Management</a></p>";
                 } else {
                     echo "<h1>Item was not successfully added.<h1>";
                     echo "<p> Error Detected: " . $errorMsg . "</p>";

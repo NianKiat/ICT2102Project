@@ -27,9 +27,9 @@ include 'adminTraverseSecurity.php';
                                 <input type='text' class='form-control' id='selected' name='idarray'>
                             </div>
                             <a class='btn btn-danger float-right' onclick="toggle('Delete')" style='margin-left:10px;'>Delete</a>
-                            <a class='btn btn-dark float-right' onclick="toggle('Price')" style='margin-left:10px;'>Price</a>
-                            <a class='btn btn-dark float-right' onclick="toggle('Discount')" style='margin-left:10px;'>Discount</a>
-                            <a class='btn btn-dark float-right' onclick="toggle('Availability')">Availability</a>
+                            <a class='btn button_forms btn-info float-right' onclick="toggle('Price')" style='margin-left:10px;'>Price</a>
+                            <a class='btn button_forms btn-info float-right' onclick="toggle('Discount')" style='margin-left:10px;'>Discount</a>
+                            <a class='btn button_forms btn-info float-right' onclick="toggle('Availability')">Availability</a>
                         </form>
                     </div>
                     <div class="card-body text-primary">

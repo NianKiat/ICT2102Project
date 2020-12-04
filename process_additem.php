@@ -94,9 +94,9 @@ require 'dbconfig.php';
                 if ($success) {
                     addItemToDB();
                     echo "<h1>Item $name successfully added.<h1>";
-                    echo "<p><a href='m.additem.php' class='btn btn-dark mr-1' style='padding: 5x 10px;'>Add another item</a>";
-                    echo "<a href='m.itemupdate.php' class ='btn btn-dark mr-1' style='padding: 5x 10px;'>Manage Items</a>";
-                    echo "<a href = 'management.php' class='btn btn-dark mr-1' style='padding: 5x 10px;'>Return to Management</a></p>";
+                    echo "<p><a href='m.additem.php' class='btn button_forms btn-info mr-1' style='padding: 5x 10px;'>Add another item</a>";
+                    echo "<a href='m.itemupdate.php' class ='btn button_forms btn-info mr-1' style='padding: 5x 10px;'>Manage Items</a>";
+                    echo "<a href = 'management.php' class='btn button_forms btn-info mr-1' style='padding: 5x 10px;'>Return to Management</a></p>";
                     move_uploaded_file($file_tem_loc, $file_store);
                 } else {
                     echo "<h1>Item was not successfully added.<h1>";

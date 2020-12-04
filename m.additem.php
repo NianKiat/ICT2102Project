@@ -77,7 +77,7 @@ include 'adminTraverseSecurity.php';
                                     </div>
                                 </div>
                                 <div class="col-md">
-                                    <input type="submit" class="float-right btn btn-primary" name="create" value="Create">
+                                    <input type="submit" class="float-right btn button_forms btn-info" name="create" value="Create">
                                 </div>
                             </div>
                         </div>

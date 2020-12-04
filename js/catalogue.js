@@ -181,16 +181,16 @@ function additems(type) {
             "class": "form-group"
         });
         $(button_add).attr({
-            "class": "btn btn-dark",
+            "class": "btn button_forms btn-info",
             "onclick": "quantitychange('+','" + str + "')"
         });
         $(button_remove).attr({
-            "class": "btn btn-dark",
+            "class": "btn button_forms btn-info",
             "onclick": "quantitychange('-'," + str + ")"
         });
         $(button_updatecart).attr({
             "id": "updatecart",
-            "class": "btn btn-dark",
+            "class": "btn button_forms btn-info",
             "onclick": "updatecart('" + str + "')"
         });
         button_add.innerHTML = "+";
@@ -216,7 +216,7 @@ function additems(type) {
         });
         $(button_close).attr({
            "type":"button",
-           "class":"btn-close btn-dark"
+           "class":"btn button_forms btn-info btn-close"
         });
         button_close.innerHTML = "x";
         button_close.addEventListener("click", e=>{
