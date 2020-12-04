@@ -4,7 +4,6 @@
     <head>
         <?php
         include 'header.php';
-        include 'navbar.php';
         ?>
         <title>Store Information</title>
         <noscript>
@@ -260,7 +259,7 @@
     </head>
     
     <body onresize="check_width_and_clear_img()">
-
+        <?php include 'navbar.php'; ?>
         <br>
         <main class="container"> 
             <section id ="store_info">
