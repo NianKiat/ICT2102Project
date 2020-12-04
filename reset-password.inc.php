@@ -44,12 +44,14 @@ if (isset($_POST["reset-password-submit"])) {
                         <h2 style='text-align:center'>Something went wrong!</h2>
                         <p style='text-align:center'>There was a connection error. Please try again later.</p>
                         <button class='btn btn-info button_forms btn-block' onclick="window.location.href = 'login.php'" >Acknowledge</button>
-                    </main>    
+                    </main>   
+                    <?php
+                    include 'footer.php';
+                    ?>
+                    <br>
                 </body>
-                <br>
-                <?php
-                include 'footer.php';
-                ?>
+
+
             </html>
             <?php
             exit();
@@ -79,12 +81,14 @@ if (isset($_POST["reset-password-submit"])) {
                             <h2 style='text-align:center'>Something went wrong!</h2>
                             <p style='text-align:center'>Your request may be expired. Please resubmit your request.</p>
                             <button class='btn btn-info button_forms btn-block' onclick="window.location.href = 'login.php'" >Acknowledge</button>
-                        </main>    
+                        </main>  
+                        <?php
+                        include 'footer.php';
+                        ?>
+                        <br>
                     </body>
-                    <br>
-                    <?php
-                    include 'footer.php';
-                    ?>
+
+
                 </html>
                 <?php
                 exit();
@@ -114,12 +118,14 @@ if (isset($_POST["reset-password-submit"])) {
                                 <h2 style='text-align:center'>Something went wrong!</h2>
                                 <p style='text-align:center'>Your request may be expired. Please resubmit your request.</p>
                                 <button class='btn btn-info button_forms btn-block' onclick="window.location.href = 'login.php'" >Acknowledge</button>
-                            </main>    
+                            </main>  
+                            <?php
+                            include 'footer.php';
+                            ?>
+                            <br>
                         </body>
-                        <br>
-                        <?php
-                        include 'footer.php';
-                        ?>
+
+
                     </html>
                     <?php
                     exit();
@@ -149,12 +155,12 @@ if (isset($_POST["reset-password-submit"])) {
                                     <h2 style='text-align:center'>Something went wrong!</h2>
                                     <p style='text-align:center'>The account that sent the request is no longer associated with us.</p>
                                     <button class='btn btn-info button_forms btn-block' onclick="window.location.href = 'login.php'" >Acknowledge</button>
-                                </main>    
+                                </main>  
+                                <?php
+                                include 'footer.php';
+                                ?>
+                                <br>
                             </body>
-                            <br>
-                            <?php
-                            include 'footer.php';
-                            ?>
                         </html>
                         <?php
                         exit();
@@ -216,10 +222,10 @@ if (isset($_POST["reset-password-submit"])) {
                     echo "<br>";
                     ?>
                 </main>
+                <?php
+                include 'footer.php';
+                ?>
             </body>
-            <?php
-            include 'footer.php';
-            ?>
         </html>
         <?php
     }

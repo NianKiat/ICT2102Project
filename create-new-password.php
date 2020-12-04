@@ -42,15 +42,15 @@ include 'sessiontest.php';
                         <input type="hidden" name="selector" value="<?php echo $selector; ?>">
                         <input type="hidden" name="validator" value="<?php echo $validator; ?>">
 
-                        <div class="form-group">
-                            <label for="pwd">New Password:</label>  
-                            <input class="form-control" required type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                        <div class="form-group" id='pwd'>
+                            <p><b>New Password:</b></p>  
+                            <input class="form-control" aria-labelledby="pwd" required type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
                                    title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters"  name="pwd" placeholder="Enter a new password">
                         </div>
 
-                        <div class="form-group">
-                            <label for="pwd-repeat">Confirm Password:</label>  
-                            <input class="form-control" required type="password" name="pwd-repeat" placeholder="Confirm new password">
+                        <div class="form-group" id='pwd-repeat'>
+                             <p><b>Confirm New Password:</b></p> 
+                            <input class="form-control" required type="password" aria-labelledby="pwd-repeat" name="pwd-repeat" placeholder="Confirm new password">
                         </div>
                         <br>
                         <div>
@@ -67,10 +67,12 @@ include 'sessiontest.php';
                 }
             }
             ?>
-        </main>    
-    </body>
-    <br>
-    <?php
+        </main>  
+            <?php
     include 'footer.php';
     ?>
+            <br>
+    </body>
+
+
 </html>
