@@ -206,7 +206,7 @@ require 'PHPMailer/src/SMTP.php';
                             echo "<h2 style='text-align:center'>The following input errors were detected:</h2>";
                             echo "<p style='text-align:center'>" . $emailerrorMsg . $fnameerrorMsg . $addresserrorMsg . $contacterrorMsg . $lnameerrorMsg . $pwderrorMsg . $pcerrorMsg . $gendererrorMsg . $errorMsg . "</p>";
                             echo "<div class='form-group'>";
-                            echo "<button onclick='history.back()' type='button' class='btn btn-danger btn-block'  type='button'>Return to Sign Up</button>";
+                            echo "<button onclick='history.back()' type='button' class='btn btn-info button_forms btn-block'  type='button'>Return to Sign Up</button>";
                             echo "</div>";
                         }
 
