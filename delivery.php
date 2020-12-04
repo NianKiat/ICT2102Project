@@ -28,17 +28,19 @@ include 'memberTraverseSecurity.php';
             <p> 
                 Please select your date here. 
 
-                
+
             </p>        
             <form action="" method="post">
                 <label for="Delivery">Delivery Date:</label>              
                 <input type="date" id="dateD" name="dateD"
-                       min="<?php $Date = $date = date("Y-m-d");
-                echo date('Y-m-d', strtotime($Date . ' + 2 days'));
-                ?>" 
-                       max="<?php $Date = $date = date("Y-m-d");
+                       min="<?php
+                       $Date = $date = date("Y-m-d");
+                       echo date('Y-m-d', strtotime($Date . ' + 2 days'));
+                       ?>" 
+                       max="<?php
+                       $Date = $date = date("Y-m-d");
                        echo date('Y-m-d', strtotime($Date . ' + 14 days'));
-                ?>"
+                       ?>"
                        >
                 <input type="submit" name="submit" class="btn button_forms btn-info">
             </form>  
@@ -58,7 +60,7 @@ include 'memberTraverseSecurity.php';
                                 $fieldquantity = $row["quantity"];
                                 $fieldname = $row["name"];
 
-                                
+
                                 //echo $launch_date;
                                 //echo "Date Chosen !!!";
                                 $sql = "INSERT INTO checkout (name, date, memberid, price, quantity, imgurl, status) VALUES ('$fieldname', '$launch_date', '$id', '$fieldprice', '$fieldquantity', '$fieldimg', 'undelivered')";
@@ -71,22 +73,18 @@ include 'memberTraverseSecurity.php';
                         } else {
                             echo "No Delivery Found";
                         }
-                        if($status == "added")
-                        {
+                        if ($status == "added") {
                             $sql3 = "DELETE FROM shoppingcart WHERE memberid = " . $id;
-                            $conn->query($sql3);    
+                            $conn->query($sql3);
                             echo $launch_date;
                             echo " has been selected.";
                             echo "<br>";
                             echo "Cakes has been successfully purchased, click here to see your delivery's date";
                             ?>
                             <input class="btn button_forms btn-info" type="button" value="Delivery" onclick="window.location.href = 'viewdelivery.php';">
-                <?php
-                           
-                        }
-                        else
-                        {
-                             echo "Date chosen is empty or unavailable. ";
+                            <?php
+                        } else {
+                            echo "Date chosen is empty or unavailable. ";
                         }
                     }
                 }
@@ -94,10 +92,10 @@ include 'memberTraverseSecurity.php';
             </a>
             <br><br>
         </main>    
- <?php
-    include 'footer.php';
-    ?>
+<?php
+include 'footer.php';
+?>
     </body>
-   
+
 </html>
 

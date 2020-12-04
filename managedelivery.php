@@ -74,17 +74,16 @@ INNER JOIN Floured.fmembers ON checkout.memberid = fmembers.memberid";
                                                                 <button name="editdate" value="<?php echo $field1name; ?>" >Change date</button>
                                                             </form>
                                                         </td>-->
-                                                        <?php 
-                                                         if($fieldstatus == "undelivered")
-                                                         {
-                                                             ?>
-                                                         <td style="text-align:right;">                                         
-                                                            <button class="btn button_forms btn-info" name="deletedate" onclick="deleteAjax(<?php echo $field1id; ?>)">Delivered Cake</button>
-                                                        </td>
                                                         <?php
-                                                         }
+                                                        if ($fieldstatus == "undelivered") {
+                                                            ?>
+                                                            <td style="text-align:right;">                                         
+                                                                <button class="btn button_forms btn-info" name="deletedate" onclick="deleteAjax(<?php echo $field1id; ?>)">Delivered Cake</button>
+                                                            </td>
+                                                            <?php
+                                                        }
                                                         ?>
-                                                       
+
                                                     </tr>
                                                     <?php
                                                 }
@@ -95,20 +94,20 @@ INNER JOIN Floured.fmembers ON checkout.memberid = fmembers.memberid";
                                             ?>
                                         </tbody>
                                         <script type="text/javascript">
-                                            
+
                                             function deleteAjax(id) {
                                                 var confirmalert = confirm("Confirmed Delivery?");
-                                            if (confirmalert == true) {
-                                                $.ajax({
-                                                    type: 'post',
-                                                    url: 'deletedelivery.php',
-                                                    data: {delete_id: id},
-                                                    success: function (data) {
-                                                        //$('#delete' + id).hide('slow');
-                                                        location.reload();
-                                                    }
-                                                });
-                                            }
+                                                if (confirmalert == true) {
+                                                    $.ajax({
+                                                        type: 'post',
+                                                        url: 'deletedelivery.php',
+                                                        data: {delete_id: id},
+                                                        success: function (data) {
+                                                            //$('#delete' + id).hide('slow');
+                                                            location.reload();
+                                                        }
+                                                    });
+                                                }
                                             }
                                         </script>
                                         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -129,9 +128,9 @@ INNER JOIN Floured.fmembers ON checkout.memberid = fmembers.memberid";
             </div>
         </div>
     </main> 
-<?php
-include 'footer.php';
-?>                           
+    <?php
+    include 'footer.php';
+    ?>                           
 </body>
 
 </html>

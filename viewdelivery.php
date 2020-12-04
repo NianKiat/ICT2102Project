@@ -8,7 +8,6 @@ include 'memberTraverseSecurity.php';
     <head>
         <?php
         $conn = OpenCon();
-
         // Check connection
         if ($conn === false) {
             die("ERROR: Could not connect. " . mysqli_connect_error());
@@ -47,36 +46,36 @@ include 'memberTraverseSecurity.php';
                                     $id = $_SESSION['memberID'];
                                     $query = "SELECT * FROM checkout WHERE memberid = '$id' and status = 'undelivered'";
                                     if ($result = $conn->query($query)) {
-                                   
-                                    while ($row = $result->fetch_assoc()) {
-                                        $field1name = $row["checkoutid"];
-                                        $fieldname = $row["name"];
-                                        $fieldquantity = $row["quantity"];
-                                        $fielddate = $row["date"];
-                                        $field1img = $row["imgurl"];
-                                        $status = 0;
-                                        ?>     
-                                        <tr id="delete<?php echo $field1name; ?>"> 
-                                            <td><img class="img" src="<?php echo $row["imgurl"]; ?>" alt="cakes" width="100px" height="100px"></td>
-                                            <td><?php echo $fieldname; ?></td>
-                                            <td><?php echo $fieldquantity; ?></td>
-                                            <td><?php echo $fielddate; ?></td>
-                                            <td style="text-align:right;">                                    
-                                                <form action="deliveryedit.php" method="POST">
-                                                    <button class="btn button_forms btn-info" name="editdate" value="<?php echo $field1name; ?>" >Change date</button>
-                                                </form>
-                                            </td>
-        <!--                                                <td style="text-align:right;">                                         
-                                                <button name="deletedate" onclick="deleteAjax(<?php //echo $field1name;  ?>)">Delete date</button>
-                                            </td>-->
-                                        </tr>
-                                        <?php
+
+                                        while ($row = $result->fetch_assoc()) {
+                                            $field1name = $row["checkoutid"];
+                                            $fieldname = $row["name"];
+                                            $fieldquantity = $row["quantity"];
+                                            $fielddate = $row["date"];
+                                            $field1img = $row["imgurl"];
+                                            $status = 0;
+                                            ?>     
+                                            <tr id="delete<?php echo $field1name; ?>"> 
+                                                <td><img class="img" src="<?php echo $row["imgurl"]; ?>" alt="cakes" width="100px" height="100px"></td>
+                                                <td><?php echo $fieldname; ?></td>
+                                                <td><?php echo $fieldquantity; ?></td>
+                                                <td><?php echo $fielddate; ?></td>
+                                                <td style="text-align:right;">                                    
+                                                    <form action="deliveryedit.php" method="POST">
+                                                        <button class="btn button_forms btn-info" name="editdate" value="<?php echo $field1name; ?>" >Change date</button>
+                                                    </form>
+                                                </td>
+            <!--                                                <td style="text-align:right;">                                         
+                                                    <button name="deletedate" onclick="deleteAjax(<?php //echo $field1name;   ?>)">Delete date</button>
+                                                </td>-->
+                                            </tr>
+                                            <?php
+                                        }
+                                        //$result->free();
+                                    } else {
+                                        echo "<a>No Delivery Found</a>";
                                     }
-                                    //$result->free();
-                                } else {
-                                    echo "<a>No Delivery Found</a>";
-                                }
-                                ?>
+                                    ?>
                                 </tbody>
                                 <script type="text/javascript">
                                     function deleteAjax(id) {
@@ -93,23 +92,20 @@ include 'memberTraverseSecurity.php';
                                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
                             </table>
                             <?php
-                                if($status == 1)
-                                {
-                                    ?>
-                            <a id="todelete">No Delivery cakes found, <a href="catalogue.php" style="color: red;">Click here to add some cakes</a></a>
-                            <?php
-                                }
-                                else
-                                {
-                                    echo "";
-                                }
+                            if ($status == 1) {
+                                ?>
+                                <a id="todelete">No Delivery cakes found, <a href="catalogue.php" style="color: red;">Click here to add some cakes</a></a>
+                                <?php
+                            } else {
+                                echo "";
+                            }
                             ?>
-                           
+
                         </div>
                 </div>
             </div>
         </main>  
-    <?php
+<?php
 include 'footer.php';
 ?>                
     </body>

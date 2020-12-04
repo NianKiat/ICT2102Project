@@ -6,7 +6,7 @@ include 'memberTraverseSecurity.php';
 <!DOCTYPE html>
 <html lang = "en">
     <head>
-         <?php
+        <?php
         $conn = OpenCon();
         // Check connection
         if ($conn === false) {
@@ -29,12 +29,14 @@ include 'memberTraverseSecurity.php';
             <form action="" method="post">
                 <label for="Delivery">Delivery Date:</label>              
                 <input type="date" id="dateD" name="dateD"
-                       min="<?php $Date = $date = date("Y-m-d");
-        echo date('Y-m-d', strtotime($Date . ' + 2 days'));
-        ?>" 
-                       max="<?php $Date = $date = date("Y-m-d");
+                       min="<?php
+                       $Date = $date = date("Y-m-d");
+                       echo date('Y-m-d', strtotime($Date . ' + 2 days'));
+                       ?>" 
+                       max="<?php
+                       $Date = $date = date("Y-m-d");
                        echo date('Y-m-d', strtotime($Date . ' + 14 days'));
-        ?>"
+                       ?>"
                        >
                 <input  type="hidden" id="rowid" name="rowid" value="
                 <?php
@@ -43,7 +45,7 @@ include 'memberTraverseSecurity.php';
                     echo $rowid;
                 }
                 ?>
-                       ">
+                        ">
                 <input class="btn button_forms btn-info" type="submit" name="submit">
                 <br>
                 <input class="btn button_forms btn-info" type="button" value="Back" onclick="window.location.href = 'viewdelivery.php';">
@@ -74,10 +76,10 @@ include 'memberTraverseSecurity.php';
             </a>
             <br><br>
         </main>    
-       <?php
-    include 'footer.php';
-    ?> 
+        <?php
+        include 'footer.php';
+        ?> 
     </body>
-    
+
 </html>
 
