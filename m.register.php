@@ -43,7 +43,7 @@ include 'adminTraverseSecurity.php';
                 </div>
                 <div class="form-group">
                     <label for="contact">Contact:</label>            
-                    <input class="form-control" type="number" id="contact" name="contact" pattern="[0-9]{8}" title="8 number characters only!"                 
+                    <input class="form-control" type="tel" id="contact" name="contact" pattern="[0-9]{8}" title="8 number characters only!"                 
                            required placeholder="Enter contact">            
                 </div>
                 <div class="form-group">
@@ -83,8 +83,9 @@ include 'adminTraverseSecurity.php';
 
             </script>
         </main>
-    </body>
-    <?php
+        <?php
     include 'footer.php';
     ?>
+    </body>
+    
 </html>

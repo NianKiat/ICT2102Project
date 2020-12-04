@@ -39,8 +39,9 @@ include 'adminTraverseSecurity.php';
                 </div>
             </form>
         </main>
+        <?php
+        include 'footer.php';
+        ?>
     </body>
-    <?php
-    include 'footer.php';
-    ?>
+
 </html>
