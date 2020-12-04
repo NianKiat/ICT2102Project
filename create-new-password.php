@@ -20,7 +20,14 @@ include 'sessiontest.php';
             $validator = $_GET["validator"];
 
             if (empty($selector) || empty($validator)) {
-                echo "Could not validate your request,";
+                ?>
+                <h1 class='section_heading' style='text-align:center'>Caked!</h1>
+                <br>
+                <h2 style='text-align:center'>Something went wrong!</h2>
+                <p style='text-align:center'>Your request is invalid. Resubmit your request.</p>
+                <button class='btn btn-info button_forms btn-block' onclick="window.location.href = 'login.php'" >Acknowledged</button>
+
+            <?php
             } else {
                 if (ctype_xdigit($selector) !== false && ctype_xdigit($validator) !== false) {
                     ?>
@@ -38,7 +45,7 @@ include 'sessiontest.php';
                         <div class="form-group">
                             <label for="pwd">New Password:</label>  
                             <input class="form-control" required type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-                           title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters"  name="pwd" placeholder="Enter a new password">
+                                   title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters"  name="pwd" placeholder="Enter a new password">
                         </div>
 
                         <div class="form-group">

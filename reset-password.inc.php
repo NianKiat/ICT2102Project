@@ -24,7 +24,34 @@ if (isset($_POST["reset-password-submit"])) {
         $sql = "SELECT * FROM pwdReset WHERE pwdResetSelector=? AND pwdResetExpires >= $currentDate";
         $stmt = mysqli_stmt_init($conn);
         if (!mysqli_stmt_prepare($stmt, $sql)) {
-            echo "There was an error!";
+            ?>
+            <!DOCTYPE html>
+            <html lang = "en">
+                <head>
+                    <?php
+                    include 'header.php';
+                    ?>
+                    <title>Floured</title>
+                </head>
+                <body>
+                    <?php
+                    include 'navbar.php';
+                    ?>
+                    <br>
+                    <main class="container">        
+                        <h1 class='section_heading' style='text-align:center'>Caked!</h1>
+                        <br>
+                        <h2 style='text-align:center'>Something went wrong!</h2>
+                        <p style='text-align:center'>There was a connection error. Please try again later.</p>
+                        <button class='btn btn-info button_forms btn-block' onclick="window.location.href = 'login.php'" >Acknowledge</button>
+                    </main>    
+                </body>
+                <br>
+                <?php
+                include 'footer.php';
+                ?>
+            </html>
+            <?php
             exit();
         } else {
             mysqli_stmt_bind_param($stmt, "s", $selector);
@@ -32,7 +59,34 @@ if (isset($_POST["reset-password-submit"])) {
 
             $result = mysqli_stmt_get_result($stmt);
             if (!$row = mysqli_fetch_assoc($result)) {
-                echo "You need to re-submit your reset request. 1";
+                ?>
+                <!DOCTYPE html>
+                <html lang = "en">
+                    <head>
+                        <?php
+                        include 'header.php';
+                        ?>
+                        <title>Floured</title>
+                    </head>
+                    <body>
+                        <?php
+                        include 'navbar.php';
+                        ?>
+                        <br>
+                        <main class="container">        
+                            <h1 class='section_heading' style='text-align:center'>Caked!</h1>
+                            <br>
+                            <h2 style='text-align:center'>Something went wrong!</h2>
+                            <p style='text-align:center'>Your request may be expired. Please resubmit your request.</p>
+                            <button class='btn btn-info button_forms btn-block' onclick="window.location.href = 'login.php'" >Acknowledge</button>
+                        </main>    
+                    </body>
+                    <br>
+                    <?php
+                    include 'footer.php';
+                    ?>
+                </html>
+                <?php
                 exit();
             } else {
 
@@ -40,7 +94,34 @@ if (isset($_POST["reset-password-submit"])) {
                 $tokenCheck = password_verify($tokenBin, $row["pwdResetToken"]);
 
                 if ($tokenCheck === false) {
-                    echo "You need to re-submit your reset request. 2";
+                    ?>
+                    <!DOCTYPE html>
+                    <html lang = "en">
+                        <head>
+                            <?php
+                            include 'header.php';
+                            ?>
+                            <title>Floured</title>
+                        </head>
+                        <body>
+                            <?php
+                            include 'navbar.php';
+                            ?>
+                            <br>
+                            <main class="container">        
+                                <h1 class='section_heading' style='text-align:center'>Caked!</h1>
+                                <br>
+                                <h2 style='text-align:center'>Something went wrong!</h2>
+                                <p style='text-align:center'>Your request may be expired. Please resubmit your request.</p>
+                                <button class='btn btn-info button_forms btn-block' onclick="window.location.href = 'login.php'" >Acknowledge</button>
+                            </main>    
+                        </body>
+                        <br>
+                        <?php
+                        include 'footer.php';
+                        ?>
+                    </html>
+                    <?php
                     exit();
                 } else if ($tokenCheck === true) {
                     $tokenEmail = $row['pwdResetEmail'];
@@ -48,7 +129,34 @@ if (isset($_POST["reset-password-submit"])) {
                     $sql = "SELECT * FROM fmembers WHERE email=?;";
                     $stmt = mysqli_stmt_init($conn);
                     if (!mysqli_stmt_prepare($stmt, $sql)) {
-                        echo "There was an error!";
+                        ?>
+                        <!DOCTYPE html>
+                        <html lang = "en">
+                            <head>
+                                <?php
+                                include 'header.php';
+                                ?>
+                                <title>Floured</title>
+                            </head>
+                            <body>
+                                <?php
+                                include 'navbar.php';
+                                ?>
+                                <br>
+                                <main class="container">        
+                                    <h1 class='section_heading' style='text-align:center'>Caked!</h1>
+                                    <br>
+                                    <h2 style='text-align:center'>Something went wrong!</h2>
+                                    <p style='text-align:center'>The account that sent the request is no longer associated with us.</p>
+                                    <button class='btn btn-info button_forms btn-block' onclick="window.location.href = 'login.php'" >Acknowledge</button>
+                                </main>    
+                            </body>
+                            <br>
+                            <?php
+                            include 'footer.php';
+                            ?>
+                        </html>
+                        <?php
                         exit();
                     } else {
                         mysqli_stmt_bind_param($stmt, "s", $tokenEmail);
