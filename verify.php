@@ -37,10 +37,11 @@ if (isset($_GET['vkey'])) {
                             </div>
                         </div>
                     </main>
-                </body>
-                <?php
+                    <?php
                 include 'footer.php';
                 ?>
+                </body>
+                
             </html>
 
             <?php
@@ -72,12 +73,14 @@ if (isset($_GET['vkey'])) {
                         </div>
                     </div>
                 </main>
+                <?php
+                include 'footer.php';
+                ?>
             </body>
-            <?php
-            include 'footer.php';
-            ?>
+
         </html>
-    <?php }
+        <?php
+    }
 } else {
     ?>
     <!DOCTYPE html>
@@ -103,10 +106,11 @@ if (isset($_GET['vkey'])) {
                     </div>
                 </div>
             </main>
+            <?php
+            include 'footer.php';
+            ?>
         </body>
-        <?php
-        include 'footer.php';
-        ?>
+
     </html>
     <?php
-    }    
+}    
