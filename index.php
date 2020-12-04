@@ -36,24 +36,26 @@ include 'sessiontest.php';
             }
         </style>
     </head>
-    <?php
-    if (isset($_SESSION['verified'])) {
-        if ($_SESSION['verified'] == 0) {
-            ?>
-            <div class = "alert alert-warning alert-dismissible fade show" role = "alert">
-                <strong style='text-align: center'>You're about to get caked!</strong> Please verify your e-mail! Verifying your e-mail allows for password recovery!            <a href="settings.php" class="alert-link">Resend Verification E-mail</a>
-                <button style=""type = "button" class = "close" data-dismiss = "alert" aria-label = "Close">
-                    <span aria-hidden = "true">&times;
-                    </span>
-                </button>
-            </div>
-            <?php
-        }
-    }
-    ?>
+
 
     <body onresize="check_width()">
+        
         <?php include 'navbar.php'; ?>
+        <?php
+        if (isset($_SESSION['verified'])) {
+            if ($_SESSION['verified'] == 0) {
+                ?>
+                <div class = "alert alert-warning alert-dismissible fade show" role = "alert">
+                    <strong style='text-align: center'>You're about to get caked!</strong> Please verify your e-mail! Verifying your e-mail allows for password recovery!            <a href="settings.php" class="alert-link">Resend Verification E-mail</a>
+                    <button style=""type = "button" class = "close" data-dismiss = "alert" aria-label = "Close">
+                        <span aria-hidden = "true">&times;
+                        </span>
+                    </button>
+                </div>
+                <?php
+            }
+        }
+        ?>
         <div id="banner_image" class="jumbotron jumbotron-fluid" role="main">
             <div class="container center">
                 <h2 id="banner-header">Singapore's Best Cake Delivery Outlet</h2>
