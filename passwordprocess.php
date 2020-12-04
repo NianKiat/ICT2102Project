@@ -2,6 +2,7 @@
 include 'sessiontest.php';
 include 'memberTraverseSecurity.php';
 ?>
+<!DOCTYPE html>
 <html lang="en">
 
     <head>
@@ -85,7 +86,7 @@ include 'memberTraverseSecurity.php';
                         echo "<h2 style='text-align:center'>The following input errors were detected:</h2>";
                         echo "<p style='text-align:center'>" . $pwdolderrorMsg . $pwderrorMsg . $pcerrorMsg . $errorMsg . "</p>";
                         echo "<div class='form-group'>";
-                        echo "<button onclick='history.back()' type='button' class='btn button_forms btn-info btn-block' type='button'>Go Back</button>";
+                        echo "<button onclick='history.back()' type='button' class='btn button_forms btn-info btn-block'>Go Back</button>";
                         echo "</div>";
                     }
 
