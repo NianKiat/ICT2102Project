@@ -40,7 +40,7 @@ include 'memberTraverseSecurity.php';
                        echo date('Y-m-d', strtotime($Date . ' + 14 days'));
                 ?>"
                        >
-                <input type="submit" name="submit">
+                <input type="submit" name="submit" class="btn button_forms btn-info">
             </form>  
             <a style="color: red;">
                 <?php
@@ -80,7 +80,7 @@ include 'memberTraverseSecurity.php';
                             echo "<br>";
                             echo "Cakes has been successfully purchased, click here to see your delivery's date";
                             ?>
-                            <input type="button" value="Delivery" onclick="window.location.href = 'viewdelivery.php';">
+                            <input class="btn button_forms btn-info" type="button" value="Delivery" onclick="window.location.href = 'viewdelivery.php';">
                 <?php
                            
                         }
