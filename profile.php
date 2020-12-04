@@ -5,20 +5,21 @@ include 'memberTraverseSecurity.php';
 <!DOCTYPE html>
 <html lang="en">
     <head> 
+        <style >
+
+            .responsive {
+                width: 100%;
+                /*  max-width: 400px;*/
+                height: auto;
+            }
+        </style>
         <?php
         include "header.php";
         ?>
         <title>Floured - Profile</title>
 
     </head>
-    <style type="text/css">
 
-        .responsive {
-            width: 100%;
-            /*  max-width: 400px;*/
-            height: auto;
-        }
-    </style>
     <body>    
         <?php
         include "navbar.php";
@@ -34,7 +35,7 @@ include 'memberTraverseSecurity.php';
                 <br>
                 <div class ="card mb-3" >
                     <div class="row no-gutters">
-                        
+
                         <?php if ($_SESSION['gender'] == 'Male') { ?>
                             <img src="images/img_avatar.png" style="width: 500px" class="card-img-top" alt="profileimg"/>
                         <?php } else if ($_SESSION['gender'] == 'Female') { ?>
@@ -44,49 +45,37 @@ include 'memberTraverseSecurity.php';
                             <div class="row">
 
                                 <div class="col">
-                                    <form action="updateprofile.php" method="post">            
-                                        <div class="form-group">
-                                            <label for="fname"><b>Name:</b></label> 
-                                            <br>
 
-                                            <p><?php echo $_SESSION['fname'] . " " . $_SESSION['lname'] ?>   </p>       
-                                        </div>
+                                    <div class="form-group">
+                                        <p><b>Name:</b></p> 
+                                        <p><?php echo $_SESSION['fname'] . " " . $_SESSION['lname'] ?>   </p>       
+                                    </div>
 
-                                        <div class="form-group">
-                                            <label for="email"><b>Email:</b></label> 
-                                            <br>
-                                            <p><?php echo $_SESSION['email'] ?>     </p>  
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="contact"><b>Contact:</b></label>  
-                                            <br>
-                                            <p><?php echo $_SESSION['contact'] ?>   </p>         
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="address"><b>Address:</b></label>  
-                                            <br>
-                                            <p><?php echo $_SESSION['address'] ?>   </p>         
-                                        </div>
+                                    <div class="form-group">
+                                        <p><b>Email:</b></p> 
+                                        <p><?php echo $_SESSION['email'] ?>     </p>  
+                                    </div>
+                                    <div class="form-group">
+                                        <p><b>Contact:</b></p>  
+                                        <p><?php echo $_SESSION['contact'] ?>   </p>         
+                                    </div>
+                                    <div class="form-group">
+                                        <p><b>Address:</b></p>  
+                                        <p><?php echo $_SESSION['address'] ?>   </p>         
+                                    </div>
+                                    <div>
+                                        <button onclick="window.location.href='updateprofile.php'" type='button' class='btn button_forms btn-info'>Update My Profile</button>
+                                    </div>
+
                                 </div>
                             </div>
-                            <div class="form-check">
-                            </div>
-                            <br>
-
-                            <div>
-                                <button class="btn button_forms btn-info" type="submit">Update My Profile</button>   
-                            </div>
-                            </form>    
                         </div>
                     </div>
                 </div>
             </main>  
         </div>
+        <?php
+        include "footer.php";
+        ?>
     </body>
-
-
-
-    <?php
-    include "footer.php";
-    ?>
 </html>

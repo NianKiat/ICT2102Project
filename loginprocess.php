@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    <title>Login Successful</title>
+    <title>Login</title>
     <?php
     include 'sessiontest.php';
     require 'dbconfig.php';
