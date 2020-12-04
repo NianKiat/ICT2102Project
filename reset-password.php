@@ -16,13 +16,13 @@ include 'sessiontest.php';
         <br>
         <main class="container"> 
             <br>
-            <h1>Password Reset</h1>
+            <h1 class='section_heading'>Password Reset</h1>
             <p> 
                 An e-mail will be sent to you with instructions on how to reset your password.        
             </p>        
             <form action="reset-request.inc.php" method="post">            
                 <div class="form-group">
-                    <label for="email">Email:</label>            
+                    <label for="email"><b>Email:</b></label>            
                     <input class="form-control" type="text" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"                  
                            required name="email" placeholder="Enter your e-mail adress">   
                 </div>
