@@ -15,7 +15,7 @@
             echo " Floured!";
         }
         ?>
-        
+
     </a>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#expand" aria-controls="expand" aria-expanded="false" aria-label="Toggle navigation">
@@ -28,7 +28,7 @@
             if (isset($_SESSION['fname'])) {
                 if ($_SESSION['role'] != 'Admin') {
                     ?>
-            <li class = "nav-item active" >
+                    <li class = "nav-item active" >
                         <a class = "nav-link" href = "index.php">Home<span class = "sr-only"></span></a>
                     </li>
                     <?php
