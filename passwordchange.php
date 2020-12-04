@@ -137,6 +137,21 @@ include 'memberTraverseSecurity.php';
                 }
 
             </script>
+            <style type="text/css">
+
+                #complexity {
+                    padding: 0;
+                    text-align: center;
+                    top: 0;
+                    width: 122px;
+                    z-index: 10;
+                }
+
+                #complexity_side {
+                    padding: 0; 
+                    vertical-align: top;
+                }
+            </style>
             <title>Floured - Profile</title>
 
         </head>
@@ -147,7 +162,7 @@ include 'memberTraverseSecurity.php';
             ?>    
             <br/>
             <br/>
-            
+
 
 
             <div class="row">
@@ -156,7 +171,7 @@ include 'memberTraverseSecurity.php';
                     <h1 class='section_heading' style="text-align: center">Update Password:</h1>
                     <br>
                     <div class ="card mb-3" >
-                        
+
                         <div class="row no-gutters">
                             <?php if ($_SESSION['gender'] == 'Male') { ?>
                                 <img src="images/img_avatar.png" style="width: 500px" class="card-img-top" alt="profileimg"/>
@@ -192,7 +207,7 @@ include 'memberTraverseSecurity.php';
                                                 </tr>
                                             </table>
                                             <input class="form-control" type="password" id="pwd" onkeyup="return checkPwdStrength();" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-                           title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters"                
+                                                   title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters"                
                                                    required name="pwd" placeholder="Enter new password">             
                                             <br>
                                             <div class="form-group">
@@ -219,8 +234,8 @@ include 'memberTraverseSecurity.php';
                     </div>
                 </main>    
             </div>
-                <?php
-                include "footer.php";
-                ?>
+            <?php
+            include "footer.php";
+            ?>
         </body>
     </html>
