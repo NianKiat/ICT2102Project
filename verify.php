@@ -10,16 +10,15 @@ if (isset($_GET['vkey'])) {
         $update = $conn->query("UPDATE fmembers SET verified = 1 WHERE vkey='$vkey' LIMIT 1");
 
         if ($update) {
-            if(isset($_SESSION['role'])){
+            if (isset($_SESSION['role'])) {
                 session_destroy();
             }
-                ?>
-            
+            ?>
+
             <!DOCTYPE html>
             <html lang = "en">
                 <head>
                     <?php
-                    
                     include 'header.php';
                     ?>
                     <title>Floured</title>
@@ -29,14 +28,14 @@ if (isset($_GET['vkey'])) {
                     include 'navbar.php';
                     ?>
                     <main>
-                    <div class="jumbotron jumbotron-fluid">
-                        <div class="container">
-                            <h1 class='section_heading' style='text-align:center'>Congratulations!</h1>
-                            <br>
-                            <h2 style='text-align:center'>Your account has been verified!</h2>
-                            <button class='btn btn-info button_forms btn-block' onclick="window.location.href = 'login.php'" >Login Now!</button>
+                        <div class="jumbotron jumbotron-fluid">
+                            <div class="container">
+                                <h1 class='section_heading' style='text-align:center'>Congratulations!</h1>
+                                <br>
+                                <h2 style='text-align:center'>Your account has been verified!</h2>
+                                <button class='btn btn-info button_forms btn-block' onclick="window.location.href = 'login.php'" >Login Now!</button>
+                            </div>
                         </div>
-                    </div>
                     </main>
                 </body>
                 <?php
@@ -44,13 +43,70 @@ if (isset($_GET['vkey'])) {
                 ?>
             </html>
 
-        <?php
+            <?php
         } else {
             echo $mysqli->error;
         }
     } else {
-        echo "Invalid request or Account already verified";
-    }
+        ?>
+        <!DOCTYPE html>
+        <html lang = "en">
+            <head>
+                <?php
+                include 'header.php';
+                ?>
+                <title>Floured</title>
+            </head>
+            <body>
+                <?php
+                include 'navbar.php';
+                ?>
+                <main>
+                    <div class="jumbotron jumbotron-fluid">
+                        <div class="container">
+                            <h1 class='section_heading' style='text-align:center'>Caked!</h1>
+                            <br>
+                            <h2 style='text-align:center'>Something went wrong!</h2>
+                            <p style='text-align:center'>Your account has already been verified or your request is invalid. Resend your verification request.</p>
+                            <button class='btn btn-info button_forms btn-block' onclick="window.location.href = 'login.php'" >Login Now!</button>
+                        </div>
+                    </div>
+                </main>
+            </body>
+            <?php
+            include 'footer.php';
+            ?>
+        </html>
+    <?php }
 } else {
-    die("Something went wrong");
-}    
+    ?>
+    <!DOCTYPE html>
+    <html lang = "en">
+        <head>
+            <?php
+            include 'header.php';
+            ?>
+            <title>Floured</title>
+        </head>
+        <body>
+            <?php
+            include 'navbar.php';
+            ?>
+            <main>
+                <div class="jumbotron jumbotron-fluid">
+                    <div class="container">
+                        <h1 class='section_heading' style='text-align:center'>Caked!</h1>
+                        <br>
+                        <h2 style='text-align:center'>Something went wrong!</h2>
+                        <p style='text-align:center'>Your account has already been verified or your request is invalid. Resend your verification request.</p>
+                        <button class='btn btn-info button_forms btn-block' onclick="window.location.href = 'login.php'" >Login Now!</button>
+                    </div>
+                </div>
+            </main>
+        </body>
+        <?php
+        include 'footer.php';
+        ?>
+    </html>
+    <?php
+    }    
