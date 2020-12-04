@@ -90,7 +90,7 @@ include 'memberTraverseSecurity.php';
                                 </div>
                                 <div class="col">
                                     <div class="form-group">
-                                        <label for="email">Email:</label>            
+                                        <label for="email">Email:</label>   
                                         <input class="form-control" type="email" id="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"                  
                                                required name="email" placeholder="Enter email" value="<?php echo $_SESSION['email'] ?>">            
                                     </div>
@@ -111,6 +111,9 @@ include 'memberTraverseSecurity.php';
                             </div>
                             <br>
                             <div>
+                                <strong>Warning: Changing your email WILL reset your verification status.</strong>
+                                <br>
+                                <br>
                                 <button class="btn button_forms btn-info" type="submit">Save Changes</button>   
                             </div>
                             </form>    

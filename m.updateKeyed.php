@@ -48,7 +48,7 @@ function sanitize_input($data) {
 }
 
 function getUser() {
-    global $success, $userid, $email, $thisfName, $thislName, $thisemail, $thiscontact, $thisaddress, $thisrole, $thisgender;
+    global $success, $userid, $email, $thisfName, $thislName, $thisemail, $thiscontact, $thisaddress, $thisrole, $thisgender, $thisverification;
     $conn = OpenCon();
     if ($conn->connect_error) {
         $errorMsg = "Connection failed: " . $conn->connect_error;
@@ -73,6 +73,8 @@ function getUser() {
             $thisgender = $row["gender"];
 
             $_SESSION['updatekey'] = $row["memberID"];
+            $_SESSION['userverified'] = $row["verified"];
+            $_SESSION['useremail'] = $row["email"];
         } else {
             $errorMsg = "User not found.";
             $success = false;
@@ -203,6 +205,9 @@ function getUser() {
                                 </div>
                                 <br>
                                 <div>
+                                    <strong>Warning: Changing the user's email WILL reset their verification status.</strong>
+                                    <br>
+                                    <br>
                                     <button class="btn btn-info button_forms" type="submit">Save Changes</button>   
                                 </div>
                                 </form>    
