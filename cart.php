@@ -9,12 +9,13 @@ include 'memberTraverseSecurity.php';
     <head>
         <?php
         include 'header.php';
-        include 'navbar.php';
         ?>
         <title>Floured</title>
     </head>
     <body class="skin-light">
-    </header>
+    <?php
+        include 'navbar.php';
+    ?>
     <!--Main Navigation-->
     <!--Main layout-->
     <main>
@@ -194,9 +195,10 @@ include 'memberTraverseSecurity.php';
         </div>
     </main>
     <!--Main layout-->
+    <?php
+        include 'footer.php';
+    ?>
 </body>
-<?php
-include 'footer.php';
-?>
+
 
 </html>
