@@ -4,12 +4,11 @@ include 'memberTraverseSecurity.php';
 ?>
 <!DOCTYPE html>
 <html lang = "en">
-    <html>
         <head> 
             <?php
             include "header.php";
             ?>
-            <script language="javascript">
+            <script>
 
                 var m_strUpperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
                 var m_strLowerCase = "abcdefghijklmnopqrstuvwxyz";
@@ -137,7 +136,7 @@ include 'memberTraverseSecurity.php';
                 }
 
             </script>
-            <style type="text/css">
+            <style>
 
                 #complexity {
                     padding: 0;
@@ -179,10 +178,11 @@ include 'memberTraverseSecurity.php';
                                 <img src="images/img_avatar2.png" style="width: 500px" class="card-img-top" alt="profileimg"/>
                             <?php } ?>
                             <div class="card-body">
+                                <form action="passwordprocess.php" method="post">  
                                 <div class="row">
 
                                     <div class="col">
-                                        <form action="passwordprocess.php" method="post">            
+                                                  
                                             <div class="form-group">
                                                 <label for="pwd_old">Enter Old Password:</label>            
                                                 <input class="form-control" type="password" id="pwd_old"                   
@@ -218,11 +218,8 @@ include 'memberTraverseSecurity.php';
 
                                     </div>
                                 </div>
-                                <div class="form-check">
-                                </div>
                                 <br>
                                 <br>
-
                                 <br>
                                 <br>
                                 <div>
