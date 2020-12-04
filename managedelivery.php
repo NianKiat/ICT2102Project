@@ -79,7 +79,7 @@ INNER JOIN Floured.fmembers ON checkout.memberid = fmembers.memberid";
                                                          {
                                                              ?>
                                                          <td style="text-align:right;">                                         
-                                                            <button name="deletedate" onclick="deleteAjax(<?php echo $field1id; ?>)">Delivered Cake</button>
+                                                            <button class="btn button_forms btn-info" name="deletedate" onclick="deleteAjax(<?php echo $field1id; ?>)">Delivered Cake</button>
                                                         </td>
                                                         <?php
                                                          }
