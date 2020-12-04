@@ -40,9 +40,10 @@ include 'memberTraverseSecurity.php';
             </div>
         </div>
         </main>
-    </body>
-
-    <?php
+        <?php
     include 'footer.php';
     ?>
+    </body>
+
+    
 </html>

@@ -6,16 +6,16 @@ include 'memberTraverseSecurity.php';
 <html lang = "en">
     <head>
         <?php
-        include 'navbar.php';
         include 'header.php';
         ?>
         <title>Floured</title>
     </head>
     <body>
+        <?php include 'navbar.php'; ?>
         <main>
-            <?php
+        <?php
 //        include 'navbar.php';
-            ?>
+        ?>
             <div class="container">
                 <br>
                 <h1 class="section_heading" style="text-align: center">Are you sure you wish to delete your account?</h1>
@@ -38,8 +38,9 @@ include 'memberTraverseSecurity.php';
 
             </div>
         </main>
+<?php
+include 'footer.php';
+?>
     </body>
-    <?php
-    include 'footer.php';
-    ?>
+
 </html>
