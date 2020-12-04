@@ -224,9 +224,9 @@ require 'PHPMailer/src/SMTP.php';
                         echo "<h1 class='section_heading' style='text-align:center'>Oops!</h1>";
                         echo "<br>";
                         echo "<h2 style='text-align:center'>The following input errors were detected:</h2>";
-                        echo "<p>" . $emailerrorMsg . $fnameerrorMsg . $addresserrorMsg . $contacterrorMsg . $lnameerrorMsg . $errorMsg . $gendererrorMsg . "</p>";
+                        echo "<p style='text-align:center'>" . $emailerrorMsg . $fnameerrorMsg . $addresserrorMsg . $contacterrorMsg . $lnameerrorMsg . $errorMsg . $gendererrorMsg . "</p>";
                         echo "<div class='form-group'>";
-                        echo "<button onclick='history.back()' type='button' class='btn btn-danger'>Go Back</button>";
+                        echo "<button onclick='history.back()' type='button' class='btn btn-info button_forms btn-block'>Go Back</button>";
                         echo "</div>";
                     }
 
