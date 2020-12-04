@@ -94,10 +94,10 @@ include 'memberTraverseSecurity.php';
             </a>
             <br><br>
         </main>    
-
-    </body>
-    <?php
+ <?php
     include 'footer.php';
     ?>
+    </body>
+   
 </html>
 

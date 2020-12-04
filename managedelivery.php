@@ -128,11 +128,12 @@ INNER JOIN Floured.fmembers ON checkout.memberid = fmembers.memberid";
                     </div>
             </div>
         </div>
-    </main>    
-</body>
+    </main> 
 <?php
 include 'footer.php';
-?>
+?>                           
+</body>
+
 </html>
 
 

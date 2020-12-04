@@ -108,10 +108,11 @@ include 'memberTraverseSecurity.php';
                         </div>
                 </div>
             </div>
-        </main>    
-    </body>
-<?php
+        </main>  
+    <?php
 include 'footer.php';
-?>
+?>                
+    </body>
+
 </html>
 
