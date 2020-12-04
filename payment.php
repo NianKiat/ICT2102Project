@@ -157,8 +157,9 @@ include 'memberTraverseSecurity.php';
         }).render('#paypal-payment-button');
     </script>
     </main>
-    </body>
     <?php
-    include 'footer.php';
+        include 'footer.php';
     ?>
+    </body>
+    
 </html>
