@@ -46,26 +46,26 @@ include 'memberTraverseSecurity.php';
                                 <div class="col">
                                     <form action="updateprofile.php" method="post">            
                                         <div class="form-group">
-                                            <label for="fname">Name:</label> 
+                                            <label for="fname"><b>Name:</b></label> 
                                             <br>
 
-                                            <h1><?php echo $_SESSION['fname'] . " " . $_SESSION['lname'] ?>   </h1>       
+                                            <p><?php echo $_SESSION['fname'] . " " . $_SESSION['lname'] ?>   </p>       
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="email">Email:</label> 
+                                            <label for="email"><b>Email:</b></label> 
                                             <br>
-                                            <h2><?php echo $_SESSION['email'] ?>     </h2>  
+                                            <p><?php echo $_SESSION['email'] ?>     </p>  
                                         </div>
                                         <div class="form-group">
-                                            <label for="contact">Contact:</label>  
+                                            <label for="contact"><b>Contact:</b></label>  
                                             <br>
-                                            <h2><?php echo $_SESSION['contact'] ?>   </h2>         
+                                            <p><?php echo $_SESSION['contact'] ?>   </p>         
                                         </div>
                                         <div class="form-group">
-                                            <label for="address">Address:</label>  
+                                            <label for="address"><b>Address:</b></label>  
                                             <br>
-                                            <h2><?php echo $_SESSION['address'] ?>   </h2>         
+                                            <p><?php echo $_SESSION['address'] ?>   </p>         
                                         </div>
                                 </div>
                             </div>
