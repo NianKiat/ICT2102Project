@@ -4,10 +4,9 @@ include 'sessiontest.php';
 <!DOCTYPE html>
 <html lang = "en">
     <head>
-<!--        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />-->
+        <!--        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />-->
         <?php
         include 'header.php';
-        include 'navbar.php';
         ?>
         <title>Floured! Homepage</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -27,7 +26,7 @@ include 'sessiontest.php';
                 }
             }
         </script>
-        <style>
+        <Style>
             .alert {
                 position: relative;
                 padding: .75rem 1.25rem;
@@ -54,6 +53,7 @@ include 'sessiontest.php';
     ?>
 
     <body onresize="check_width()">
+        <?php include 'navbar.php'; ?>
         <div id="banner_image" class="jumbotron jumbotron-fluid" role="main">
             <div class="container center">
                 <h2 id="banner-header">Singapore's Best Cake Delivery Outlet</h2>
@@ -140,7 +140,7 @@ include 'sessiontest.php';
         <br>
         <section class="jumbotron text-center section_wrap" role="contentinfo" aria-label="Walk-in promotion">
             <div class="container">
-                <h2 class="jumbotron-heading section_heading">walk-in promotion</h2>
+                <h1 class="jumbotron-heading section_heading">walk-in promotion</h1>
                 <hr class="section_break">
             </div>
         </section>
@@ -187,7 +187,7 @@ include 'sessiontest.php';
         <br>
         <section class="jumbotron section_wrap" role="contentinfo" aria-label="Frequently Asked Questions">
             <div class="container">
-                <h2 class="jumbotron-heading section_heading" style="text-align:center;">frequently asked questions</h2>
+                <h1 class="jumbotron-heading section_heading" style="text-align:center;">frequently asked questions</h1>
                 <hr class="section_break" style="width:40%;">
             </div>
             <div class="jumbotron section_wrap" style="margin-left: 61.667px; margin-right: 61.667px; padding-left:30px; padding-right:30px;">
@@ -237,8 +237,9 @@ include 'sessiontest.php';
         </section>
         <br>
         <br>
+        <?php
+        include 'footer.php';
+        ?>
     </body>
-    <?php
-    include 'footer.php';
-    ?>
+
 </html>
