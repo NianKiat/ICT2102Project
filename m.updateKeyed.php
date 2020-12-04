@@ -90,19 +90,20 @@ function getUser() {
 <!DOCTYPE html>
 <html lang = "en">
     <head>
+        <style>
+            .responsive {
+                width: 100%;
+                /*  max-width: 400px;*/
+                height: auto;
+
+            }
+        </style>
         <?php
         include 'header.php';
         ?>
         <title>Floured - Update</title>
     </head>
-    <style>
-        .responsive {
-            width: 100%;
-            /*  max-width: 400px;*/
-            height: auto;
 
-        }
-    </style>
     <body>
 
         <?php
@@ -126,10 +127,11 @@ function getUser() {
                                 <img src="images/img_avatar2.png" style="width: 500px" class="card-img-top" alt="profileimg"/>
                             <?php } ?>
                             <div class="card-body">
-                                <div class="row">
+                                <form action="m.updateprocess.php" method="post">
+                                    <div class="row">
 
-                                    <div class="col">
-                                        <form action="m.updateprocess.php" method="post">            
+                                        <div class="col">
+
 
 
 
@@ -141,7 +143,7 @@ function getUser() {
                                             <div class="form-group">
                                                 <label for="lname">Last Name:</label>             
                                                 <input class="form-control" type="text" id="lname" name="lname" pattern="[A-Za-z]{2,45}" title="2-45 Alphabetical Characters Only."                  
-                                                       required name="lname" placeholder="Enter last name" value="<?php echo $thislName ?>">             
+                                                       required placeholder="Enter last name" value="<?php echo $thislName ?>">             
                                             </div>
                                             <div class="form-group">
 
@@ -163,53 +165,52 @@ function getUser() {
 
                                             </div>
 
-                                    </div>
-                                    <div class="col">
-                                        <div class="form-group">
-                                            <label for="email">Email:</label>            
-                                            <input class="form-control" type="email" id="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"                  
-                                                   required name="email" placeholder="Enter email" value="<?php echo $thisemail ?>">            
                                         </div>
-                                        <div class="form-group">
-                                            <label for="contact">Contact:</label>            
-                                            <input class="form-control" type="contact" id="contact" name="contact" pattern="[0-9]{8}" title="8 number characters only!"                  
-                                                   required name="number" placeholder="Enter contact" value="<?php echo $thiscontact ?>">            
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="address">Address:</label>            
-                                            <input class="form-control" type="text" id="address" name="address"                   
-                                                   required name="address" placeholder="Enter address" value="<?php echo $thisaddress ?>">            
-                                        </div>
-                                        <div class="form-check">
-                                            <label>
+                                        <div class="col">
+                                            <div class="form-group">
+                                                <label for="email">Email:</label>            
+                                                <input class="form-control" type="email" id="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"                  
+                                                       required placeholder="Enter email" value="<?php echo $thisemail ?>">            
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="contact">Contact:</label>            
+                                                <input class="form-control" type="tel" id="contact" name="contact" pattern="[0-9]{8}" title="8 number characters only!"                  
+                                                       required placeholder="Enter contact" value="<?php echo $thiscontact ?>">            
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="address">Address:</label>            
+                                                <input class="form-control" type="text" id="address" name="address"                   
+                                                       required placeholder="Enter address" value="<?php echo $thisaddress ?>">            
+                                            </div>
+                                            <div class="form-check">
+
                                                 <?php if ($thisrole == 'Admin') { ?>
                                                     <p>Revert Admin Rights?:</p>
-                                                    <input type="radio" id="Member" name="role" value="Member">
-                                                    <label for="role">Yes</label><br>
-                                                    <input type="radio" id="Admin" name="role" checked value="Admin">
-                                                    <label for="role">No</label><br>
+                                                    <label>
+                                                    <input type="radio" id="Member" name="role" value="Member"> Yes</label>
+                                                    <label>
+                                                    <input type="radio" id="Admin" name="role" checked value="Admin"> No</label>
                                                 <?php } else { ?>
                                                     <p>Make this user an Admin?:</p>
-                                                    <input type="radio" id="Admin" name="role" value="Admin">
-                                                    <label for="role">Yes</label><br>
-                                                    <input type="radio" id="Member" name="role" checked value="Member">
-                                                    <label for="role">No</label><br>
+                                                    <label>
+                                                    <input type="radio" id="Admin" name="role" value="Admin"> Yes</label>
+                                                    <label>
+                                                    <input type="radio" id="Member" name="role" checked value="Member"> No</label>
                                                 <?php } ?>
 
-                                            </label>
-                                            <br>
+                                                <br>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="form-check">
-                                </div>
-                                <br>
-                                <div>
-                                    <strong>Warning: Changing the user's email WILL reset their verification status.</strong>
+                                    <div class="form-check">
+                                    </div>
                                     <br>
-                                    <br>
-                                    <button class="btn btn-info button_forms" type="submit">Save Changes</button>   
-                                </div>
+                                    <div>
+                                        <strong>Warning: Changing the user's email WILL reset their verification status.</strong>
+                                        <br>
+                                        <br>
+                                        <button class="btn btn-info button_forms" type="submit">Save Changes</button>   
+                                    </div>
                                 </form>    
                             </div>
 
@@ -224,8 +225,9 @@ function getUser() {
                 </div>
             </main>    
         </div>
+        <?php
+        include 'footer.php';
+        ?>
     </body>
-    <?php
-    include 'footer.php';
-    ?>
+
 </html>
