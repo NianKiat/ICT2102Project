@@ -9,13 +9,15 @@ if (isset($_SESSION['fname'])) {
 <html lang="en">
 
     <head>
+        <title>Floured - Login</title>
         <?php
         include 'header.php';
-        include 'navbar.php';
+        
         ?>
-        <title>Floured - Login</title>
+
     </head>
-    <body>    
+    <body>
+        <?php include 'navbar.php';?>
         <br>
         <br>
         <main class="container">        
@@ -41,9 +43,11 @@ if (isset($_SESSION['fname'])) {
                     <br>
                     <?php
                     if (isset($_GET["newpwd"])) {
-                        if ($_GET["newpwd"] == "passwordupdated") { ?>
+                        if ($_GET["newpwd"] == "passwordupdated") {
+                            ?>
                             <h2 style="color: green;">Your password has been reset!</h2>
-                      <?php  }
+                            <?php
+                        }
                     }
                     ?>
                     <a style="color: black" href ="reset-password.php"><strong>Forgot your password?</strong></a>
@@ -54,8 +58,8 @@ if (isset($_SESSION['fname'])) {
             </form>    
         </main>    
 
-    </body><?php
-    include "footer.php";
-    ?>
-
+        <?php
+        include "footer.php";
+        ?>
+    </body>
 </html>

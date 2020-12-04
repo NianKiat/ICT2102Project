@@ -1,11 +1,11 @@
 <?php
 include 'sessiontest.php';
 ?>
+<!DOCTYPE html>
 <html lang="en">
     <head> 
         <?php
         include "header.php";
-        include 'navbar.php';
         ?>
         <script>
 
@@ -135,7 +135,7 @@ include 'sessiontest.php';
             }
 
         </script>
-        <style type="text/css">
+        <style>
             #pmId {
 
             }
@@ -177,10 +177,10 @@ include 'sessiontest.php';
     </head>
 
     <body>    
-
+        <?php include 'navbar.php'; ?>
         <br/>
         <main class="container">        
-            <h1 class="section_heading"style="margin-bottom:0px;">Member Registration</h1>        
+            <h1 class="section_heading" style="margin-bottom:0px;">Member Registration</h1>        
             <p class="subtext" style="color:black"> For existing members, please go to the            
                 <a style="color: black" href="login.php"><strong>Sign In</strong></a> page.        
             </p>        
@@ -192,7 +192,7 @@ include 'sessiontest.php';
                 </div>
                 <div class="form-group">
                     <label for="lname">Last Name:</label>             
-                    <input class="form-control" type="text" id="lname" name="lname"                   
+                    <input class="form-control" type="text" id="lname"                 
                            required name="lname" pattern="[A-Za-z]{2,45}" title="2-45 Alphabetical Characters Only." placeholder="Enter last name">             
                 </div>
                 <div class="form-group">
@@ -205,17 +205,17 @@ include 'sessiontest.php';
                 </div>
                 <div class="form-group">
                     <label for="email">Email:</label>            
-                    <input class="form-control" type="email" id="email" name="email"                   
+                    <input class="form-control" type="email" id="email"                  
                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title='Use Proper E-mail Format!' required name="email" placeholder="Enter email">            
                 </div>
                 <div class="form-group">
                     <label for="contact">Contact:</label>            
-                    <input class="form-control" type="contact" id="contact" name="contact"                   
-                           required pattern="[0-9]{8}" title="8 number characters only!" name="number" placeholder="Enter contact">            
+                    <input class="form-control" type="tel" id="contact" name="contact"                   
+                           required pattern="[0-9]{8}" title="8 number characters only!" placeholder="Enter contact">            
                 </div>
                 <div class="form-group">
                     <label for="address">Address:</label>            
-                    <input class="form-control" type="text" id="address" name="address"                   
+                    <input class="form-control" type="text" id="address"             
                            required name="address" placeholder="Enter address">            
                 </div>
                 <div class="form-group">
@@ -249,7 +249,7 @@ include 'sessiontest.php';
 
                 <div class="form-check" style="padding-left:0px!important;">
                     <label>                
-                        <input type="checkbox" name="agree" required name="agree">                
+                        <input type="checkbox" required name="agree">                
                         By Signing up, you permit access to your information under the PDPA act.   
                     </label>            
                 </div>
@@ -258,6 +258,7 @@ include 'sessiontest.php';
                 <div>
                     <button class="btn button_forms btn-info" type="submit">Submit</button>   
                 </div>
+                <br>
             </form>    
         </main>    
         <?php
